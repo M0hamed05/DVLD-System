@@ -1,0 +1,9 @@
+E:\Projects\DVLD\DVLDdataAccessLayer\bin\Debug\DVLDdataAccessLayer.dll
+E:\Projects\DVLD\DVLDdataAccessLayer\bin\Debug\DVLDdataAccessLayer.pdb
+E:\Projects\DVLD\DVLDdataAccessLayer\bin\Debug\DVLD_Shared.dll
+E:\Projects\DVLD\DVLDdataAccessLayer\bin\Debug\DVLD_Shared.pdb
+E:\Projects\DVLD\DVLDdataAccessLayer\obj\Debug\DVLDdataAccessLayer.csproj.AssemblyReference.cache
+E:\Projects\DVLD\DVLDdataAccessLayer\obj\Debug\DVLDdataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Projects\DVLD\DVLDdataAccessLayer\obj\Debug\DVLDdata.7AC691E2.Up2Date
+E:\Projects\DVLD\DVLDdataAccessLayer\obj\Debug\DVLDdataAccessLayer.dll
+E:\Projects\DVLD\DVLDdataAccessLayer\obj\Debug\DVLDdataAccessLayer.pdb

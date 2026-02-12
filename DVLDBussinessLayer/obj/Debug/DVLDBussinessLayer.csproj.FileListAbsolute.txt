@@ -1,0 +1,11 @@
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLDBussinessLayer.dll
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLDBussinessLayer.pdb
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLDdataAccessLayer.dll
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLD_Shared.dll
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLDdataAccessLayer.pdb
+E:\Projects\DVLD\DVLDBussinessLayer\bin\Debug\DVLD_Shared.pdb
+E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.csproj.AssemblyReference.cache
+E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.csproj.CoreCompileInputs.cache
+E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBuss.F42A9AF3.Up2Date
+E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.dll
+E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.pdb

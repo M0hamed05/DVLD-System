@@ -1,0 +1,6 @@
+E:\Projects\DVLD\DVLD_Shared\bin\Debug\DVLD_Shared.dll
+E:\Projects\DVLD\DVLD_Shared\bin\Debug\DVLD_Shared.pdb
+E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.AssemblyReference.cache
+E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.CoreCompileInputs.cache
+E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.dll
+E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.pdb
