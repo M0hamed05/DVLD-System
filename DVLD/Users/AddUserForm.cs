@@ -93,7 +93,7 @@ namespace DVLD
 
         private void passowrdTxtBox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(usernameTxtBox.Text)) errorProvider.SetError(usernameTxtBox, "This is requried field");
+            if (string.IsNullOrWhiteSpace(passowrdTxtBox.Text)) errorProvider.SetError(passowrdTxtBox, "This is requried field");
             else if (passowrdTxtBox.Text.Length < 4) errorProvider.SetError(confrimPasswordTxtBox, "Password Should be matched");
             else errorProvider.Clear();
         }
