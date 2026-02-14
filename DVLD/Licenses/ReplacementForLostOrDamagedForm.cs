@@ -100,7 +100,7 @@ namespace DVLD.Licenses
                 }
                 else
                 {
-                    MessageBox.Show("Unexpcted error Happend Adding the License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unexpcted error Happend Replacing the License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }

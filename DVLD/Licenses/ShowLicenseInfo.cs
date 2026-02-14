@@ -5,10 +5,17 @@ namespace DVLD.Applications
 {
     public partial class ShowLicenseInfo : Form
     {
-        public ShowLicenseInfo(int appID)
+        public ShowLicenseInfo(int ID, bool showByLicenseID = false)
         {
             InitializeComponent();
-            driverLicenseInfoUserCiontrol1.load_data_by_aaplicationID(appID);
+            if (showByLicenseID)
+            {
+                driverLicenseInfoUserCiontrol1.load_data(ID);
+            }
+            else
+            {
+                driverLicenseInfoUserCiontrol1.load_data_by_aaplicationID(ID);
+            }
         }
 
         private void ShowLicenseInfo_Load(object sender, EventArgs e)

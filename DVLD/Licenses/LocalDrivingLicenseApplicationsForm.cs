@@ -122,7 +122,6 @@ namespace DVLD.Applications
 
             if (Convert.ToString(applications_dgv.CurrentRow.Cells[6].Value) == "Completed")
             {
-                editApplicationToolStripMenuItem.Enabled = false;
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 sechToolStripMenuItem.Enabled = false;
@@ -132,7 +131,6 @@ namespace DVLD.Applications
 
             if (Convert.ToString(applications_dgv.CurrentRow.Cells[6].Value) == "Cancelled")
             {
-                editApplicationToolStripMenuItem.Enabled = false;
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 sechToolStripMenuItem.Enabled = false;
                 issueDrirvingLicenseFirstTimeToolStripMenuItem.Enabled = false;

@@ -46,8 +46,9 @@ E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Applications.ManageDriversForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.User_Controls.DrvierLicenseInfo_WithFilterUserControl.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ShowInternationalLicenseForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.User_Controls.InternationaLicenseInfoUserControl.resources
-E:\Projects\DVLD\DVLD\obj\Debug\DVLD.exe.config
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.internationalLicenseApplicationForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Applications.IssueInternationalLicenseApplicationForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.RenewLicenseApplicationForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ReplacementForLostOrDamagedForm.resources
+E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.DetainLicenseForm.resources
+E:\Projects\DVLD\DVLD\obj\Debug\DVLD.exe.config

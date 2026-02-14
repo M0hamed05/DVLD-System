@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Licenses\DetainLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\DetainLicenseForm.Designer.cs">
+      <DependentUpon>DetainLicenseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\internationalLicenseApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     <Compile Include="Users\UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Licenses\DetainLicenseForm.resx">
+      <DependentUpon>DetainLicenseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses\internationalLicenseApplicationForm.resx">
       <DependentUpon>internationalLicenseApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +588,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\driverlicense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detainCardBlack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

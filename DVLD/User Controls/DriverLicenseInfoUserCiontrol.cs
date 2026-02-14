@@ -35,7 +35,7 @@ namespace DVLD.User_Controls
             DateOfBirthTxtBox.Text = person.DateOfBirth.ToShortDateString();
             DriverIDTxtBox.Text = license.driverID.ToString();
             ExpirationDateTxtBox.Text = license.ExpirationDate.ToShortDateString();
-            IsDetainedTxtBox.Text = "No";//needs refersh
+            IsDetainedTxtBox.Text = DVLD_BL.Licenses.IsDetainLicense(licenseID) ? "Yes" : "No";
 
             if (person.ImagePath != null)
             {
@@ -72,7 +72,7 @@ namespace DVLD.User_Controls
             DateOfBirthTxtBox.Text = person.DateOfBirth.ToShortDateString();
             DriverIDTxtBox.Text = license.driverID.ToString();
             ExpirationDateTxtBox.Text = license.ExpirationDate.ToShortDateString();
-            IsDetainedTxtBox.Text = "No";//needs refersh
+            IsDetainedTxtBox.Text = DVLD_BL.Licenses.IsDetainLicense(license.LicenseID) ? "Yes" : "No";
 
             if (person.ImagePath != null)
             {
@@ -116,6 +116,7 @@ namespace DVLD.User_Controls
         public bool IsActive() => license.isActive;
         public DateTime get_expiration_date() => license.ExpirationDate;
         public string get_notes() => Convert.ToString(NotesTxtBox.Text);
+        public bool IsDetain() => IsDetainedTxtBox.Text == "Yes" ? true : false;
 
         public void set_not_active()
         {

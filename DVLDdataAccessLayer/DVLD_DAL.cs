@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace DVLDdataAccessLayer
 {
-    
+
     public class DVLD_DAL
     {
         public class People
@@ -421,7 +421,7 @@ namespace DVLDdataAccessLayer
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
-                    
+
                     string query = "SELECT PersonID FROM People WHERE NationalNo = @number";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -486,7 +486,7 @@ namespace DVLDdataAccessLayer
                         {
                             connection.Open();
                             object result = command.ExecuteScalar();
-                            personID  = result != null ? Convert.ToInt32(result) : 0;
+                            personID = result != null ? Convert.ToInt32(result) : 0;
                         }
                         catch
                         {
@@ -635,7 +635,7 @@ namespace DVLDdataAccessLayer
                 }
             }
 
-            public static bool is_repeated_user_id_but_personal(string username,int UserID)
+            public static bool is_repeated_user_id_but_personal(string username, int UserID)
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -663,7 +663,7 @@ namespace DVLDdataAccessLayer
             public static int save_new_user(DVLDShared.stUser user)
             {
                 user.userID = -1;
-                using(SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = @"INSERT INTO [dbo].[Users]
                                           ([PersonID]
@@ -687,7 +687,7 @@ namespace DVLDdataAccessLayer
                         {
                             connection.Open();
                             object result = command.ExecuteScalar();
-                            user.userID = result != null? Convert.ToInt32(result) : -1;
+                            user.userID = result != null ? Convert.ToInt32(result) : -1;
                         }
                         catch
                         {
@@ -754,7 +754,7 @@ namespace DVLDdataAccessLayer
                 return success;
             }
 
-            public static bool update_user_password(int userID,string password)
+            public static bool update_user_password(int userID, string password)
             {
                 bool success = false;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -1247,7 +1247,7 @@ namespace DVLDdataAccessLayer
                 return applicationType;
             }
 
-            public static DataTable get_testAppoitments(int LDAL_ID,byte typeID)
+            public static DataTable get_testAppoitments(int LDAL_ID, byte typeID)
             {
                 DataTable dt = new DataTable();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -1280,7 +1280,7 @@ namespace DVLDdataAccessLayer
                 return dt;
             }
 
-            public static bool add_testApptoitments(int LDLA,byte TesttypeID,DateTime testDate,int UserID,decimal paidFees)
+            public static bool add_testApptoitments(int LDLA, byte TesttypeID, DateTime testDate, int UserID, decimal paidFees)
             {
                 bool success = false;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -1299,12 +1299,12 @@ namespace DVLDdataAccessLayer
                                        ,@PaidFees
                                        ,@CreatedByUserID
                                        ,@IsLocked)";
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@typeID", TesttypeID);
                         command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LDLA);
                         command.Parameters.AddWithValue("@AppointmentDate", testDate);
-                        command.Parameters.AddWithValue("@PaidFees",paidFees);
+                        command.Parameters.AddWithValue("@PaidFees", paidFees);
                         command.Parameters.AddWithValue("@CreatedByUserID", UserID);
                         command.Parameters.AddWithValue("IsLocked", false);
                         try
@@ -1319,11 +1319,11 @@ namespace DVLDdataAccessLayer
                             throw;
                         }
                     }
-                    
+
                 }
                 return success;
             }
-            
+
             public static bool update_testApptoitments(int appointementID, DateTime newTestDate)
             {
                 bool success = false;
@@ -1406,10 +1406,10 @@ namespace DVLDdataAccessLayer
                 return success;
             }
 
-            public static bool save_test_withCase(int testAppointmentID,bool testResult,string notes)
+            public static bool save_test_withCase(int testAppointmentID, bool testResult, string notes)
             {
                 bool success = false;
-                using(SqlConnection connection  = new SqlConnection(DataAccessSetting.connection_string))
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = @"INSERT INTO [dbo].[Tests]
                                    ([TestAppointmentID]
@@ -1421,7 +1421,7 @@ namespace DVLDdataAccessLayer
                                    ,@TestResult
                                    ,@Notes
                                    ,@CreatedByUserID)";
-                    using(SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@TestAppointmentID", testAppointmentID);
                         command.Parameters.AddWithValue("@TestResult", testResult);
@@ -1990,7 +1990,7 @@ namespace DVLDdataAccessLayer
             public static decimal get_licenseClassFees(int licenseClassID)
             {
                 decimal fees = 0;
-                using(SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT ClassFees FROM LicenseClasses WHERE LicenseClassID = @id";
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -2000,7 +2000,7 @@ namespace DVLDdataAccessLayer
                         {
                             connection.Open();
                             object result = command.ExecuteScalar();
-                            if(result != null) fees = Convert.ToDecimal(result);         
+                            if (result != null) fees = Convert.ToDecimal(result);
                         }
                         catch
                         {
@@ -2024,7 +2024,7 @@ namespace DVLDdataAccessLayer
                         {
                             connection.Open();
                             object result = command.ExecuteNonQuery();
-                            if (result != null) sucess = Convert.ToByte(result) == 1 ? true : false; 
+                            if (result != null) sucess = Convert.ToByte(result) == 1 ? true : false;
                         }
                         catch
                         {
@@ -2034,6 +2034,97 @@ namespace DVLDdataAccessLayer
                     }
                 }
                 return sucess;
+            }
+
+            public static int add_detain_license(DVLDShared.stDetainLicense detainLicense)
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"INSERT INTO [dbo].[DetainedLicenses]
+                                   ([LicenseID]
+                                   ,[DetainDate]
+                                   ,[FineFees]
+                                   ,[CreatedByUserID]
+                                   ,[IsReleased]
+                                   ,[ReleaseDate]
+                                   ,[ReleasedByUserID]
+                                   ,[ReleaseApplicationID])
+                             VALUES
+                                   (@LicenseID
+                                   ,@DetainDate
+                                   ,@FineFees
+                                   ,@CreatedByUserID
+                                   ,@IsReleased
+                                   ,@ReleaseDate
+                                   ,@ReleasedByUserID
+                                   ,@ReleaseApplicationID)
+                                    SELECT SCOPE_IDENTITY()";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LicenseID", detainLicense.LicenseID);
+                        command.Parameters.AddWithValue("@DetainDate", detainLicense.DetainDate);
+                        command.Parameters.AddWithValue("@FineFees", detainLicense.FineFees);
+                        command.Parameters.AddWithValue("@CreatedByUserID", detainLicense.CreatedByUserID);
+                        command.Parameters.AddWithValue("@IsReleased", detainLicense.IsReleased);
+
+                        command.Parameters.AddWithValue("@ReleaseDate", (object)detainLicense.ReleaseDate ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@ReleasedByUserID", (object)detainLicense.ReleasedByUserID ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@ReleaseApplicationID", (object)detainLicense.ReleaseApplicationID ?? DBNull.Value);
+
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+
+                            if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                            {
+                                detainLicense.DetainID = insertedID;
+                            }
+                            else
+                            {
+                                detainLicense.DetainID = -1;
+                            }
+                        }
+                        catch
+                        {
+                            detainLicense.DetainID = -1;
+                            throw;
+                        }
+                    }
+                }
+                return detainLicense.DetainID;
+            }
+
+            public static bool IsDetainLicense(int licenseID)
+            {
+                bool success = false;
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"SELECT Found = 1 FROM [dbo].[DetainedLicenses] WHERE LicenseID = @id AND (IsReleased is NULL OR IsReleased = 0)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", licenseID);
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            if(result != null && Convert.ToInt32(result) == 1)
+                            {
+                                success = true;
+                            }
+                            else
+                            {
+                                success = false;
+                            }
+                        }
+                        catch
+                        {
+                            success = false;
+                            throw;
+                        }
+                    }
+                }
+                return success;
             }
         }
 

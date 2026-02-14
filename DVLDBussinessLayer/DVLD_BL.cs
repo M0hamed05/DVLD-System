@@ -178,11 +178,15 @@ namespace DVLDBussinessLayer
 
             public static DVLDShared.stInternationalLicense get_international_licenseInfo(int internationalLicenseID) => DVLD_DAL.Licenses.get_international_licenseInfo(internationalLicenseID);
 
-            public static DataTable get_all_international_licenses()=>DVLD_DAL.Licenses.get_all_international_licenses();
+            public static DataTable get_all_international_licenses() => DVLD_DAL.Licenses.get_all_international_licenses();
 
             public static decimal get_licenseClassFees(int licenseClassID) => DVLD_DAL.Licenses.get_licenseClassFees(licenseClassID);
 
             public static bool set_license_not_active(int licenseID) => DVLD_DAL.Licenses.set_license_not_active(licenseID);
+
+            public static int add_detain_license(DVLDShared.stDetainLicense detainLicense) => DVLD_DAL.Licenses.add_detain_license(detainLicense);
+
+            public static bool IsDetainLicense(int licenseID) => DVLD_DAL.Licenses.IsDetainLicense(licenseID);
         }
 
         public class Drivers

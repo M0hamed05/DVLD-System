@@ -193,6 +193,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap detainCardBlack {
+            get {
+                object obj = ResourceManager.GetObject("detainCardBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap driverlicense {
             get {
                 object obj = ResourceManager.GetObject("driverlicense", resourceCulture);

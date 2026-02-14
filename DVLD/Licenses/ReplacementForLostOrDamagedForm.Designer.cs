@@ -296,6 +296,7 @@
             this.damagedRadioButton.Name = "damagedRadioButton";
             this.damagedRadioButton.Size = new System.Drawing.Size(200, 29);
             this.damagedRadioButton.TabIndex = 6;
+            this.damagedRadioButton.TabStop = true;
             this.damagedRadioButton.Text = "Damaged License ";
             this.damagedRadioButton.UseVisualStyleBackColor = true;
             this.damagedRadioButton.CheckedChanged += new System.EventHandler(this.damagedRadioButton_CheckedChanged);
@@ -337,7 +338,7 @@
             this.Name = "ReplacementForLostOrDamagedForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ReplacementForLostOrDamagedForm";
+            this.Text = "Replacement For Lost Or Damaged License";
             this.Load += new System.EventHandler(this.ReplacementForLostOrDamagedForm_Load);
             this.RenewApplicationInfoGroupBox.ResumeLayout(false);
             this.RenewApplicationInfoGroupBox.PerformLayout();

@@ -41,7 +41,6 @@
             this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showApplicationDetialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.editApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cancelApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,7 +180,6 @@
             this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showApplicationDetialsToolStripMenuItem,
             this.toolStripSeparator1,
-            this.editApplicationToolStripMenuItem,
             this.deleteApplicationToolStripMenuItem,
             this.toolStripSeparator2,
             this.cancelApplicationToolStripMenuItem,
@@ -193,7 +191,7 @@
             this.showLicenseToolStripMenuItem,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(450, 338);
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(450, 333);
             this.optionsContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.optionsContextMenuStrip_Opening);
             // 
             // showApplicationDetialsToolStripMenuItem
@@ -209,14 +207,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(446, 6);
-            // 
-            // editApplicationToolStripMenuItem
-            // 
-            this.editApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.editApplicationToolStripMenuItem.Image = global::DVLD.Properties.Resources.manageApplications;
-            this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(449, 38);
-            this.editApplicationToolStripMenuItem.Text = "Edit Application";
             // 
             // deleteApplicationToolStripMenuItem
             // 
@@ -379,7 +369,6 @@
         private System.Windows.Forms.Label recordsLabel;
         private System.Windows.Forms.ContextMenuStrip optionsContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem showApplicationDetialsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cancelApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sechToolStripMenuItem;

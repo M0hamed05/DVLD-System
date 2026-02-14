@@ -155,5 +155,11 @@ namespace DVLD
             ReplacementForLostOrDamagedForm frm = new ReplacementForLostOrDamagedForm();
             frm.ShowDialog();
         }
+
+        private void detainLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DetainLicenseForm frm = new DetainLicenseForm();
+            frm.ShowDialog();
+        }
     }
 }

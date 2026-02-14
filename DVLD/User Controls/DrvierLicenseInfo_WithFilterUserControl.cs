@@ -1,5 +1,6 @@
 ﻿using DVLDBussinessLayer;
 using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
 namespace DVLD.User_Controls
@@ -37,12 +38,16 @@ namespace DVLD.User_Controls
         public bool IsActive() => driverLicenseInfoUserCiontrol1.IsActive();
         public DateTime get_expriationDate() => driverLicenseInfoUserCiontrol1.get_expiration_date();
         public int get_driverID() => driverLicenseInfoUserCiontrol1.get_driverID();
+        public bool IsDetain() => driverLicenseInfoUserCiontrol1.IsDetain();
+
         public void set_not_active()
         {
             driverLicenseInfoUserCiontrol1.set_not_active();
         }
 
+
         public string get_notes() => driverLicenseInfoUserCiontrol1.get_notes();
+
 
         public void disable_filter_panel()
         {
