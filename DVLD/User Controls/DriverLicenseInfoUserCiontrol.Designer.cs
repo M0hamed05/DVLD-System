@@ -128,7 +128,7 @@
             // IsDetainedTxtBox
             // 
             this.IsDetainedTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsDetainedTxtBox.Location = new System.Drawing.Point(715, 374);
+            this.IsDetainedTxtBox.Location = new System.Drawing.Point(796, 370);
             this.IsDetainedTxtBox.Name = "IsDetainedTxtBox";
             this.IsDetainedTxtBox.ReadOnly = true;
             this.IsDetainedTxtBox.Size = new System.Drawing.Size(108, 32);
@@ -137,7 +137,7 @@
             // IsActiveTxtBox
             // 
             this.IsActiveTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsActiveTxtBox.Location = new System.Drawing.Point(715, 323);
+            this.IsActiveTxtBox.Location = new System.Drawing.Point(796, 323);
             this.IsActiveTxtBox.Name = "IsActiveTxtBox";
             this.IsActiveTxtBox.ReadOnly = true;
             this.IsActiveTxtBox.Size = new System.Drawing.Size(108, 32);
@@ -159,7 +159,7 @@
             this.IssueReasonTxtBox.Location = new System.Drawing.Point(247, 371);
             this.IssueReasonTxtBox.Name = "IssueReasonTxtBox";
             this.IssueReasonTxtBox.ReadOnly = true;
-            this.IssueReasonTxtBox.Size = new System.Drawing.Size(187, 32);
+            this.IssueReasonTxtBox.Size = new System.Drawing.Size(325, 32);
             this.IssueReasonTxtBox.TabIndex = 20;
             // 
             // IssueDateTxtBox
@@ -232,7 +232,7 @@
             this.IsDetainedLabel.AutoSize = true;
             this.IsDetainedLabel.Image = global::DVLD.Properties.Resources.status;
             this.IsDetainedLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.IsDetainedLabel.Location = new System.Drawing.Point(497, 374);
+            this.IsDetainedLabel.Location = new System.Drawing.Point(578, 370);
             this.IsDetainedLabel.Name = "IsDetainedLabel";
             this.IsDetainedLabel.Size = new System.Drawing.Size(212, 29);
             this.IsDetainedLabel.TabIndex = 12;
@@ -276,7 +276,7 @@
             this.IsActiveLabel.AutoSize = true;
             this.IsActiveLabel.Image = global::DVLD.Properties.Resources.status;
             this.IsActiveLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.IsActiveLabel.Location = new System.Drawing.Point(500, 323);
+            this.IsActiveLabel.Location = new System.Drawing.Point(581, 323);
             this.IsActiveLabel.Name = "IsActiveLabel";
             this.IsActiveLabel.Size = new System.Drawing.Size(209, 29);
             this.IsActiveLabel.TabIndex = 8;

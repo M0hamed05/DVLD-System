@@ -103,6 +103,12 @@
     <Compile Include="Licenses\RenewLicenseApplicationForm.Designer.cs">
       <DependentUpon>RenewLicenseApplicationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\ReplacementForLostOrDamagedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\ReplacementForLostOrDamagedForm.Designer.cs">
+      <DependentUpon>ReplacementForLostOrDamagedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\ShowInternationalLicenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\RenewLicenseApplicationForm.resx">
       <DependentUpon>RenewLicenseApplicationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\ReplacementForLostOrDamagedForm.resx">
+      <DependentUpon>ReplacementForLostOrDamagedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ShowInternationalLicenseForm.resx">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>

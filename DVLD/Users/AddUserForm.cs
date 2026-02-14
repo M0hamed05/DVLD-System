@@ -81,6 +81,7 @@ namespace DVLD
             if (DVLD_BL.Users.is_repeated_user_id(usernameTxtBox.Text.ToString()))
                 errorProvider.SetError(usernameTxtBox, "There is a username with this id");
             else if (string.IsNullOrWhiteSpace(usernameTxtBox.Text)) errorProvider.SetError(usernameTxtBox, "This is requried field");
+            else errorProvider.Clear();
         }
 
         private void confrimPasswordTxtBox_Leave(object sender, EventArgs e)
@@ -94,7 +95,7 @@ namespace DVLD
         private void passowrdTxtBox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(passowrdTxtBox.Text)) errorProvider.SetError(passowrdTxtBox, "This is requried field");
-            else if (passowrdTxtBox.Text.Length < 4) errorProvider.SetError(confrimPasswordTxtBox, "Password Should be matched");
+            else if (passowrdTxtBox.Text == confrimPasswordTxtBox.Text) errorProvider.Clear();
             else errorProvider.Clear();
         }
 

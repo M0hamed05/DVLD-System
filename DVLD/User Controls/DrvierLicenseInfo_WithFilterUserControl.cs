@@ -42,6 +42,8 @@ namespace DVLD.User_Controls
             driverLicenseInfoUserCiontrol1.set_not_active();
         }
 
+        public string get_notes() => driverLicenseInfoUserCiontrol1.get_notes();
+
         public void disable_filter_panel()
         {
             FilterPanel.Enabled = false;

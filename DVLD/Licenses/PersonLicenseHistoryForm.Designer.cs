@@ -36,21 +36,21 @@
             this.closeBtn = new System.Windows.Forms.Button();
             this.LicenseGroupBox = new System.Windows.Forms.GroupBox();
             this.DriverLicense_dgv = new System.Windows.Forms.DataGridView();
+            this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.localToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.internationalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downBtnsPanel = new System.Windows.Forms.Panel();
             this.recordsLabel = new System.Windows.Forms.Label();
             this.personInfoUserControl1 = new DVLD.PersonInfoUserControl();
-            this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.showLicenseInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.historyPictureBox)).BeginInit();
             this.buttonPanel.SuspendLayout();
             this.LicenseGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DriverLicense_dgv)).BeginInit();
+            this.optionsContextMenuStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.downBtnsPanel.SuspendLayout();
-            this.optionsContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // historyPictureBox
@@ -133,6 +133,23 @@
             this.DriverLicense_dgv.Size = new System.Drawing.Size(1242, 207);
             this.DriverLicense_dgv.TabIndex = 12;
             // 
+            // optionsContextMenuStrip
+            // 
+            this.optionsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLicenseInfoToolStripMenuItem});
+            this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(289, 42);
+            // 
+            // showLicenseInfoToolStripMenuItem
+            // 
+            this.showLicenseInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverslicense;
+            this.showLicenseInfoToolStripMenuItem.Name = "showLicenseInfoToolStripMenuItem";
+            this.showLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(288, 38);
+            this.showLicenseInfoToolStripMenuItem.Text = "Show License Info";
+            this.showLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.showLicenseInfoToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -189,23 +206,6 @@
             this.personInfoUserControl1.Size = new System.Drawing.Size(1070, 395);
             this.personInfoUserControl1.TabIndex = 1;
             // 
-            // optionsContextMenuStrip
-            // 
-            this.optionsContextMenuStrip.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showLicenseInfoToolStripMenuItem});
-            this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(289, 42);
-            // 
-            // showLicenseInfoToolStripMenuItem
-            // 
-            this.showLicenseInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverslicense;
-            this.showLicenseInfoToolStripMenuItem.Name = "showLicenseInfoToolStripMenuItem";
-            this.showLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(288, 38);
-            this.showLicenseInfoToolStripMenuItem.Text = "Show License Info";
-            this.showLicenseInfoToolStripMenuItem.Click += new System.EventHandler(this.showLicenseInfoToolStripMenuItem_Click);
-            // 
             // PersonLicenseHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -230,10 +230,10 @@
             this.LicenseGroupBox.ResumeLayout(false);
             this.LicenseGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DriverLicense_dgv)).EndInit();
+            this.optionsContextMenuStrip.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.downBtnsPanel.ResumeLayout(false);
-            this.optionsContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

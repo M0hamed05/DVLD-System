@@ -29,6 +29,7 @@ namespace DVLD.Applications
                 DriverLicense_dgv.DataSource = dtLocal;
                 if (DriverLicense_dgv.Rows.Count > 0)
                 {
+                    dtLocal.DefaultView.Sort = "IssueDate DESC";
                     DriverLicense_dgv.Columns[0].HeaderText = "Lic ID";
                     DriverLicense_dgv.Columns[1].HeaderText = "App ID";
                     DriverLicense_dgv.Columns[2].HeaderText = "Class Name";
@@ -46,6 +47,7 @@ namespace DVLD.Applications
                 DriverLicense_dgv.DataSource = dtInternational;
                 if (DriverLicense_dgv.Rows.Count > 0)
                 {
+                    dtLocal.DefaultView.Sort = "IssueDate DESC";
                     DriverLicense_dgv.Columns[0].HeaderText = "Int License ID";
                     DriverLicense_dgv.Columns[1].HeaderText = "App ID";
                     DriverLicense_dgv.Columns[2].HeaderText = "L. Licese ID";

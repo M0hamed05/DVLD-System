@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.recordsLabel = new System.Windows.Forms.Label();
             this.downBtnsPanel = new System.Windows.Forms.Panel();
             this.headerLabel = new System.Windows.Forms.Label();
@@ -38,11 +39,14 @@
             this.fliterLabel = new System.Windows.Forms.Label();
             this.upperButtenPanels = new System.Windows.Forms.Panel();
             this.drivers_dgv = new System.Windows.Forms.DataGridView();
+            this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDriverLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downBtnsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.titlePanel.SuspendLayout();
             this.upperButtenPanels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_dgv)).BeginInit();
+            this.optionsContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // recordsLabel
@@ -143,6 +147,7 @@
             this.drivers_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drivers_dgv.BackgroundColor = System.Drawing.Color.LightGray;
             this.drivers_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drivers_dgv.ContextMenuStrip = this.optionsContextMenuStrip;
             this.drivers_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.drivers_dgv.GridColor = System.Drawing.Color.LightGray;
             this.drivers_dgv.Location = new System.Drawing.Point(0, 197);
@@ -154,6 +159,23 @@
             this.drivers_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.drivers_dgv.Size = new System.Drawing.Size(1216, 314);
             this.drivers_dgv.TabIndex = 15;
+            // 
+            // optionsContextMenuStrip
+            // 
+            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDriverLicenseHistoryToolStripMenuItem});
+            this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(391, 75);
+            // 
+            // showDriverLicenseHistoryToolStripMenuItem
+            // 
+            this.showDriverLicenseHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.showDriverLicenseHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverslicense;
+            this.showDriverLicenseHistoryToolStripMenuItem.Name = "showDriverLicenseHistoryToolStripMenuItem";
+            this.showDriverLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(390, 38);
+            this.showDriverLicenseHistoryToolStripMenuItem.Text = "Show Driver License History";
+            this.showDriverLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showDriverLicenseHistoryToolStripMenuItem_Click);
             // 
             // ManageDriversForm
             // 
@@ -175,6 +197,7 @@
             this.upperButtenPanels.ResumeLayout(false);
             this.upperButtenPanels.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_dgv)).EndInit();
+            this.optionsContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -191,5 +214,7 @@
         private System.Windows.Forms.Label fliterLabel;
         private System.Windows.Forms.Panel upperButtenPanels;
         private System.Windows.Forms.DataGridView drivers_dgv;
+        private System.Windows.Forms.ContextMenuStrip optionsContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem showDriverLicenseHistoryToolStripMenuItem;
     }
 }

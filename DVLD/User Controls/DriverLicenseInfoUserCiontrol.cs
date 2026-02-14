@@ -93,10 +93,12 @@ namespace DVLD.User_Controls
             }
         }
 
-        public string get_issueReason(int issueReason)
+        private string get_issueReason(int issueReason)
         {
             if (issueReason == (int)DVLDShared.enIssueReason.FirstTime) return "First Time";
             if (issueReason == (int)DVLDShared.enIssueReason.RenewLicense) return "Renew License";
+            if (issueReason == (int)DVLDShared.enIssueReason.DamagedLicense) return "Replcament For Damaged License";
+            if (issueReason == (int)DVLDShared.enIssueReason.LostLicense) return "Replcament For Lost License";
             return "Don't Know yet";
         }
 
@@ -113,6 +115,7 @@ namespace DVLD.User_Controls
         public int getlicenseClass_id() => license.licenseClassID;
         public bool IsActive() => license.isActive;
         public DateTime get_expiration_date() => license.ExpirationDate;
+        public string get_notes() => Convert.ToString(NotesTxtBox.Text);
 
         public void set_not_active()
         {

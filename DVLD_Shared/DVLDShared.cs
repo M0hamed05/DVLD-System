@@ -114,7 +114,9 @@ namespace DVLD_Shared
         public enum enIssueReason
         {
             FirstTime = 1,
-            RenewLicense = 2
+            RenewLicense = 2,
+            DamagedLicense = 3,
+            LostLicense = 4
         }
 
     }

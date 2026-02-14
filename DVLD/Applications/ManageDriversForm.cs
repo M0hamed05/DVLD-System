@@ -68,6 +68,11 @@ namespace DVLD.Applications
                 if (int.TryParse(filter_txtbox.Text, out value))
                     dt.DefaultView.RowFilter = $"Convert({dt.Columns[1]},'System.String') LIKE '{value}%'";
             }
+            else if (filterComboBox.SelectedIndex == 5)
+            {
+                if (int.TryParse(filter_txtbox.Text, out value))
+                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[5]},'System.String') LIKE '{value}%'";
+            }
             else dt.DefaultView.RowFilter = $"[{dt.Columns[filterComboBox.SelectedIndex]}] LIKE '{filter_txtbox.Text}%'";
 
             recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
@@ -77,6 +82,12 @@ namespace DVLD.Applications
         {
             if (filterComboBox.SelectedIndex == 0 || filterComboBox.SelectedIndex == 1)
                 if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
+        }
+
+        private void showDriverLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PersonLicenseHistoryForm frm = new PersonLicenseHistoryForm(Convert.ToInt32(drivers_dgv.CurrentRow.Cells[1].Value));
+            frm.ShowDialog();
         }
     }
 }
