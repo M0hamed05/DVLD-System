@@ -118,10 +118,17 @@ namespace DVLD.User_Controls
         public string get_notes() => Convert.ToString(NotesTxtBox.Text);
         public bool IsDetain() => IsDetainedTxtBox.Text == "Yes" ? true : false;
 
+
+
         public void set_not_active()
         {
             IsActiveTxtBox.Text = "No";
         }
+        public void set_not_detain()
+        {
+            IsDetainedTxtBox.Text = "No";
+        }
+
 
     }
 }

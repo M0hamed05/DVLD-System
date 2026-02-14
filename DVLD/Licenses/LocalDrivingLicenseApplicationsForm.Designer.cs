@@ -56,6 +56,7 @@
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downBtnsPanel = new System.Windows.Forms.Panel();
             this.recordsLabel = new System.Windows.Forms.Label();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.upperButtenPanels.SuspendLayout();
@@ -180,6 +181,7 @@
             this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showApplicationDetialsToolStripMenuItem,
             this.toolStripSeparator1,
+            this.editToolStripMenuItem,
             this.deleteApplicationToolStripMenuItem,
             this.toolStripSeparator2,
             this.cancelApplicationToolStripMenuItem,
@@ -191,7 +193,7 @@
             this.showLicenseToolStripMenuItem,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(450, 333);
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(450, 371);
             this.optionsContextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.optionsContextMenuStrip_Opening);
             // 
             // showApplicationDetialsToolStripMenuItem
@@ -329,6 +331,15 @@
             this.recordsLabel.TabIndex = 1;
             this.recordsLabel.Text = "Records: 0";
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.addcard;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(449, 38);
+            this.editToolStripMenuItem.Text = "Edit Application";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // LocalDrivingLicenseApplicationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -383,5 +394,6 @@
         private System.Windows.Forms.ToolStripMenuItem sechduleVisionTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sechduleWrittenTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sechduleStreetTestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
     }
 }

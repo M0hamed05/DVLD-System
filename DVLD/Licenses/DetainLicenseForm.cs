@@ -79,6 +79,9 @@ namespace DVLD.Licenses
 
                     MessageBox.Show("License Detained Successfully", "Detain Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    Form frm = Application.OpenForms["ManageDetainLicensesForm"];
+                    if (frm != null)
+                        ((ManageDetainLicensesForm)frm).refersh_all();
                 }
                 else
                 {

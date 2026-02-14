@@ -79,6 +79,12 @@
     <Compile Include="Applications\ManageDriversForm.Designer.cs">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licenses\ManageDetainLicensesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\ManageDetainLicensesForm.Designer.cs">
+      <DependentUpon>ManageDetainLicensesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licenses\PersonLicenseHistoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Licenses\LocalDrivingLicenseApplicationsForm.Designer.cs">
       <DependentUpon>LocalDrivingLicenseApplicationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licenses\ReleaseDetainedLicenseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses\ReleaseDetainedLicenseForm.Designer.cs">
+      <DependentUpon>ReleaseDetainedLicenseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\RenewLicenseApplicationForm.cs">
       <SubType>Form</SubType>
@@ -288,6 +300,9 @@
     <EmbeddedResource Include="Applications\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\ManageDetainLicensesForm.resx">
+      <DependentUpon>ManageDetainLicensesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licenses\PersonLicenseHistoryForm.resx">
       <DependentUpon>PersonLicenseHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\LocalDrivingLicenseApplicationsForm.resx">
       <DependentUpon>LocalDrivingLicenseApplicationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses\ReleaseDetainedLicenseForm.resx">
+      <DependentUpon>ReleaseDetainedLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\RenewLicenseApplicationForm.resx">
       <DependentUpon>RenewLicenseApplicationForm.cs</DependentUpon>
@@ -591,6 +609,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\detainCardBlack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addCard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\detainCard2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

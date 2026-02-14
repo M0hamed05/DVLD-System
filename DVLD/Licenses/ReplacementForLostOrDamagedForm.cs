@@ -81,7 +81,13 @@ namespace DVLD.Licenses
                 return;
             }
 
-            applicationID = DVLD_BL.Applications.add_new_application(drvierLicenseInfo_WithFilterUserControl1.get_personID(), (int)DVLDShared.enAppplicationTyoes.RenewDrivingLicenseService);
+            if(damagedRadioButton.Checked)
+            applicationID = DVLD_BL.Applications.add_new_application(drvierLicenseInfo_WithFilterUserControl1.get_personID(), (int)DVLDShared.enAppplicationTyoes.ReplacementForADamagedDrivingLicense);
+            else
+            {
+             applicationID = DVLD_BL.Applications.add_new_application(drvierLicenseInfo_WithFilterUserControl1.get_personID(), (int)DVLDShared.enAppplicationTyoes.ReplacementForALostDrivingLicense);
+            }
+
             if (applicationID != -1)
             {
                 int licenseID = DVLD_BL.Licenses.issue_new_license(save_data_to_struct(applicationID));

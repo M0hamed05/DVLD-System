@@ -1,69 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\DVLD\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\licenses\\detainlicenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\licenses\\detainlicenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\licenses\\detainlicenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\licenses\\detainlicenseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\licenses\\replacementforlostordamagedform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\licenses\\replacementforlostordamagedform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ReplacementForLostOrDamagedForm.cs [Design]",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Licenses\\ReplacementForLostOrDamagedForm.cs",
-              "RelativeDocumentMoniker": "DVLD\\Licenses\\ReplacementForLostOrDamagedForm.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Licenses\\ReplacementForLostOrDamagedForm.cs [Design]",
-              "RelativeToolTip": "DVLD\\Licenses\\ReplacementForLostOrDamagedForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T14:58:40.775Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DetainLicenseForm.cs",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Licenses\\DetainLicenseForm.cs",
-              "RelativeDocumentMoniker": "DVLD\\Licenses\\DetainLicenseForm.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Licenses\\DetainLicenseForm.cs",
-              "RelativeToolTip": "DVLD\\Licenses\\DetainLicenseForm.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAADUAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:53:05.478Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DetainLicenseForm.cs [Design]",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Licenses\\DetainLicenseForm.cs",
-              "RelativeDocumentMoniker": "DVLD\\Licenses\\DetainLicenseForm.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Licenses\\DetainLicenseForm.cs [Design]",
-              "RelativeToolTip": "DVLD\\Licenses\\DetainLicenseForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:33:28.468Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -1,8 +1,10 @@
 ﻿using DVLD_Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.CompilerServices;
 
 namespace DVLDdataAccessLayer
 {
@@ -1032,6 +1034,51 @@ namespace DVLDdataAccessLayer
                         command.Parameters.AddWithValue("@applicationStatus", 1);
                         command.Parameters.AddWithValue("@lastStatusdate", DateTime.Now);
                         command.Parameters.AddWithValue("@paidFees", get_application_fee(applicationTypeID));
+                        command.Parameters.AddWithValue("@userID", DVLDShared.currentUser.userID);
+
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            return result != null ? Convert.ToInt32(result) : -1;
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+            }
+
+            public static int add_new_application(int personID, int applicationTypeID, decimal paidmoney)
+            {
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"INSERT INTO [dbo].[Applications]
+                                     ([ApplicantPersonID]
+                                     ,[ApplicationDate]
+                                     ,[ApplicationTypeID]
+                                     ,[ApplicationStatus]
+                                     ,[LastStatusDate]
+                                     ,[PaidFees]
+                                     ,[CreatedByUserID])
+                               VALUES
+                                     (@personID
+                                     ,@applicationDate
+                                     ,@applicationType
+                                     ,@applicationStatus
+                                     ,@lastStatusdate
+                                     ,@paidFees
+                                     ,@userID)
+                                    SELECT SCOPE_IDENTITY();";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@personID", personID);
+                        command.Parameters.AddWithValue("@applicationDate", DateTime.Now);
+                        command.Parameters.AddWithValue("@applicationType", applicationTypeID);
+                        command.Parameters.AddWithValue("@applicationStatus", 1);
+                        command.Parameters.AddWithValue("@lastStatusdate", DateTime.Now);
+                        command.Parameters.AddWithValue("@paidFees", paidmoney);
                         command.Parameters.AddWithValue("@userID", DVLDShared.currentUser.userID);
 
                         try
@@ -2108,7 +2155,7 @@ namespace DVLDdataAccessLayer
                         {
                             connection.Open();
                             object result = command.ExecuteScalar();
-                            if(result != null && Convert.ToInt32(result) == 1)
+                            if (result != null && Convert.ToInt32(result) == 1)
                             {
                                 success = true;
                             }
@@ -2126,8 +2173,130 @@ namespace DVLDdataAccessLayer
                 }
                 return success;
             }
-        }
 
+            public static DVLDShared.stDetainLicense get_detain_license_info(int licenseID)
+            {
+                DVLDShared.stDetainLicense detainLicense = new DVLDShared.stDetainLicense();
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = "SELECT * FROM DetainedLicenses WHERE LicenseID = @id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", licenseID);
+
+                        try
+                        {
+                            connection.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                detainLicense.DetainID = (int)reader["DetainID"];
+                                detainLicense.LicenseID = (int)reader["LicenseID"];
+                                detainLicense.DetainDate = (DateTime)reader["DetainDate"];
+                                detainLicense.FineFees = (decimal)reader["FineFees"];
+                                detainLicense.CreatedByUserID = (int)reader["CreatedByUserID"];
+                                detainLicense.IsReleased = (bool)reader["IsReleased"];
+
+                                detainLicense.ReleaseDate = reader["ReleaseDate"] == DBNull.Value ? null : (DateTime?)reader["[ReleaseDate]"];
+                                detainLicense.ReleasedByUserID = reader["ReleasedByUserID"] == DBNull.Value ? null : (int?)reader["ReleasedByUserID"];
+                                detainLicense.ReleaseApplicationID = reader["ReleaseApplicationID"] == DBNull.Value ? null : (int?)reader["ReleaseApplicationID"];
+
+                            }
+                            reader.Close();
+
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return detainLicense;
+            }
+
+            public static bool release_detainLicense(int detainLicenseID, int applicationID)
+            {
+                bool success = false;
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"UPDATE [dbo].[DetainedLicenses]
+                               SET [IsReleased] = @IsReleased
+                                  ,[ReleaseDate] = @ReleaseDate
+                                  ,[ReleasedByUserID] = @ReleasedByUserID
+                                  ,[ReleaseApplicationID] = @ReleaseApplicationID
+                             WHERE DetainID = @id";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@IsReleased", true);
+                        command.Parameters.AddWithValue("@ReleaseDate", DateTime.Now);
+                        command.Parameters.AddWithValue("@ReleasedByUserID", DVLDShared.currentUser.userID);
+                        command.Parameters.AddWithValue("@ReleaseApplicationID", applicationID);
+                        command.Parameters.AddWithValue("@id", detainLicenseID);
+
+                        try
+                        {
+                            connection.Open();
+                            object rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected != null)
+                            {
+                                success = Convert.ToInt32(rowsAffected) > 0 ? true : false;
+                            }
+                            else
+                            {
+                                success = false;
+                            }
+
+                        }
+                        catch
+                        {
+                            success = false;
+                            throw;
+                        }
+                    }
+                }
+                return success;
+            }
+
+            public static DataTable get_all_detainLicense()
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"SELECT D.DetainID AS [Detain ID]
+                                     ,D.LicenseID AS [License ID]
+                                     ,D.DetainDate AS [Detain Date]
+                                     ,D.IsReleased AS [Is Released]
+                                     ,D.FineFees AS [Fine Fees]
+                                     ,D.ReleaseDate AS [Release Date]
+                                     ,P.NationalNo AS [National No]
+                                     ,P.FirstName + ' ' + P.SecondName + ' ' + P.ThirdName + ' ' + p.LastName AS [Full Name]
+                                	  ,D.ReleaseApplicationID AS [Release App ID] 
+                                 FROM [dbo].[DetainedLicenses] AS D
+                                 INNER JOIN Licenses AS L
+                                 ON D.LicenseID = L.LicenseID
+                                 INNER JOIN Drivers AS DR
+                                 ON L.DriverID = DR.DriverID
+                                 INNER JOIN People AS P
+                                 ON P.PersonID = DR.PersonID
+                                 ORDER BY D.IsReleased,D.DetainDate DESC;";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.HasRows) dt.Load(reader);
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return dt;
+            }
+        }
         public class Drivers
         {
             public static int add_new_driver(DVLDShared.stDriver driver)

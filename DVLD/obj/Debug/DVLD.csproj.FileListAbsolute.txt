@@ -52,3 +52,5 @@ E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.RenewLicenseApplicationForm.resour
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ReplacementForLostOrDamagedForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.DetainLicenseForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.exe.config
+E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ReleaseDetainedLicenseForm.resources
+E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ManageDetainLicensesForm.resources

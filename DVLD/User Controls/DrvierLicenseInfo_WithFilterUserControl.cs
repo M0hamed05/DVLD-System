@@ -1,6 +1,5 @@
 ﻿using DVLDBussinessLayer;
 using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
 namespace DVLD.User_Controls
@@ -12,10 +11,16 @@ namespace DVLD.User_Controls
             InitializeComponent();
         }
 
+        bool licenseComboBoxCalled = false;
+        int licenseIDCalled = -1;
         private void DrvierLicenseInfo_WithFilter_Load(object sender, EventArgs e)
         {
             licensesComboBox.DataSource = DVLD_BL.Licenses.get_all_licenseID();
-            licensesComboBox.SelectedIndex = 0;
+            if (licenseComboBoxCalled)
+                licensesComboBox.Text = licenseIDCalled.ToString();
+            else
+                licensesComboBox.SelectedIndex = 0;
+
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -39,19 +44,33 @@ namespace DVLD.User_Controls
         public DateTime get_expriationDate() => driverLicenseInfoUserCiontrol1.get_expiration_date();
         public int get_driverID() => driverLicenseInfoUserCiontrol1.get_driverID();
         public bool IsDetain() => driverLicenseInfoUserCiontrol1.IsDetain();
+        public string get_notes() => driverLicenseInfoUserCiontrol1.get_notes();
+
 
         public void set_not_active()
         {
             driverLicenseInfoUserCiontrol1.set_not_active();
         }
-
-
-        public string get_notes() => driverLicenseInfoUserCiontrol1.get_notes();
-
-
+        public void set_not_detain()
+        {
+            driverLicenseInfoUserCiontrol1.set_not_detain();
+        }
+        public void set_licenseComboBox(int licenseID)
+        {
+            licenseComboBoxCalled = true;
+            licenseIDCalled = licenseID;
+        }
+        public void perfrom_addClick()
+        {
+            addBtn.PerformClick();
+        }
         public void disable_filter_panel()
         {
             FilterPanel.Enabled = false;
+        }
+        public void load_data(int licenseID)
+        {
+            driverLicenseInfoUserCiontrol1.load_data(licenseID);
         }
 
     }

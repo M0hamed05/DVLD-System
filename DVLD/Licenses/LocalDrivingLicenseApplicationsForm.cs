@@ -27,18 +27,19 @@ namespace DVLD.Applications
                 applications_dgv.Columns["ApplicationDate"].HeaderText = "Application Date";
                 applications_dgv.Columns["PassedTestCount"].HeaderText = "Passed Tests";
             }
+            recordsLabel.Text = $"Records : {dt.Rows.Count}";
         }
 
         private void LocalDrivingLicenseApplicationsForm_Load(object sender, EventArgs e)
         {
             refersh_all();
-            foreach (DataGridViewColumn column in applications_dgv.Columns)
-            {
-                filterComboBox.Items.Add(column.HeaderText.ToString());
-            }
+            if (applications_dgv.Rows.Count > 0)
+                foreach (DataGridViewColumn column in applications_dgv.Columns)
+                {
+                    filterComboBox.Items.Add(column.HeaderText.ToString());
+                }
 
             if (filterComboBox.Items.Count > 0) filterComboBox.SelectedIndex = 0;
-            recordsLabel.Text = $"Records : {dt.Rows.Count}";
         }
 
         private void filter_txtbox_KeyPress(object sender, KeyPressEventArgs e)
@@ -122,6 +123,7 @@ namespace DVLD.Applications
 
             if (Convert.ToString(applications_dgv.CurrentRow.Cells[6].Value) == "Completed")
             {
+                editToolStripMenuItem.Enabled = false;
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 sechToolStripMenuItem.Enabled = false;
@@ -131,6 +133,7 @@ namespace DVLD.Applications
 
             if (Convert.ToString(applications_dgv.CurrentRow.Cells[6].Value) == "Cancelled")
             {
+                editToolStripMenuItem.Enabled = false;
                 cancelApplicationToolStripMenuItem.Enabled = false;
                 sechToolStripMenuItem.Enabled = false;
                 issueDrirvingLicenseFirstTimeToolStripMenuItem.Enabled = false;
@@ -159,6 +162,7 @@ namespace DVLD.Applications
 
                 sechduleWrittenTestToolStripMenuItem.Enabled = true;
 
+                editToolStripMenuItem.Enabled = false;
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 return;
             }
@@ -172,6 +176,7 @@ namespace DVLD.Applications
 
                 sechduleStreetTestToolStripMenuItem.Enabled = true;
 
+                editToolStripMenuItem.Enabled = false;
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 return;
             }
@@ -180,6 +185,7 @@ namespace DVLD.Applications
                 sechToolStripMenuItem.Enabled = false;
                 showLicenseToolStripMenuItem.Enabled = false;
 
+                editToolStripMenuItem.Enabled = false;
                 deleteApplicationToolStripMenuItem.Enabled = false;
                 return;
             }
@@ -239,6 +245,11 @@ namespace DVLD.Applications
             PersonLicenseHistoryForm frm = new PersonLicenseHistoryForm(
                 DVLD_BL.People.get_personID_by_NationaltyNO(Convert.ToString(applications_dgv.CurrentRow.Cells[2].Value)));
             frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Feature could be added in the future","",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }
 }

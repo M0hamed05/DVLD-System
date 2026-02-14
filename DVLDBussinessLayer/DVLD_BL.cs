@@ -109,6 +109,8 @@ namespace DVLDBussinessLayer
         {
             public static int add_new_application(int personID, int applicationTypeID) => DVLD_DAL.Applications.add_new_application(personID,applicationTypeID);
 
+            public static int add_new_application(int personID, int applicationTypeID, decimal paidmoney) => DVLD_DAL.Applications.add_new_application(personID, applicationTypeID, paidmoney);
+
             public static DataTable get_all_applicationsTypes() => DVLD_DAL.Applications.get_all_applicationsTypes();
 
             public static bool update_applicationtype(int id, string title, string fees) => DVLD_DAL.Applications.update_applicationtype(id, title, fees);
@@ -187,6 +189,12 @@ namespace DVLDBussinessLayer
             public static int add_detain_license(DVLDShared.stDetainLicense detainLicense) => DVLD_DAL.Licenses.add_detain_license(detainLicense);
 
             public static bool IsDetainLicense(int licenseID) => DVLD_DAL.Licenses.IsDetainLicense(licenseID);
+
+            public static DVLDShared.stDetainLicense get_detain_license_info(int licenseID) => DVLD_DAL.Licenses.get_detain_license_info(licenseID);
+
+            public static bool release_detainLicense(int detainLicenseID, int applicationID) => DVLD_DAL.Licenses.release_detainLicense(detainLicenseID, applicationID);
+
+            public static DataTable get_all_detainLicense() => DVLD_DAL.Licenses.get_all_detainLicense();
         }
 
         public class Drivers
