@@ -45,7 +45,7 @@ namespace DVLD.Licenses
 
         private void detainButton_Click(object sender, EventArgs e)
         {
-            ReleaseDetainedLicenseForm frm = new ReleaseDetainedLicenseForm();
+            DetainLicenseForm frm = new DetainLicenseForm();
             frm.ShowDialog();
         }
 
