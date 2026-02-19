@@ -1,4 +1,5 @@
-﻿using DVLDBussinessLayer;
+﻿using DVLD.Licenses;
+using DVLDBussinessLayer;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace DVLD.Applications
     {
         DataTable dtLocal = new DataTable();
         DataTable dtInternational = new DataTable();
+        bool local_dgv_enabled = true;
         public PersonLicenseHistoryForm(int personID)
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace DVLD.Applications
         {
             if (local)
             {
+                local_dgv_enabled = true;
                 DriverLicense_dgv.DataSource = dtLocal;
                 if (DriverLicense_dgv.Rows.Count > 0)
                 {
@@ -44,6 +47,7 @@ namespace DVLD.Applications
             }
             else
             {
+                local_dgv_enabled = false;
                 DriverLicense_dgv.DataSource = dtInternational;
                 if (DriverLicense_dgv.Rows.Count > 0)
                 {
@@ -79,8 +83,16 @@ namespace DVLD.Applications
 
         private void showLicenseInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowLicenseInfo frm = new ShowLicenseInfo(Convert.ToInt32(DriverLicense_dgv.CurrentRow.Cells[1].Value));
-            frm.ShowDialog();
+            if (local_dgv_enabled)
+            {
+                ShowLicenseInfo frm = new ShowLicenseInfo(Convert.ToInt32(DriverLicense_dgv.CurrentRow.Cells[1].Value));
+                frm.ShowDialog();
+            }
+            else
+            {
+                ShowInternationalLicenseForm frm = new ShowInternationalLicenseForm(Convert.ToInt32(DriverLicense_dgv.CurrentRow.Cells[0].Value));
+                frm.ShowDialog();
+            }
         }
     }
 }

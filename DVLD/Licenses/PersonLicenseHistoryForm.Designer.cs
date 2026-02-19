@@ -140,7 +140,7 @@
             this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showLicenseInfoToolStripMenuItem});
             this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(289, 42);
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(289, 75);
             // 
             // showLicenseInfoToolStripMenuItem
             // 

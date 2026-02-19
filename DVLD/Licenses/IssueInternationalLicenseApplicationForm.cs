@@ -2,6 +2,7 @@
 using DVLD_Shared;
 using DVLDBussinessLayer;
 using System;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace DVLD.Applications
@@ -101,7 +102,7 @@ namespace DVLD.Applications
                        internationalLicenseIDTxtBox.Text = internationalLicenseID.ToString();
 
                         Form frm = Application.OpenForms["internationalLicenseApplicationForm"];
-                        if (frm != null)
+                        if (frm != null && frm is internationalLicenseApplicationForm)
                             ((internationalLicenseApplicationForm)frm).refersh_all();
 
                     }
