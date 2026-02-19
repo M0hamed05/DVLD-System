@@ -72,7 +72,8 @@ namespace DVLD_Shared
             ReplacementForALostDrivingLicense = 3,
             ReplacementForADamagedDrivingLicense = 4,
             ReleaseDetainedDrivingLicsense = 5,
-            NewInternationalLicense = 6
+            NewInternationalLicense = 6,
+            RetakeTest = 8
         }
 
         public struct stLicense

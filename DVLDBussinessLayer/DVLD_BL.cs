@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 
+//point 1 = prefered not to be all in one class 
 namespace DVLDBussinessLayer
 {
     public class DVLD_BL

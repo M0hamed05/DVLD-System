@@ -73,10 +73,10 @@
     <Compile Include="Licenses\IssueDrivingLicenseApplicaionForm.Designer.cs">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\ManageDriversForm.cs">
+    <Compile Include="Licenses\ManageDriversForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\ManageDriversForm.Designer.cs">
+    <Compile Include="Licenses\ManageDriversForm.Designer.cs">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\ManageDetainLicensesForm.cs">
@@ -297,7 +297,7 @@
     <EmbeddedResource Include="Licenses\IssueDrivingLicenseApplicaionForm.resx">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\ManageDriversForm.resx">
+    <EmbeddedResource Include="Licenses\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ManageDetainLicensesForm.resx">
