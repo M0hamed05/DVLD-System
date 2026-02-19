@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 
 //point 1 = prefered not to be all in one class 
+//point 4 = should be implemented in classes and clsperosn as a class with all its functions
 namespace DVLDBussinessLayer
 {
     public class DVLD_BL
@@ -18,11 +19,11 @@ namespace DVLDBussinessLayer
 
             public static bool delete_person(int personID) => DVLD_DAL.People.delete_person(personID);
 
-            public static DVLDShared.stPerson get_person_data_for_edit(int personID) => DVLD_DAL.People.get_person_data(personID);
+            public static DVLDShared.clsPerson get_person_data_for_edit(int personID) => DVLD_DAL.People.get_person_data(personID);
 
-            public static DVLDShared.stPerson get_person_data_for_edit(string nationalNo) => DVLD_DAL.People.get_person_data(nationalNo);
+            public static DVLDShared.clsPerson get_person_data_for_edit(string nationalNo) => DVLD_DAL.People.get_person_data(nationalNo);
 
-            public static int add_new_person(DVLDShared.stPerson person)
+            public static int add_new_person(DVLDShared.clsPerson person)
             {
                 if (string.IsNullOrWhiteSpace(person.NationalNo) || is_unique_naitonalNo(person.NationalNo) || string.IsNullOrWhiteSpace(person.FirstName) ||
                     string.IsNullOrWhiteSpace(person.SecondName) || string.IsNullOrWhiteSpace(person.LastName) ||
@@ -34,7 +35,7 @@ namespace DVLDBussinessLayer
                 return DVLD_DAL.People.save_new_person(person);
             }
 
-            public static bool update_new_person(DVLDShared.stPerson person)
+            public static bool update_new_person(DVLDShared.clsPerson person)
             {
                 if (string.IsNullOrWhiteSpace(person.NationalNo) || is_unique_nationalNo_but_personal(person.NationalNo,person.personID) || string.IsNullOrWhiteSpace(person.FirstName) ||
                     string.IsNullOrWhiteSpace(person.SecondName) || string.IsNullOrWhiteSpace(person.LastName) ||
@@ -72,7 +73,7 @@ namespace DVLDBussinessLayer
 
             public static int get_user_id(int userID) => DVLD_DAL.Users.get_user_id(userID);
 
-            public static DVLDShared.stUser get_user_data(int userID) => DVLD_DAL.Users.get_user_info(userID);
+            public static DVLDShared.clsUser get_user_data(int userID) => DVLD_DAL.Users.get_user_info(userID);
 
             public static DataTable get_all_users() => DVLD_DAL.Users.get_all_users();
 
@@ -80,7 +81,7 @@ namespace DVLDBussinessLayer
 
             public static bool is_repeated_user_id(string username) => DVLD_DAL.Users.is_repeated_user_id(username);
 
-            public static int add_new_user(DVLDShared.stUser user)
+            public static int add_new_user(DVLDShared.clsUser user)
             {
                 if (string.IsNullOrWhiteSpace(user.username) || DVLD_DAL.Users.is_repeated_user_id_but_personal(user.username, user.userID)
                     || string.IsNullOrWhiteSpace(user.password))
@@ -92,7 +93,7 @@ namespace DVLDBussinessLayer
 
             public static bool delete_user(int user) => DVLD_DAL.Users.delete_user(user);
 
-            public static bool update_user(DVLDShared.stUser user)
+            public static bool update_user(DVLDShared.clsUser user)
             {
                 if (string.IsNullOrWhiteSpace(user.username) || DVLD_DAL.Users.is_repeated_user_id_but_personal(user.username,user.userID)
                     || string.IsNullOrWhiteSpace(user.password))
@@ -132,9 +133,9 @@ namespace DVLDBussinessLayer
 
             public static bool canacel_applicationID(int localDrivingLicesnseApplicationID) => DVLD_DAL.Applications.canacel_applicationID(localDrivingLicesnseApplicationID);
 
-            public static DVLDShared.stApplication get_application_basic_info(int applicationID) => DVLD_DAL.Applications.get_application_basic_info(applicationID);
+            public static DVLDShared.clsApplication get_application_basic_info(int applicationID) => DVLD_DAL.Applications.get_application_basic_info(applicationID);
 
-            public static DVLDShared.stApplicationType get_application_Type_Info(int applicaionTypeID) => DVLD_DAL.Applications.get_applicationType_Info(applicaionTypeID);
+            public static DVLDShared.clsApplicationType get_application_Type_Info(int applicaionTypeID) => DVLD_DAL.Applications.get_applicationType_Info(applicaionTypeID);
 
             public static int get_applicationID_by_LDLA(int localDrivingLicenseApplicationID) => DVLD_DAL.Applications.get_applicationID_by_LDLA(localDrivingLicenseApplicationID);
 
@@ -153,17 +154,17 @@ namespace DVLDBussinessLayer
 
         public class Licenses
         {
-            public static int issue_new_license(DVLDShared.stLicense license) => DVLD_DAL.Licenses.issue_new_license(license);
+            public static int issue_new_license(DVLDShared.clsLicense license) => DVLD_DAL.Licenses.issue_new_license(license);
 
             public static int get_license_class_ID(string className) => DVLD_DAL.Licenses.get_license_class_ID(className);
 
             public static int DefaultValidityLengthAge(int classID) => DVLD_DAL.Licenses.DefaultValidityLengthAge(classID);
 
-            public static DVLDShared.stLicense get_licenseInfo(int licenseID) => DVLD_DAL.Licenses.get_licesnseInfo(licenseID);
+            public static DVLDShared.clsLicense get_licenseInfo(int licenseID) => DVLD_DAL.Licenses.get_licesnseInfo(licenseID);
 
             public static string get_licenseClassName(int licenseClassID) => DVLD_DAL.Licenses.get_licenseClassName(licenseClassID);
 
-            public static DVLDShared.stLicense get_licenseInfo_By_AppID(int AppID) => DVLD_DAL.Licenses.get_licesnseInfo_ByAppID(AppID);
+            public static DVLDShared.clsLicense get_licenseInfo_By_AppID(int AppID) => DVLD_DAL.Licenses.get_licesnseInfo_ByAppID(AppID);
 
             public static bool person_have_this_license(string nationaltiyNo, string drvingClass) => DVLD_DAL.Licenses.person_have_this_license(nationaltiyNo, drvingClass);
 
@@ -173,13 +174,13 @@ namespace DVLDBussinessLayer
 
             public static List<int> get_all_licenseID() => DVLD_DAL.Licenses.get_all_licenseID();
 
-            public static int issue_new_international_license(DVLDShared.stInternationalLicense license) => DVLD_DAL.Licenses.issue_new_international_license(license);
+            public static int issue_new_international_license(DVLDShared.clsInternationalLicense license) => DVLD_DAL.Licenses.issue_new_international_license(license);
 
             public static bool has_license_with_class3(int driverID) => DVLD_DAL.Licenses.has_license_with_class3(driverID);
 
             public static bool has_same_international_license(int local_licenseID) => DVLD_DAL.Licenses.has_same_international_license(local_licenseID);
 
-            public static DVLDShared.stInternationalLicense get_international_licenseInfo(int internationalLicenseID) => DVLD_DAL.Licenses.get_international_licenseInfo(internationalLicenseID);
+            public static DVLDShared.clsInternationalLicense get_international_licenseInfo(int internationalLicenseID) => DVLD_DAL.Licenses.get_international_licenseInfo(internationalLicenseID);
 
             public static DataTable get_all_international_licenses() => DVLD_DAL.Licenses.get_all_international_licenses();
 
@@ -187,11 +188,11 @@ namespace DVLDBussinessLayer
 
             public static bool set_license_not_active(int licenseID) => DVLD_DAL.Licenses.set_license_not_active(licenseID);
 
-            public static int add_detain_license(DVLDShared.stDetainLicense detainLicense) => DVLD_DAL.Licenses.add_detain_license(detainLicense);
+            public static int add_detain_license(DVLDShared.clsDetainLicense detainLicense) => DVLD_DAL.Licenses.add_detain_license(detainLicense);
 
             public static bool IsDetainLicense(int licenseID) => DVLD_DAL.Licenses.IsDetainLicense(licenseID);
 
-            public static DVLDShared.stDetainLicense get_detain_license_info(int licenseID) => DVLD_DAL.Licenses.get_detain_license_info(licenseID);
+            public static DVLDShared.clsDetainLicense get_detain_license_info(int licenseID) => DVLD_DAL.Licenses.get_detain_license_info(licenseID);
 
             public static bool release_detainLicense(int detainLicenseID, int applicationID) => DVLD_DAL.Licenses.release_detainLicense(detainLicenseID, applicationID);
 
@@ -200,7 +201,7 @@ namespace DVLDBussinessLayer
 
         public class Drivers
         {
-            public static int add_new_driver(DVLDShared.stDriver driver) => DVLD_DAL.Drivers.add_new_driver(driver);
+            public static int add_new_driver(DVLDShared.clsDriver driver) => DVLD_DAL.Drivers.add_new_driver(driver);
 
             public static int get_personID_FromDriverID(int driverID) => DVLD_DAL.Drivers.get_personID_FromDriverID(driverID);
 

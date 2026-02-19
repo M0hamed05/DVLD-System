@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 
 
 namespace DVLD_Shared
 {
+    //point 3 = should be class instead of struct becacuse of memory space and speed, also should be done in BL in some way
+    //implemented
     public class DVLDShared
     {
-        public struct stPerson
+        public class clsPerson
         {
             public int personID { get; set; }
             public string NationalNo { get; set; }
@@ -24,7 +25,7 @@ namespace DVLD_Shared
             public string ImagePath { get; set; }
         }
 
-        public struct stUser
+        public class clsUser
         {
             public int userID { get; set; }
             public int personID { get; set; }
@@ -36,10 +37,10 @@ namespace DVLD_Shared
         public static List<string> countries { get; set; } = new List<string>();
         public static List<string> LicenseClasses { get; set; } = new List<string>();
 
-        public static stUser currentUser;
-        public static stPerson currentPerson;
+        public static clsUser currentUser;
+        public static clsPerson currentPerson;
 
-        public struct stApplication
+        public class clsApplication
         {
             public int ApplicationID { get; set; }
             public int ApplicationPersonID { get; set; }
@@ -51,7 +52,7 @@ namespace DVLD_Shared
             public int UserID { get; set; }
         }
 
-        public struct stApplicationType
+        public class clsApplicationType
         {
             public int ApplicationTypeID { get; set; }
             public string ApplicationTitle { get; set; }
@@ -76,7 +77,7 @@ namespace DVLD_Shared
             RetakeTest = 8
         }
 
-        public struct stLicense
+        public class clsLicense
         {
             public int LicenseID { get; set; }
             public int applicationID { get; set; }
@@ -92,7 +93,7 @@ namespace DVLD_Shared
 
         }
 
-        public struct stDetainLicense
+        public class clsDetainLicense
         {
             public int DetainID { get; set; }
             public int LicenseID { get; set; }
@@ -106,7 +107,7 @@ namespace DVLD_Shared
 
         }
 
-        public struct stInternationalLicense
+        public class clsInternationalLicense
         {
             public int InternationalLicenseID { get; set; }
             public int applicationID { get; set; }
@@ -118,7 +119,7 @@ namespace DVLD_Shared
             public int CreatedByUserID { get; set; }
         }
 
-        public struct stDriver
+        public class clsDriver
         {
             public int driverID { get; set; }
             public int personID { get; set; }

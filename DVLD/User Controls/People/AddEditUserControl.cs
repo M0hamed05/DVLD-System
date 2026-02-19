@@ -1,8 +1,8 @@
 ﻿using DVLD_Shared;
 using DVLDBussinessLayer;
 using System;
-using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -18,7 +18,7 @@ namespace DVLD
         private bool editmode = false;
         private int personID = -1;
         private bool PersonalImage = false;
-        private DVLDShared.stPerson personData;
+        private DVLDShared.clsPerson personData;
 
         private bool change_happend()
         {
@@ -55,9 +55,9 @@ namespace DVLD
             return (removeImageBtn.Visible) ? userPicture.ImageLocation : null;
         }
 
-        public DVLDShared.stPerson save_data_to_struct()
+        public DVLDShared.clsPerson save_data_to_class()
         {
-            DVLDShared.stPerson person = new DVLDShared.stPerson();
+            DVLDShared.clsPerson person = new DVLDShared.clsPerson();
             person.personID = Convert.ToInt32(personID);
             person.NationalNo = Convert.ToString(nationalNoTxtBox.Text);
             person.FirstName = Convert.ToString(firstNameTxtBox.Text);
@@ -78,6 +78,14 @@ namespace DVLD
        
         public void load_person_data(int personID)
         {
+            //point 6 add this 
+            if (!DVLD_BL.People.is_person_found(personID))
+            {
+                MessageBox.Show($"Person with ID = {personID} was not found", "Person Not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.ParentForm.Close();
+                return;
+            }
+
             editmode = true;
             countryComboBox.DataSource = DVLDShared.countries;
             this.personID = personID;
@@ -162,7 +170,7 @@ namespace DVLD
 
             if (!editmode)
             {
-                int id = DVLD_BL.People.add_new_person(save_data_to_struct());
+                int id = DVLD_BL.People.add_new_person(save_data_to_class());
                 if (id != -1)//check if there errors or not
                 {
                     MessageBox.Show("New Person Added Successfully!", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -185,7 +193,7 @@ namespace DVLD
                     MessageBox.Show("No change to save", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                if (DVLD_BL.People.update_new_person(save_data_to_struct()))
+                if (DVLD_BL.People.update_new_person(save_data_to_class()))
                 {
                     MessageBox.Show("Person Updated Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form frm = Application.OpenForms["PeopleForm"];
@@ -225,6 +233,10 @@ namespace DVLD
                     errorProvider.SetError(nationalNoTxtBox, "There is a Person with this National Number.");
                 else errorProvider.Clear();
             }
+            if (string.IsNullOrEmpty(nationalNoTxtBox.Text.ToString()))
+                errorProvider.SetError(nationalNoTxtBox, "This is required Feild");
+            else
+                errorProvider.Clear();
         }
 
         private void emailTxtBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -236,12 +248,16 @@ namespace DVLD
         {
             if (!string.IsNullOrEmpty(emailTxtBox.Text))
             {
-                if (emailTxtBox.Text.Contains("@") && emailTxtBox.Text.Contains(".") &&
-                    (emailTxtBox.Text.IndexOf("@") > 0 && emailTxtBox.Text.LastIndexOf(".") > emailTxtBox.Text.IndexOf("@")))
+                //point 7 add this check email
+                var pattren = @"^[a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
+                var regex = new Regex(pattren);
+                if (regex.IsMatch(emailTxtBox.Text.ToString()))
+                {
                     errorProvider.Clear();
+                }
                 else
                 {
-                    errorProvider.SetError(emailTxtBox, "Invalid Email Format");
+                    errorProvider.SetError(emailTxtBox, "Invalid Email Format!");
                 }
             }
             else
@@ -343,8 +359,66 @@ namespace DVLD
                 if (MessageBox.Show("Nothing Saved, Are you Sure to Close?", "Warning", MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning) == DialogResult.Yes) this.ParentForm.Close();
             }
-            else 
-            this.ParentForm.Close();
+            else this.ParentForm.Close();
+        }
+
+        //point 5 apply accept and esc buttons
+        public Button SaveButton
+        {
+            get { return saveBtn; }
+        }
+        public Button CloseButton
+        {
+            get { return closeBtn; }
+        }
+
+        private void firstNameTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(firstNameTxtBox.Text.ToString()))
+            {
+                errorProvider.SetError(firstNameTxtBox, "This is required Feild");
+            }
+            else errorProvider.Clear();
+        }
+
+        private void secondNameTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(secondNameTxtBox.Text.ToString()))
+            {
+                errorProvider.SetError(secondNameTxtBox, "This is required Feild");
+            }
+            else errorProvider.Clear();
+
+        }
+
+        private void lastNameTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(lastNameTxtBox.Text.ToString()))
+            {
+                errorProvider.SetError(lastNameTxtBox, "This is required Feild");
+            }
+            else errorProvider.Clear();
+
+        }
+
+        private void phoneTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(phoneTxtBox.Text.ToString()))
+            {
+                errorProvider.SetError(phoneTxtBox, "This is required Feild");
+            }
+            else errorProvider.Clear();
+
+        }
+
+        private void addressTxtBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(addressTxtBox.Text.ToString()))
+            {
+                errorProvider.SetError(addressTxtBox, "This is required Feild");
+            }
+            else errorProvider.Clear();
+
         }
     }
      

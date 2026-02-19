@@ -151,10 +151,10 @@
     <Compile Include="Applications\VisionTestForm.Designer.cs">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\AddEditUserControl.cs">
+    <Compile Include="User Controls\People\AddEditUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\AddEditUserControl.Designer.cs">
+    <Compile Include="User Controls\People\AddEditUserControl.Designer.cs">
       <DependentUpon>AddEditUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="People\AddEditPersonForm.cs">
@@ -235,10 +235,10 @@
     <Compile Include="Applications\ManageTestTypeForm.Designer.cs">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\PeersonInfoWithFilterUserControl.cs">
+    <Compile Include="User Controls\People\PeersonInfoWithFilterUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\PeersonInfoWithFilterUserControl.Designer.cs">
+    <Compile Include="User Controls\People\PeersonInfoWithFilterUserControl.Designer.cs">
       <DependentUpon>PeersonInfoWithFilterUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="People\PeopleForm.cs">
@@ -253,10 +253,10 @@
     <Compile Include="People\PersonDetailsForm.Designer.cs">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\PersonInformation.cs">
+    <Compile Include="User Controls\People\PersonInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\PersonInformation.Designer.cs">
+    <Compile Include="User Controls\People\PersonInformation.Designer.cs">
       <DependentUpon>PersonInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -336,7 +336,7 @@
     <EmbeddedResource Include="Applications\VisionTestForm.resx">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\AddEditUserControl.resx">
+    <EmbeddedResource Include="User Controls\People\AddEditUserControl.resx">
       <DependentUpon>AddEditUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\AddEditPersonForm.resx">
@@ -378,7 +378,7 @@
     <EmbeddedResource Include="Applications\ManageTestTypeForm.resx">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\PeersonInfoWithFilterUserControl.resx">
+    <EmbeddedResource Include="User Controls\People\PeersonInfoWithFilterUserControl.resx">
       <DependentUpon>PeersonInfoWithFilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\PeopleForm.resx">
@@ -387,7 +387,7 @@
     <EmbeddedResource Include="People\PersonDetailsForm.resx">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\PersonInformation.resx">
+    <EmbeddedResource Include="User Controls\People\PersonInformation.resx">
       <DependentUpon>PersonInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

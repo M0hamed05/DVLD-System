@@ -88,7 +88,7 @@ namespace DVLD.Applications
                 int applicationID = DVLD_BL.Applications.add_new_application(drvierLicenseInfo_WithFilter1.get_personID(), (int)DVLDShared.enAppplicationTyoes.NewInternationalLicense);
                 if (applicationID != -1)
                 {
-                    DVLDShared.stInternationalLicense InternationalLicense = save_data_to_struct(applicationID);
+                    DVLDShared.clsInternationalLicense InternationalLicense = save_data_to_struct(applicationID);
 
                     internationalLicenseID = DVLD_BL.Licenses.issue_new_international_license(InternationalLicense);
                     if (internationalLicenseID != -1)
@@ -120,9 +120,9 @@ namespace DVLD.Applications
 
         }
 
-        public DVLDShared.stInternationalLicense save_data_to_struct(int applicationID)
+        public DVLDShared.clsInternationalLicense save_data_to_struct(int applicationID)
         {
-            DVLDShared.stInternationalLicense internationalLicense = new DVLDShared.stInternationalLicense();
+            DVLDShared.clsInternationalLicense internationalLicense = new DVLDShared.clsInternationalLicense();
             internationalLicense.applicationID = applicationID;
             internationalLicense.driverID = drvierLicenseInfo_WithFilter1.get_driverID();
             internationalLicense.localLicenseID = drvierLicenseInfo_WithFilter1.get_licenseID();

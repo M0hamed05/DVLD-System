@@ -20,8 +20,8 @@ namespace DVLD.User_Controls
 
         public void load_data(int interationalLicenseID)
         {
-            DVLDShared.stInternationalLicense license = DVLD_BL.Licenses.get_international_licenseInfo(interationalLicenseID);
-            DVLDShared.stPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
+            DVLDShared.clsInternationalLicense license = DVLD_BL.Licenses.get_international_licenseInfo(interationalLicenseID);
+            DVLDShared.clsPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
 
             NameTxtBox.Text = $"{person.FirstName} {person.SecondName} {person.ThirdName} {person.LastName}";
             NationaNoTxtBox.Text = person.NationalNo;

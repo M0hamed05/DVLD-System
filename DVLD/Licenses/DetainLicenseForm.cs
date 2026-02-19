@@ -95,9 +95,9 @@ namespace DVLD.Licenses
             }
         }
 
-        public DVLDShared.stDetainLicense save_data_to_struct(int applicationID)
+        public DVLDShared.clsDetainLicense save_data_to_struct(int applicationID)
         {
-            DVLDShared.stDetainLicense detainLicense = new DVLDShared.stDetainLicense();
+            DVLDShared.clsDetainLicense detainLicense = new DVLDShared.clsDetainLicense();
             detainLicense.ReleaseApplicationID = applicationID;
             detainLicense.LicenseID = drvierLicenseInfo_WithFilterUserControl1.get_licenseID();
             detainLicense.DetainDate = DateTime.Now;

@@ -46,7 +46,7 @@ namespace DVLD.Licenses
             drvierLicenseInfo_WithFilterUserControl1.addButtonClicked += userControl_addButtonClicked;
         }
 
-        DVLDShared.stDetainLicense detainLicense = new DVLDShared.stDetainLicense();
+        DVLDShared.clsDetainLicense detainLicense = new DVLDShared.clsDetainLicense();
 
         private void userControl_addButtonClicked(object sender,EventArgs e)
         {

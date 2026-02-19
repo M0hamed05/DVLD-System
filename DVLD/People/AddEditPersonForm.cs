@@ -26,7 +26,8 @@ namespace DVLD
 
         private void AddPersonForm_Load(object sender, EventArgs e)
         {
-
+            //point 5 = apply accept and cancel button
+            this.AcceptButton = addEditUserControl1.SaveButton;
         }
 
         private void AddEditPersonForm_FormClosing(object sender, FormClosingEventArgs e)

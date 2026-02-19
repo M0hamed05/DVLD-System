@@ -20,7 +20,7 @@ namespace DVLD
         {
             if (this.DesignMode) return;
 
-            DVLDShared.stPerson personData = new DVLDShared.stPerson();
+            DVLDShared.clsPerson personData = new DVLDShared.clsPerson();
             List <string> countries= DVLDShared.countries;
             if (personID != -1)
             {

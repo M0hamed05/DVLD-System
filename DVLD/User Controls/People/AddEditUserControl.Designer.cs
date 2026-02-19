@@ -262,6 +262,7 @@
             this.addressTxtBox.Name = "addressTxtBox";
             this.addressTxtBox.Size = new System.Drawing.Size(634, 99);
             this.addressTxtBox.TabIndex = 18;
+            this.addressTxtBox.Leave += new System.EventHandler(this.addressTxtBox_Leave);
             // 
             // emailTxtBox
             // 
@@ -283,6 +284,7 @@
             this.phoneTxtBox.Size = new System.Drawing.Size(200, 33);
             this.phoneTxtBox.TabIndex = 16;
             this.phoneTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneTxtBox_KeyPress);
+            this.phoneTxtBox.Leave += new System.EventHandler(this.phoneTxtBox_Leave);
             // 
             // phoneLabel
             // 
@@ -307,6 +309,7 @@
             this.lastNameTxtBox.Size = new System.Drawing.Size(170, 33);
             this.lastNameTxtBox.TabIndex = 14;
             this.lastNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxtBox_KeyPress);
+            this.lastNameTxtBox.Leave += new System.EventHandler(this.lastNameTxtBox_Leave);
             // 
             // personDateTimePicker
             // 
@@ -376,6 +379,7 @@
             this.secondNameTxtBox.Size = new System.Drawing.Size(200, 33);
             this.secondNameTxtBox.TabIndex = 7;
             this.secondNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxtBox_KeyPress);
+            this.secondNameTxtBox.Leave += new System.EventHandler(this.secondNameTxtBox_Leave);
             // 
             // nationalNoTxtBox
             // 
@@ -452,6 +456,7 @@
             this.firstNameTxtBox.Size = new System.Drawing.Size(200, 33);
             this.firstNameTxtBox.TabIndex = 1;
             this.firstNameTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NameTxtBox_KeyPress);
+            this.firstNameTxtBox.Leave += new System.EventHandler(this.firstNameTxtBox_Leave);
             // 
             // namelabel
             // 

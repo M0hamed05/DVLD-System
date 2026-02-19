@@ -8,8 +8,8 @@ namespace DVLD.User_Controls
 {
     public partial class Application_Info_UserControl : UserControl
     {
-        DVLDShared.stPerson person;
-        DVLDShared.stUser user;
+        DVLDShared.clsPerson person;
+        DVLDShared.clsUser user;
         public Application_Info_UserControl()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace DVLD.User_Controls
         public void load_data(int LDLA_ID, string licenseClass, byte passedTests,bool isThereLicense = false)
         {
             int applicationID = DVLD_BL.Applications.get_applicationID_by_LDLA(LDLA_ID);
-            DVLDShared.stApplication application = DVLD_BL.Applications.get_application_basic_info(applicationID);
+            DVLDShared.clsApplication application = DVLD_BL.Applications.get_application_basic_info(applicationID);
             person = DVLD_BL.People.get_person_data_for_edit(application.ApplicationPersonID);
             user = DVLD_BL.Users.get_user_data(application.UserID);
 

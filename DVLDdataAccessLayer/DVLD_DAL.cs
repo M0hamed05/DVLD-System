@@ -1,11 +1,10 @@
 ﻿using DVLD_Shared;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Runtime.CompilerServices;
 
+// point 2 like point 1 organize them( not in one file)
 namespace DVLDdataAccessLayer
 {
 
@@ -23,7 +22,7 @@ namespace DVLDdataAccessLayer
                             DateOfBirth,    
                             CASE
                             WHEN Gendor = 0 THEN 'Male'
-                            WHEN Gendor = 1 THEN 'Female'
+                            ELSE 'Female'
                             END AS [Gender],
                             Address,Phone,Email
                             FROM People";
@@ -45,7 +44,7 @@ namespace DVLDdataAccessLayer
                 return dt;
             }
 
-            public static int save_new_person(DVLDShared.stPerson person1)
+            public static int save_new_person(DVLDShared.clsPerson person1)
             {
                 int personID = -1;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -84,7 +83,7 @@ namespace DVLDdataAccessLayer
                         command.Parameters.AddWithValue("@firstName", person1.FirstName);
                         command.Parameters.AddWithValue("@secondName", person1.SecondName);
                         command.Parameters.AddWithValue("@lastName", person1.LastName);
-                        command.Parameters.AddWithValue("@dateOfBirth", person1.DateOfBirth.Date.ToShortDateString());
+                        command.Parameters.AddWithValue("@dateOfBirth", person1.DateOfBirth);
                         command.Parameters.AddWithValue("@Gender", person1.Gender);
                         command.Parameters.AddWithValue("@Address", person1.Address);
                         command.Parameters.AddWithValue("@Phone", person1.Phone);
@@ -113,9 +112,9 @@ namespace DVLDdataAccessLayer
                 return personID;
             }
 
-            public static DVLDShared.stPerson get_person_data(int personID)
+            public static DVLDShared.clsPerson get_person_data(int personID)
             {
-                DVLDShared.stPerson person = new DVLDShared.stPerson();
+                DVLDShared.clsPerson person = new DVLDShared.clsPerson();
                 person.personID = personID;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -155,9 +154,9 @@ namespace DVLDdataAccessLayer
                 return person;
             }
 
-            public static DVLDShared.stPerson get_person_data(string NationalNo)
+            public static DVLDShared.clsPerson get_person_data(string NationalNo)
             {
-                DVLDShared.stPerson person = new DVLDShared.stPerson();
+                DVLDShared.clsPerson person = new DVLDShared.clsPerson();
                 person.NationalNo = NationalNo;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -197,7 +196,7 @@ namespace DVLDdataAccessLayer
                 return person;
             }
 
-            public static bool update_person(DVLDShared.stPerson person)
+            public static bool update_person(DVLDShared.clsPerson person)
             {
                 bool success = false;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -529,9 +528,9 @@ namespace DVLDdataAccessLayer
 
             }
 
-            public static DVLDShared.stUser get_user_info(int userID)
+            public static DVLDShared.clsUser get_user_info(int userID)
             {
-                DVLDShared.stUser user = new DVLDShared.stUser();
+                DVLDShared.clsUser user = new DVLDShared.clsUser();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT * FROM Users WHERE UserID = @id";
@@ -662,7 +661,7 @@ namespace DVLDdataAccessLayer
                 }
             }
 
-            public static int save_new_user(DVLDShared.stUser user)
+            public static int save_new_user(DVLDShared.clsUser user)
             {
                 user.userID = -1;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -723,7 +722,7 @@ namespace DVLDdataAccessLayer
                 return success;
             }
 
-            public static bool update_user(DVLDShared.stUser user)
+            public static bool update_user(DVLDShared.clsUser user)
             {
                 bool success = false;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
@@ -1227,9 +1226,9 @@ namespace DVLDdataAccessLayer
                 }
             }
 
-            public static DVLDShared.stApplication get_application_basic_info(int applicationID)
+            public static DVLDShared.clsApplication get_application_basic_info(int applicationID)
             {
-                DVLDShared.stApplication application = new DVLDShared.stApplication();
+                DVLDShared.clsApplication application = new DVLDShared.clsApplication();
                 application.ApplicationID = applicationID;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -1263,9 +1262,9 @@ namespace DVLDdataAccessLayer
                 return application;
             }
 
-            public static DVLDShared.stApplicationType get_applicationType_Info(int applicaionTypeID)
+            public static DVLDShared.clsApplicationType get_applicationType_Info(int applicaionTypeID)
             {
-                DVLDShared.stApplicationType applicationType = new DVLDShared.stApplicationType();
+                DVLDShared.clsApplicationType applicationType = new DVLDShared.clsApplicationType();
                 applicationType.ApplicationTypeID = applicaionTypeID;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -1527,7 +1526,7 @@ namespace DVLDdataAccessLayer
 
         public class Licenses
         {
-            public static int issue_new_license(DVLDShared.stLicense license)
+            public static int issue_new_license(DVLDShared.clsLicense license)
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -1641,9 +1640,9 @@ namespace DVLDdataAccessLayer
                 return AllowedAge;
             }
 
-            public static DVLDShared.stLicense get_licesnseInfo(int licenseID)
+            public static DVLDShared.clsLicense get_licesnseInfo(int licenseID)
             {
-                DVLDShared.stLicense license = new DVLDShared.stLicense();
+                DVLDShared.clsLicense license = new DVLDShared.clsLicense();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT * FROM Licenses WHERE LicenseID = @id";
@@ -1704,9 +1703,9 @@ namespace DVLDdataAccessLayer
                 }
             }
 
-            public static DVLDShared.stLicense get_licesnseInfo_ByAppID(int AppID)
+            public static DVLDShared.clsLicense get_licesnseInfo_ByAppID(int AppID)
             {
-                DVLDShared.stLicense license = new DVLDShared.stLicense();
+                DVLDShared.clsLicense license = new DVLDShared.clsLicense();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT * FROM Licenses WHERE ApplicationID = @id";
@@ -1861,7 +1860,7 @@ namespace DVLDdataAccessLayer
                 return LicenseID;
             }
 
-            public static int issue_new_international_license(DVLDShared.stInternationalLicense license)
+            public static int issue_new_international_license(DVLDShared.clsInternationalLicense license)
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -1966,9 +1965,9 @@ namespace DVLDdataAccessLayer
                 }
             }
 
-            public static DVLDShared.stInternationalLicense get_international_licenseInfo(int internationalLicenseID)
+            public static DVLDShared.clsInternationalLicense get_international_licenseInfo(int internationalLicenseID)
             {
-                DVLDShared.stInternationalLicense license = new DVLDShared.stInternationalLicense();
+                DVLDShared.clsInternationalLicense license = new DVLDShared.clsInternationalLicense();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT * FROM InternationalLicenses WHERE InternationalLicenseID = @id";
@@ -2083,7 +2082,7 @@ namespace DVLDdataAccessLayer
                 return sucess;
             }
 
-            public static int add_detain_license(DVLDShared.stDetainLicense detainLicense)
+            public static int add_detain_license(DVLDShared.clsDetainLicense detainLicense)
             {
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
@@ -2174,9 +2173,9 @@ namespace DVLDdataAccessLayer
                 return success;
             }
 
-            public static DVLDShared.stDetainLicense get_detain_license_info(int licenseID)
+            public static DVLDShared.clsDetainLicense get_detain_license_info(int licenseID)
             {
-                DVLDShared.stDetainLicense detainLicense = new DVLDShared.stDetainLicense();
+                DVLDShared.clsDetainLicense detainLicense = new DVLDShared.clsDetainLicense();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = "SELECT * FROM DetainedLicenses WHERE LicenseID = @id";
@@ -2297,9 +2296,10 @@ namespace DVLDdataAccessLayer
                 return dt;
             }
         }
+
         public class Drivers
         {
-            public static int add_new_driver(DVLDShared.stDriver driver)
+            public static int add_new_driver(DVLDShared.clsDriver driver)
             {
                 int driverID = get_DriverID_by_PerosnID(driver.personID);
                 if (driverID != -1) return driverID;

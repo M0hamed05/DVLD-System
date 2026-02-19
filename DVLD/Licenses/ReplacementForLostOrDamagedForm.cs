@@ -116,9 +116,9 @@ namespace DVLD.Licenses
             }
         }
 
-        public DVLDShared.stLicense save_data_to_struct(int applicationID)
+        public DVLDShared.clsLicense save_data_to_struct(int applicationID)
         {
-            DVLDShared.stLicense license = new DVLDShared.stLicense();
+            DVLDShared.clsLicense license = new DVLDShared.clsLicense();
             license.applicationID = applicationID;
             license.driverID = drvierLicenseInfo_WithFilterUserControl1.get_driverID();
             license.licenseClassID = drvierLicenseInfo_WithFilterUserControl1.get_licenseClassID();

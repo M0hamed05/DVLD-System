@@ -28,7 +28,7 @@ namespace DVLD
         int personID = -1;
         int userID = -1;
 
-        DVLDShared.stUser user;
+        DVLDShared.clsUser user;
 
         List<string> all_nationalty = DVLD_BL.People.get_all_nationlityID_for_user_adding();
 
@@ -189,9 +189,9 @@ namespace DVLD
             }
         }
 
-        private DVLDShared.stUser save_user_to_struct()
+        private DVLDShared.clsUser save_user_to_struct()
         {
-            DVLDShared.stUser user = new DVLDShared.stUser();
+            DVLDShared.clsUser user = new DVLDShared.clsUser();
             user.username = usernameTxtBox.Text;
             user.password = passowrdTxtBox.Text;
             user.personID = personID;

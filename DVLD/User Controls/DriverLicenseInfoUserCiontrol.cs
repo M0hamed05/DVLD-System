@@ -7,7 +7,7 @@ namespace DVLD.User_Controls
 {
     public partial class DriverLicenseInfoUserCiontrol : UserControl
     {
-        DVLDShared.stLicense license = new DVLDShared.stLicense();
+        DVLDShared.clsLicense license = new DVLDShared.clsLicense();
         public DriverLicenseInfoUserCiontrol()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace DVLD.User_Controls
         public void load_data(int licenseID)
         {
             license = DVLD_BL.Licenses.get_licenseInfo(licenseID);
-            DVLDShared.stPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
+            DVLDShared.clsPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
 
             classTxtBox.Text = DVLD_BL.Licenses.get_licenseClassName(license.licenseClassID);
             NameTxtBox.Text = $"{person.FirstName} {person.SecondName} {person.ThirdName} {person.LastName}";
@@ -59,7 +59,7 @@ namespace DVLD.User_Controls
         public void load_data_by_aaplicationID(int AppID)
         {
             license = DVLD_BL.Licenses.get_licenseInfo_By_AppID(AppID);
-            DVLDShared.stPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
+            DVLDShared.clsPerson person = DVLD_BL.People.get_person_data_for_edit(DVLD_BL.Drivers.get_personID_FromDriverID(license.driverID));
             classTxtBox.Text = DVLD_BL.Licenses.get_licenseClassName(license.licenseClassID);
             NameTxtBox.Text = $"{person.FirstName} {person.SecondName} {person.ThirdName} {person.LastName}";
             NationaNoTxtBox.Text = person.NationalNo;

@@ -42,15 +42,15 @@ namespace DVLD.Applications
             }
         }
 
-        private DVLDShared.stLicense save_data_to_struct()
+        private DVLDShared.clsLicense save_data_to_struct()
         {
-            DVLDShared.stLicense license = new DVLDShared.stLicense();
+            DVLDShared.clsLicense license = new DVLDShared.clsLicense();
             license.applicationID = application_Info_UserControl1.get_applicantion_ID();
 
             int driverID = DVLD_BL.Drivers.get_DriverID_by_PerosnID(license.applicationID);
             if (driverID == -1)
             {
-                license.driverID = Drivers.add_new_driver(new DVLDShared.stDriver
+                license.driverID = Drivers.add_new_driver(new DVLDShared.clsDriver
                 {
                     personID = DVLD_BL.Applications.get_application_basic_info(license.applicationID).ApplicationPersonID
                                 ,
