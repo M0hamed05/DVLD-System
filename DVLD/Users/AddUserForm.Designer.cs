@@ -272,6 +272,7 @@
             this.isActiveCheckButton.TabIndex = 13;
             this.isActiveCheckButton.Text = "Is Actvie";
             this.isActiveCheckButton.UseVisualStyleBackColor = true;
+            this.isActiveCheckButton.CheckedChanged += new System.EventHandler(this.isActiveCheckButton_CheckedChanged);
             // 
             // confirmPasswordLabel
             // 

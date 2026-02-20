@@ -253,5 +253,17 @@ namespace DVLD
                 allUsersComboBox.DataSource = all_personID;
             }
         }
+
+        private void isActiveCheckButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!isActiveCheckButton.Checked)
+            {
+                if(DVLDShared.currentUser.personID == personInfoUserControl1.get_personID())
+                {
+                    MessageBox.Show("User can't be unactive because it is the current user", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    isActiveCheckButton.Checked = true;
+                }
+            }
+        }
     }
 }
