@@ -278,21 +278,22 @@ namespace DVLD
                 userPicture.Image = Properties.Resources.female;
         }
 
+        string localappdataPath, imagesFolder, newfilename, app_image_path;
         private string copy_image_to_app_data(string orginal_image_path)
         {
             try
             {
                 //get app data folder path
-                string localappdataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                localappdataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
-                string imagesFolder = Path.Combine(localappdataPath, "DVLD_Images");// create your folder path
+                imagesFolder = Path.Combine(localappdataPath, "DVLD_Images");// create your folder path
 
                 if (!Directory.Exists(imagesFolder))
                     Directory.CreateDirectory(imagesFolder);//create floder if not exists in that path
 
-                string newfilename = Guid.NewGuid().ToString() + Path.GetExtension(orginal_image_path); //creataes file name
+                newfilename = Guid.NewGuid().ToString() + Path.GetExtension(orginal_image_path); //creataes file name with it's type
 
-                string app_image_path = Path.Combine(imagesFolder, newfilename);//creates new image address
+                app_image_path = Path.Combine(imagesFolder, newfilename);//creates new image address
 
                 File.Copy(orginal_image_path, app_image_path, true);//copy the orginal photo to it
 

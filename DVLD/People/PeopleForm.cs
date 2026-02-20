@@ -60,12 +60,12 @@ namespace DVLD
             }
 
             if (filterComboBox.SelectedIndex == 0)
-            {
-                if (int.TryParse(filter_txtbox.Text, out int value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[0]},'System.String') LIKE '{value}%'";
+                dt.DefaultView.RowFilter = $"Convert({dt.Columns[0]},'System.String') LIKE '{filter_txtbox.Text}%'";
+            else if (filterComboBox.SelectedIndex > 5)
+                dt.DefaultView.RowFilter = $"{dt.Columns[filterComboBox.SelectedIndex + 1]} LIKE '{filter_txtbox.Text}%'";
 
-            }
             else dt.DefaultView.RowFilter = $"{filterComboBox.Text} LIKE '{filter_txtbox.Text}%'";
+
             recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
         }
 

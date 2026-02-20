@@ -41,6 +41,10 @@
             this.drivers_dgv = new System.Windows.Forms.DataGridView();
             this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDriverLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.issueInternationalLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.downBtnsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.titlePanel.SuspendLayout();
@@ -164,9 +168,13 @@
             // 
             this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showDriverLicenseHistoryToolStripMenuItem});
+            this.showPersonInfoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.showDriverLicenseHistoryToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.issueInternationalLicenseToolStripMenuItem});
             this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(391, 75);
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(391, 130);
             // 
             // showDriverLicenseHistoryToolStripMenuItem
             // 
@@ -176,6 +184,34 @@
             this.showDriverLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(390, 38);
             this.showDriverLicenseHistoryToolStripMenuItem.Text = "Show Driver License History";
             this.showDriverLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showDriverLicenseHistoryToolStripMenuItem_Click);
+            // 
+            // showPersonInfoToolStripMenuItem
+            // 
+            this.showPersonInfoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.showPersonInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.userinfo;
+            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(390, 38);
+            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
+            this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
+            // 
+            // issueInternationalLicenseToolStripMenuItem
+            // 
+            this.issueInternationalLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.issueInternationalLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverlicense;
+            this.issueInternationalLicenseToolStripMenuItem.Name = "issueInternationalLicenseToolStripMenuItem";
+            this.issueInternationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(390, 38);
+            this.issueInternationalLicenseToolStripMenuItem.Text = "Issue International License";
+            this.issueInternationalLicenseToolStripMenuItem.Click += new System.EventHandler(this.issueInternationalLicenseToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(387, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(387, 6);
             // 
             // ManageDriversForm
             // 
@@ -216,5 +252,9 @@
         private System.Windows.Forms.DataGridView drivers_dgv;
         private System.Windows.Forms.ContextMenuStrip optionsContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem showDriverLicenseHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showPersonInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem issueInternationalLicenseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

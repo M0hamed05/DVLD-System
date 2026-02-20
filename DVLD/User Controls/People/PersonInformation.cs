@@ -14,14 +14,26 @@ namespace DVLD
             InitializeComponent();
             if (this.DesignMode) return;
         }
+
         private int personID = -1;
+
+        DVLDShared.clsPerson personData = new DVLDShared.clsPerson();
+
+        public DVLDShared.clsPerson SelectedPersonInfo
+        {
+            get { return personData; }
+        }
 
         public void load_person_data(int personID)
         {
-            if (this.DesignMode) return;
+            if (!DVLD_BL.People.is_person_found(personID))
+            {
+                MessageBox.Show($"Person was not found with id = {personID}", "Perosn not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.ParentForm.Close();
+                return;
+            }
 
-            DVLDShared.clsPerson personData = new DVLDShared.clsPerson();
-            List <string> countries= DVLDShared.countries;
+            List<string> countries = DVLDShared.countries;
             if (personID != -1)
             {
                 this.personID = personID;
@@ -33,34 +45,14 @@ namespace DVLD
                 lastNameTxtBox.Text = Convert.ToString(personData.LastName);
                 nationalNoTxtBox.Text = Convert.ToString(personData.NationalNo);
                 personDateTimePicker.Value = Convert.ToDateTime(personData.DateOfBirth);
-
-                if (Convert.ToByte(personData.Gender) == 0)
-                    genderTxtBox.Text = "Male";
-                else
-                    genderTxtBox.Text = "Female";
+                genderTxtBox.Text = (Convert.ToByte(personData.Gender) == 0) ? "Male" : "Female";
 
                 addressTxtBox.Text = Convert.ToString(personData.Address);
                 phoneTxtBox.Text = Convert.ToString(personData.Phone);
                 emailTxtBox.Text = Convert.ToString(personData.Email);
                 countryTxtBox.Text = countries[Convert.ToInt16(personData.NationaltityCountryID)];
 
-                if (personData.ImagePath != null)
-                {
-                    if (File.Exists(personData.ImagePath.ToString()))
-                    {
-                        userPicture.ImageLocation = personData.ImagePath.ToString();
-                    }
-                    else
-                    {
-                        if (Convert.ToByte(personData.Gender) == 0) userPicture.Image = Properties.Resources.defaultuser;
-                        else userPicture.Image = Properties.Resources.female;
-                    }
-                }
-                else
-                {
-                    if (Convert.ToByte(personData.Gender) == 0) userPicture.Image = Properties.Resources.defaultuser;
-                    else userPicture.Image = Properties.Resources.female;
-                }
+                load_person_image();
 
             }
             else
@@ -68,6 +60,24 @@ namespace DVLD
                 MessageBox.Show("Error Loading Person Data", "Error");
                 this.ParentForm.Close();
             }
+        }
+
+        private void load_person_image()
+        {
+            if (personData.ImagePath != null)
+            {
+                if (File.Exists(personData.ImagePath.ToString()))
+                {
+                    userPicture.ImageLocation = personData.ImagePath.ToString();
+                }
+                else
+                    userPicture.Image = Convert.ToByte(personData.Gender) == 0 ? Properties.Resources.defaultuser :
+                        userPicture.Image = Properties.Resources.female;
+
+            }
+            else
+                userPicture.Image = Convert.ToByte(personData.Gender) == 0 ? Properties.Resources.defaultuser :
+                    userPicture.Image = Properties.Resources.female;
         }
 
         private void editButton_Click(object sender, EventArgs e)

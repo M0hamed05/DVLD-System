@@ -77,7 +77,7 @@ namespace DVLD.Licenses
 
         private void showLicenseDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowLicenseInfo frm = new ShowLicenseInfo(Convert.ToInt32(detainLicense_dgv.CurrentRow.Cells[1].Value));
+            ShowLicenseInfo frm = new ShowLicenseInfo(Convert.ToInt32(detainLicense_dgv.CurrentRow.Cells[1].Value), true);
             frm.ShowDialog();
         }
 
