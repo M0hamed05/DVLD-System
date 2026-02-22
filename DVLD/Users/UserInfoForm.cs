@@ -20,6 +20,10 @@ namespace DVLD
             userInfoUserControl1.load_all_data(personID,userID);
 
         }
-        
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

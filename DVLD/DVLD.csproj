@@ -73,10 +73,10 @@
     <Compile Include="Licenses\IssueDrivingLicenseApplicaionForm.Designer.cs">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\ManageDriversForm.cs">
+    <Compile Include="Drivers\ManageDriversForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\ManageDriversForm.Designer.cs">
+    <Compile Include="Drivers\ManageDriversForm.Designer.cs">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\ManageDetainLicensesForm.cs">
@@ -273,10 +273,10 @@
     <Compile Include="Users\UserInfoForm.Designer.cs">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UserInfoUserControl.cs">
+    <Compile Include="User Controls\Users\UserInfoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UserInfoUserControl.Designer.cs">
+    <Compile Include="User Controls\Users\UserInfoUserControl.Designer.cs">
       <DependentUpon>UserInfoUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\UsersForm.cs">
@@ -297,7 +297,7 @@
     <EmbeddedResource Include="Licenses\IssueDrivingLicenseApplicaionForm.resx">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\ManageDriversForm.resx">
+    <EmbeddedResource Include="Drivers\ManageDriversForm.resx">
       <DependentUpon>ManageDriversForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ManageDetainLicensesForm.resx">
@@ -401,7 +401,7 @@
     <EmbeddedResource Include="Users\UserInfoForm.resx">
       <DependentUpon>UserInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UserInfoUserControl.resx">
+    <EmbeddedResource Include="User Controls\Users\UserInfoUserControl.resx">
       <DependentUpon>UserInfoUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\UsersForm.resx">

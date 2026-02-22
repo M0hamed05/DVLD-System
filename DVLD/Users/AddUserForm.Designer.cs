@@ -211,7 +211,6 @@
             // 
             // nxtBtn
             // 
-            this.nxtBtn.Enabled = false;
             this.nxtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nxtBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nxtBtn.Image = global::DVLD.Properties.Resources.next;
@@ -334,6 +333,7 @@
             // 
             // AddEditUserForm
             // 
+            this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 744);

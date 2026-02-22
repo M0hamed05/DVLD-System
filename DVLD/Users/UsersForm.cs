@@ -14,13 +14,8 @@ namespace DVLD
             dt = DVLD_BL.Users.get_all_users();
             users_dgv.DataSource = dt;
             recordsLabel.Text = $"Records : {dt.Rows.Count}";
-            if (dt.Rows.Count > 0)
-            {
-                users_dgv.Columns["UserID"].HeaderText = "User ID";
-                users_dgv.Columns["PersonID"].HeaderText = "Person ID";
-                users_dgv.Columns["UserName"].HeaderText = "Username";
-                users_dgv.Columns["IsActive"].HeaderText = "Is Active";
-            }
+            if(users_dgv.Rows.Count > 0)
+                users_dgv.Columns[2].FillWeight = 250;
         }
 
         public UsersForm()
@@ -56,9 +51,9 @@ namespace DVLD
             if (filterComboBox.SelectedIndex == 0 || filterComboBox.SelectedIndex == 1)
             {
                 if (int.TryParse(filter_txtbox.Text, out int value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns["UserID"]}, 'System.String') LIKE '{value}%'"; // so i can be searched like a string
+                    dt.DefaultView.RowFilter = $"Convert([{dt.Columns[filterComboBox.SelectedIndex]}], 'System.String') LIKE '{value}%'"; // so i can be searched like a string
             }
-            else dt.DefaultView.RowFilter = $"{filterComboBox.Text} LIKE '{filter_txtbox.Text}%'";
+            else dt.DefaultView.RowFilter = $"[{filterComboBox.Text}] LIKE '{filter_txtbox.Text}%'";
 
             recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
         }

@@ -25,6 +25,7 @@ namespace DVLD
         bool next_clicked = false;
         bool editmode = false;
         bool saved = false;
+        bool add_clicked = false;
         int personID = -1;
         int userID = -1;
 
@@ -55,7 +56,7 @@ namespace DVLD
                 personInfoUserControl1.load_person_data(Convert.ToInt32(allUsersComboBox.Text));
 
             }
-            nxtBtn.Enabled = true;
+            add_clicked = true;
         }
 
         private void nxtBtn_Click(object sender, EventArgs e)
@@ -66,6 +67,11 @@ namespace DVLD
                 next_clicked = true;
                 saveBtn.Enabled = true;
                 nxtBtn.Text = "Prev";
+                if (!add_clicked)
+                {
+                    addBtn.PerformClick();
+                }
+                filterPanel.Enabled = false;
             }
             else
             {
@@ -73,7 +79,9 @@ namespace DVLD
                 next_clicked = false;
                 saveBtn.Enabled = false;
                 nxtBtn.Text = "Next";
+                filterPanel.Enabled = true;
             }
+            
         }
 
         private void usernameTxtBox_Leave(object sender, EventArgs e)
