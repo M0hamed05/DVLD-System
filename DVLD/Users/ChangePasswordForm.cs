@@ -9,17 +9,15 @@ namespace DVLD
     {
         bool saved = false;
         int personID = -1;
-        int userID = -1;
-        public ChangePasswordForm(int personID, int userID)
+        public ChangePasswordForm(int personID)
         {
             InitializeComponent();
             this.personID = personID;
-            this.userID = userID;
         }
 
         private void ChangePasswordForm_Load(object sender, EventArgs e)
         {
-            userInfoUserControl1.load_all_data(personID, userID);
+            userInfoUserControl1.load_all_data(personID);
         }
 
         private void oldPasswordTxtBox_Leave(object sender, EventArgs e)

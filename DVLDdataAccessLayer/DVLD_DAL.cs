@@ -561,7 +561,7 @@ namespace DVLDdataAccessLayer
                 return user;
             }
 
-            public static int get_user_id(int personID)
+            public static int get_user_id_by_PersonID(int personID)
             {
                 int userID;
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))

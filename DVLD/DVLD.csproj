@@ -151,6 +151,12 @@
     <Compile Include="Applications\VisionTestForm.Designer.cs">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login and main\ChangeBackgroundImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login and main\ChangeBackgroundImageForm.Designer.cs">
+      <DependentUpon>ChangeBackgroundImageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\People\AddEditUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\VisionTestForm.resx">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login and main\ChangeBackgroundImageForm.resx">
+      <DependentUpon>ChangeBackgroundImageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\People\AddEditUserControl.resx">
       <DependentUpon>AddEditUserControl.cs</DependentUpon>
@@ -615,6 +624,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\detainCard2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

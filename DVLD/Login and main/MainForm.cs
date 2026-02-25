@@ -1,9 +1,12 @@
 ﻿using DVLD.Applications;
 using DVLD.Licenses;
+using DVLD.Login_and_main;
 using DVLD.Resources;
 using DVLD_Shared;
 using DVLDBussinessLayer;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -15,7 +18,7 @@ namespace DVLD
         public MainForm(int personID)
         {
             DVLDShared.currentPerson = DVLD_BL.People.get_person_data_for_edit(personID);
-            DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id(personID));
+            DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id_by_PersonID(personID));
             DVLD_BL.get_all_countries();
             InitializeComponent();
         }
@@ -23,34 +26,50 @@ namespace DVLD
         public void update_user_info(int personID)
         {
             DVLDShared.currentPerson = DVLD_BL.People.get_person_data_for_edit(personID);
-            DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id(personID));
+            DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id_by_PersonID(personID));
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            show_image();
+        }
+
+        public void show_image()
+        {
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.BackgorundImage) &&
+                File.Exists(Properties.Settings.Default.BackgorundImage))
+            {
+                mainPanel.BackgroundImage = Image.FromFile(Properties.Settings.Default.BackgorundImage);//should be form file here
+                mainPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            }
         }
 
         private void open_child_form(Form childForm)
         {
-            if (activeForm != null && activeForm.GetType() == childForm.GetType()) return;//null here because dont get value of null
-            // name is محجوز if (ActiveForm != null) ActiveForm.Close();//if there an opend form close it
-            if (activeForm != null)
-            {
-                activeForm.Close();
-                activeForm.Dispose();
-                activeForm = null;
-            
-            }
-
+            if (activeForm?.GetType() == childForm.GetType()) return;//null here because dont get value of null
+                                                                     // name is محجوز if (ActiveForm != null) ActiveForm.Close();//if there an opend form close it
+            Form LastForm = activeForm;
             activeForm = childForm;
+
+
+           mainPanel.SuspendLayout();//wait a second please till the second form appear
 
             childForm.TopLevel = false;//make it a form in it
             childForm.Dock = DockStyle.Fill;
+            childForm.Size = mainPanel.ClientSize;//takes panel size then display it so didn't show pop screen
 
             this.mainPanel.Controls.Add(childForm);
-            this.mainPanel.Tag = childForm;//shows/saves info of current form
-            childForm.BringToFront();//حطها في الاول فوق اي حاجه
             childForm.Show();
+            childForm.BringToFront();
+
+            if (LastForm != null)
+            {
+                LastForm.Close();
+                LastForm.Dispose();
+            }
+
+            mainPanel.ResumeLayout();
+
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -85,7 +104,7 @@ namespace DVLD
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserInfoForm frm = new UserInfoForm(DVLDShared.currentPerson.personID,DVLDShared.currentUser.userID);
+            UserInfoForm frm = new UserInfoForm(DVLDShared.currentPerson.personID);
             frm.ShowDialog();
         }
 
@@ -101,7 +120,7 @@ namespace DVLD
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePasswordForm frm = new ChangePasswordForm(DVLDShared.currentPerson.personID,DVLDShared.currentUser.userID);
+            ChangePasswordForm frm = new ChangePasswordForm(DVLDShared.currentPerson.personID);
             frm.ShowDialog();
         }
 
@@ -182,6 +201,31 @@ namespace DVLD
         private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             open_child_form(new LocalDrivingLicenseApplicationsForm());
+        }
+
+        private void changeBackgroundImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeBackgroundImageForm frm = new ChangeBackgroundImageForm();
+            frm.ShowDialog();
+        }
+
+        private void MainMenutoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(activeForm != null)
+            {
+                activeForm.Close();
+                activeForm.Dispose();
+                activeForm = null;
+            }
+        }
+
+        public void remove_image()
+        {
+            if (mainPanel.BackgroundImage != null)
+            {
+                mainPanel.BackgroundImage.Dispose();
+                mainPanel.BackgroundImage = null;
+            }
         }
     }
 }

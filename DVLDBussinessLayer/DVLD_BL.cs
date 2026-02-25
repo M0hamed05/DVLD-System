@@ -71,7 +71,7 @@ namespace DVLDBussinessLayer
 
             public static bool is_active_user(int personID) => DVLD_DAL.Users.is_active(personID);
 
-            public static int get_user_id(int userID) => DVLD_DAL.Users.get_user_id(userID);
+            public static int get_user_id_by_PersonID(int personID) => DVLD_DAL.Users.get_user_id_by_PersonID(personID);
 
             public static DVLDShared.clsUser get_user_data(int userID) => DVLD_DAL.Users.get_user_info(userID);
 

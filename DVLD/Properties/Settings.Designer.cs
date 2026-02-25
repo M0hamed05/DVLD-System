@@ -34,5 +34,17 @@ namespace DVLD.Properties {
                 this["SavedID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BackgorundImage {
+            get {
+                return ((string)(this["BackgorundImage"]));
+            }
+            set {
+                this["BackgorundImage"] = value;
+            }
+        }
     }
 }

@@ -29,19 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInfoForm));
-            this.userInfoUserControl1 = new DVLD.UserInfoUserControl();
             this.headerLabel = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.userInfoUserControl1 = new DVLD.UserInfoUserControl();
             this.SuspendLayout();
-            // 
-            // userInfoUserControl1
-            // 
-            this.userInfoUserControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userInfoUserControl1.Location = new System.Drawing.Point(0, 46);
-            this.userInfoUserControl1.Name = "userInfoUserControl1";
-            this.userInfoUserControl1.Padding = new System.Windows.Forms.Padding(3, 0, 4, 0);
-            this.userInfoUserControl1.Size = new System.Drawing.Size(1075, 516);
-            this.userInfoUserControl1.TabIndex = 0;
             // 
             // headerLabel
             // 
@@ -69,6 +60,15 @@
             this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // userInfoUserControl1
+            // 
+            this.userInfoUserControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userInfoUserControl1.Location = new System.Drawing.Point(0, 46);
+            this.userInfoUserControl1.Name = "userInfoUserControl1";
+            this.userInfoUserControl1.Padding = new System.Windows.Forms.Padding(3, 0, 4, 0);
+            this.userInfoUserControl1.Size = new System.Drawing.Size(1075, 516);
+            this.userInfoUserControl1.TabIndex = 0;
             // 
             // UserInfoForm
             // 

@@ -138,7 +138,7 @@ namespace DVLD
 
             if (!editmode)
             {
-                int userID = DVLD_BL.Users.add_new_user(save_user_to_struct());
+                int userID = DVLD_BL.Users.add_new_user(save_user_to_class());
                 if (userID != -1)
                 {
                     MessageBox.Show($"User Added Successfully With User ID :{userID}", "Operation Success",
@@ -166,7 +166,7 @@ namespace DVLD
 
                 is_in_rememberme(personID);
 
-                if(DVLD_BL.Users.update_user(save_user_to_struct()))
+                if(DVLD_BL.Users.update_user(save_user_to_class()))
                 {
                     MessageBox.Show("User Updated Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form frm = Application.OpenForms["UsersForm"];
@@ -197,7 +197,7 @@ namespace DVLD
             }
         }
 
-        private DVLDShared.clsUser save_user_to_struct()
+        private DVLDShared.clsUser save_user_to_class()
         {
             DVLDShared.clsUser user = new DVLDShared.clsUser();
             user.username = usernameTxtBox.Text;

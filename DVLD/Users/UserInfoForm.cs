@@ -7,17 +7,15 @@ namespace DVLD
     public partial class UserInfoForm : Form
     {
         int personID = -1;
-        int userID = -1;
-        public UserInfoForm(int perosnID,int userID)
+        public UserInfoForm(int perosnID)
         {
             this.personID = perosnID;
-            this.userID = userID;
             InitializeComponent();
         }
 
         private void UserInfoForm_Load(object sender, EventArgs e)
         {
-            userInfoUserControl1.load_all_data(personID,userID);
+            userInfoUserControl1.load_all_data(personID);
 
         }
 

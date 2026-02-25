@@ -113,7 +113,7 @@ namespace DVLD
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserInfoForm frm = new UserInfoForm((int)users_dgv.CurrentRow.Cells[1].Value, (int)users_dgv.CurrentRow.Cells[0].Value);
+            UserInfoForm frm = new UserInfoForm((int)users_dgv.CurrentRow.Cells[1].Value);
             frm.ShowDialog();
         }
 
@@ -153,7 +153,7 @@ namespace DVLD
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePasswordForm frm = new ChangePasswordForm((int)users_dgv.CurrentRow.Cells[1].Value, (int)users_dgv.CurrentRow.Cells[0].Value);
+            ChangePasswordForm frm = new ChangePasswordForm((int)users_dgv.CurrentRow.Cells[1].Value);
             frm.ShowDialog();
         }
     }
