@@ -592,7 +592,7 @@ namespace DVLDdataAccessLayer
                 DataTable dt = new DataTable();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
-                    string query = @"SELECT UserID AS [User ID],P.PersonID AS [Person ID],[Full Name] = P.FirstName + ' ' + P.SecondName + ' ' + ISNULL(P.ThirdName,' ') + P.LastName,
+                    string query = @"SELECT UserID AS [User ID],P.PersonID AS [Person ID],[Full Name] = P.FirstName + ' ' + P.SecondName + ' ' + ISNULL(P.ThirdName,' ') + ' ' + P.LastName,
                             UserName AS [User Name],IsActive AS [Is Active]
                             FROM Users INNER JOIN People AS P ON Users.PersonID = P.PersonID";
                     using (SqlCommand command = new SqlCommand(query, connection))

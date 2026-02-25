@@ -111,13 +111,13 @@ namespace DVLD
 
         private void usernameTextBox_Leave(object sender, EventArgs e)
         {
-            if (usernameTextBox.Text.Length < 4) usernameErrorProvider.SetError(usernameTextBox, "Username Should be 4 at least");
+            if (string.IsNullOrEmpty(usernameTextBox.Text)) usernameErrorProvider.SetError(usernameTextBox, "This is required field");
             else usernameErrorProvider.Clear();
         }
 
         private void passwordTextBox_Leave(object sender, EventArgs e)
         {
-            if (passwordTextBox.Text.Length < 4) passowrdErrorProvider.SetError(passwordTextBox, "Password Should be 4 at least");
+            if (string.IsNullOrEmpty(passwordTextBox.Text)) passowrdErrorProvider.SetError(passwordTextBox, "This is a required field");
             else passowrdErrorProvider.Clear();
         }
 
