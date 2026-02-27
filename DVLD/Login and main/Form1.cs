@@ -17,22 +17,6 @@ namespace DVLD
         {
         }
 
-        private void loginForm_Shown(object sender, EventArgs e)//when it finished the loading
-        {
-            int saved_id = Properties.Settings.Default.SavedID;
-            if (DVLD_BL.People.is_person_found(saved_id))
-                if (saved_id != 0)
-                {
-                    MainForm mainForm = new MainForm(saved_id);
-                    mainForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    Properties.Settings.Default.SavedID = 0;
-                }
-        }
-
         private void closeBtn_Click_1(object sender, EventArgs e)
         {
            this.Close();
@@ -62,6 +46,13 @@ namespace DVLD
                 return;
             }
 
+            //active or not
+            if (!DVLD_BL.Users.is_active_user(personID))
+            {
+                errorLabel.Text = "User is not active";
+                return;
+            }
+
             //remember me
             if (rememberMeCheckBox.Checked)
             {
@@ -71,14 +62,9 @@ namespace DVLD
             {
                 Properties.Settings.Default.SavedID = 0;
             }
+
             Properties.Settings.Default.Save();
 
-            //active or not
-            if (!DVLD_BL.Users.is_active_user(personID))
-            {
-                errorLabel.Text = "User is not active";
-                return;
-            }
 
             //show main form
             this.Hide();
@@ -93,7 +79,7 @@ namespace DVLD
             }
             else
             {
-                MainForm frm2 = new MainForm(personID);
+                MainForm frm2 = new MainForm(personID, this);
                 frm2.Show();
             }
 

@@ -14,6 +14,16 @@ namespace DVLD
     public partial class MainForm : Form
     {
         private Form activeForm = null;
+        private Form loginForm = null;
+
+        public MainForm(int personID,Form loginForm)
+        {
+            DVLDShared.currentPerson = DVLD_BL.People.get_person_data_for_edit(personID);
+            DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id_by_PersonID(personID));
+            this.loginForm = loginForm;
+            DVLD_BL.get_all_countries();
+            InitializeComponent();
+        }
 
         public MainForm(int personID)
         {
@@ -87,19 +97,17 @@ namespace DVLD
             this.Hide();
             Properties.Settings.Default.SavedID = 0;
             Properties.Settings.Default.Save();
-
-            Form frm = Application.OpenForms["Form1"];
-            
-            if(frm != null)
+            DVLDShared.currentPerson = null;
+            DVLDShared.currentUser = null;
+            if (loginForm != null)
             {
-                frm.Show();
+                loginForm.Show();
             }
             else
             {
-                loginForm frm2 = new loginForm();
-                frm2.Show();
+                loginForm frm = new loginForm();
+                frm.Show();
             }
-            
         }
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)

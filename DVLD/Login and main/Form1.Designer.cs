@@ -45,6 +45,7 @@
             this.usernameImage = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passowrdErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.versionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passowrdPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernameImage)).BeginInit();
@@ -202,6 +203,16 @@
             // 
             this.passowrdErrorProvider.ContainerControl = this;
             // 
+            // versionLabel
+            // 
+            this.versionLabel.AutoSize = true;
+            this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.versionLabel.Location = new System.Drawing.Point(678, 462);
+            this.versionLabel.Name = "versionLabel";
+            this.versionLabel.Size = new System.Drawing.Size(111, 25);
+            this.versionLabel.TabIndex = 13;
+            this.versionLabel.Text = "Version 1.0";
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -209,6 +220,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.closeBtn;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.rememberMeCheckBox);
@@ -230,7 +242,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.Load += new System.EventHandler(this.loginForm_Load);
-            this.Shown += new System.EventHandler(this.loginForm_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.loginForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.usernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passowrdPicture)).EndInit();
@@ -259,6 +270,7 @@
         private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.ErrorProvider usernameErrorProvider;
         private System.Windows.Forms.ErrorProvider passowrdErrorProvider;
+        private System.Windows.Forms.Label versionLabel;
     }
 }
 

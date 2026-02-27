@@ -1,53 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\DVLD\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
-              "RelativeDocumentMoniker": "DVLD\\Login and main\\Form1.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
-              "RelativeToolTip": "DVLD\\Login and main\\Form1.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAuwG8AAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T16:56:36.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
-              "RelativeDocumentMoniker": "DVLD\\Login and main\\Form1.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs [Design]",
-              "RelativeToolTip": "DVLD\\Login and main\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T16:56:34.243Z",
-              "EditorCaption": " [Design]"
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DVLDBussinessLayer;
+using System;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -16,7 +14,14 @@ namespace DVLD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loginForm());
+            if (Properties.Settings.Default.SavedID != 0 && DVLD_BL.People.is_person_found(Properties.Settings.Default.SavedID))
+            {
+                Application.Run(new MainForm(Properties.Settings.Default.SavedID));
+            }
+            else
+            {
+                Application.Run(new loginForm());
+            }
         }
     }
 }
