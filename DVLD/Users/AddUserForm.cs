@@ -120,12 +120,6 @@ namespace DVLD
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (saved)
-            {
-                MessageBox.Show("Close and open again for a new action", "Changes already made", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                return;
-            }
 
             foreach (Control ctrl in loginInfoPanel.Controls)
             {
@@ -166,7 +160,7 @@ namespace DVLD
 
                 is_in_rememberme(personID);
 
-                if(DVLD_BL.Users.update_user(save_user_to_class()))
+                if (DVLD_BL.Users.update_user(save_user_to_class()))
                 {
                     MessageBox.Show("User Updated Successfully!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Form frm = Application.OpenForms["UsersForm"];
@@ -182,6 +176,12 @@ namespace DVLD
 
 
             }
+            personID = -1;
+            userID = -1;
+            all_nationalty = DVLD_BL.People.get_all_nationlityID_for_user_adding();
+            all_personID = DVLD_BL.People.get_all_personID_for_user_adding();
+            filterComboBox.SelectedIndex = 0;
+            allUsersComboBox.DataSource = all_nationalty;
 
         }
 
@@ -260,6 +260,7 @@ namespace DVLD
             {
                 allUsersComboBox.DataSource = all_personID;
             }
+            add_clicked = false;
         }
 
         private void isActiveCheckButton_CheckedChanged(object sender, EventArgs e)
@@ -272,6 +273,11 @@ namespace DVLD
                     isActiveCheckButton.Checked = true;
                 }
             }
+        }
+
+        private void allUsersComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            add_clicked = false;
         }
     }
 }

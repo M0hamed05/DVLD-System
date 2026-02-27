@@ -40,7 +40,8 @@ namespace DVLD
         private void editTextTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditTestTypeSmallForm frm = new EditTestTypeSmallForm((int)TestTypes_dgv.CurrentRow.Cells[0].Value, 
-                (string)TestTypes_dgv.CurrentRow.Cells[1].Value, (string)TestTypes_dgv.CurrentRow.Cells[2].Value);
+                (string)TestTypes_dgv.CurrentRow.Cells[1].Value, (string)TestTypes_dgv.CurrentRow.Cells[2].Value,
+                Convert.ToDouble(TestTypes_dgv.CurrentRow.Cells[3].Value));
             frm.Show();
         }
     }

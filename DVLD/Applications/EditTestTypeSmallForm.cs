@@ -9,22 +9,15 @@ namespace DVLD
     {
         int testID = -1;
         bool saved = false;
-        public EditTestTypeSmallForm(int id, string test_title, string test_description)
+        public EditTestTypeSmallForm(int id, string test_title, string test_description,double fees)
         {
             InitializeComponent();
             this.testID = id;
-            load_test(id, test_title, test_description);
+            load_test(id, test_title, test_description,fees);
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (saved)
-            {
-                MessageBox.Show("Close and open again for a new action", "Changes already made", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                return;
-            }
-
             foreach (Control ctrl in Controls)
             {
                 if (!string.IsNullOrEmpty(errorProvider.GetError(ctrl)))
@@ -103,11 +96,12 @@ namespace DVLD
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void load_test(int id, string test_title,string test_description)
+        private void load_test(int id, string test_title,string test_description, double fees)
         {
             idLabel.Text = $"ID : {id}";
             titleTxtBox.Text = test_title;
             DescriptionTxtBox.Text = test_description;
+            FeeTxtBox.Text = fees.ToString();
         }
     }
 }

@@ -13,14 +13,17 @@ namespace DVLD.Resources
 
         public void refersh_all()
         {
-            applicationsTypes_dgv.DataSource =  DVLD_BL.Applications.get_all_applicationsTypes();
-            applicationsTypes_dgv.Columns["ApplicationTypeID"].HeaderText = "ID";
-            applicationsTypes_dgv.Columns["ApplicationTypeTitle"].HeaderText = "Ttile";
-            applicationsTypes_dgv.Columns["ApplicationFees"].HeaderText = "Fees";
+            applicationsTypes_dgv.DataSource = DVLD_BL.Applications.get_all_applicationsTypes();
+            if (applicationsTypes_dgv.Rows.Count > 0)
+            {
+                applicationsTypes_dgv.Columns["ApplicationTypeID"].HeaderText = "ID";
+                applicationsTypes_dgv.Columns["ApplicationTypeTitle"].HeaderText = "Ttile";
+                applicationsTypes_dgv.Columns["ApplicationFees"].HeaderText = "Fees";
 
-            applicationsTypes_dgv.Columns["ApplicationTypeTitle"].FillWeight = 600;
-            recordsLabel.Text = $"Records : {applicationsTypes_dgv.RowCount}";
+                applicationsTypes_dgv.Columns["ApplicationTypeTitle"].FillWeight = 600;
+                recordsLabel.Text = $"Records : {applicationsTypes_dgv.RowCount}";
 
+            }
         }
 
         private void ManageApplicationTypesForm_Load(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace DVLD.Resources
         private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditApplicationTypeSmapleForm frm = new EditApplicationTypeSmapleForm((int)applicationsTypes_dgv.CurrentRow.Cells[0].Value
-                , (string)applicationsTypes_dgv.CurrentRow.Cells[1].Value);
+                , (string)applicationsTypes_dgv.CurrentRow.Cells[1].Value,Convert.ToDouble(applicationsTypes_dgv.CurrentRow.Cells[2].Value));
             frm.ShowDialog();
         }
     }

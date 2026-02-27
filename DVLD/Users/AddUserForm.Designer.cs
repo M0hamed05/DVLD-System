@@ -162,6 +162,7 @@
             this.allUsersComboBox.Name = "allUsersComboBox";
             this.allUsersComboBox.Size = new System.Drawing.Size(220, 34);
             this.allUsersComboBox.TabIndex = 27;
+            this.allUsersComboBox.SelectedIndexChanged += new System.EventHandler(this.allUsersComboBox_SelectedIndexChanged);
             // 
             // addBtn
             // 

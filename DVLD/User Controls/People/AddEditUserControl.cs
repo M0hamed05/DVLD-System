@@ -153,12 +153,6 @@ namespace DVLD
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (saved)
-            {
-                MessageBox.Show("Close and open again for a new action", "Changes already made", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.ParentForm.Close();
-                return;
-            }
             foreach (Control ctrl in personGroupBox.Controls)
             {
                 if (!string.IsNullOrEmpty(errorProvider.GetError(ctrl)))
@@ -200,6 +194,8 @@ namespace DVLD
                     if (frm != null)
                         ((PeopleForm)frm).refersh_all();
                     saved = true;
+
+                    personData = DVLD_BL.People.get_person_data_for_edit(personData.personID);
                 }
                 else
                 {

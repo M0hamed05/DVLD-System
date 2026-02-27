@@ -10,10 +10,10 @@ namespace DVLD
         int applicationID = -1;
         bool saved = false;
 
-        public EditApplicationTypeSmapleForm(int id,string application_text)
+        public EditApplicationTypeSmapleForm(int id,string application_text,double fees)
         {
             InitializeComponent();
-            load_application(id, application_text);
+            load_application(id, application_text,fees);
             applicationID = id;
         }
 
@@ -34,21 +34,15 @@ namespace DVLD
             else errorProvider.Clear();
         }
 
-        private void load_application(int id, string application_text)
+        private void load_application(int id, string application_text, double fees)
         {
             idLabel.Text = $"ID : {id}";
             titleTxtBox.Text = application_text;
+            FeeTxtBox.Text = fees.ToString();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (saved)
-            {
-                MessageBox.Show("Close and open again for a new action", "Changes already made", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
-                return;
-            }
-
             foreach (Control ctrl in Controls)
             {
                 if (!string.IsNullOrEmpty(errorProvider.GetError(ctrl)))
