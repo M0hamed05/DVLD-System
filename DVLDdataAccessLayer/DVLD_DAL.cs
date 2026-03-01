@@ -2331,12 +2331,12 @@ namespace DVLDdataAccessLayer
                 {
                     string query = @"SELECT 
                                    L.LicenseID AS [License ID], 
-                                   L.ApplicationID AS [Application ID], 
+                                   L.DriverID AS [Driver ID], 
+                                   P.NationalNo AS [National No],
                                    [Driver Name] = P.FirstName + P.SecondName + ISNULL(P.ThirdName,' ') + ' ' + P.LastName,
                                    C.ClassName AS [Class Name], -- here for name instead of number by inner join
-                                   L.IssueDate AS [Issue Date], 
-                                   L.ExpirationDate AS [Expiration Date], 
-                                   L.IsActive AS [IsActive]
+                                   CAST(L.ExpirationDate AS DATE) AS [Expiration Date], 
+                                   L.IsActive AS [Is Active]
                                 FROM [dbo].[Licenses] L
                                 INNER JOIN [dbo].[LicenseClasses] C ON L.LicenseClass = C.LicenseClassID
                                 INNER JOIN [dbo].[Drivers] D ON L.DriverID = D.DriverID
@@ -2370,8 +2370,7 @@ namespace DVLDdataAccessLayer
                                      ,[IssueDate]
                                      ,[ExpirationDate]
                                      ,[IsActive]
-                                 FROM [dbo].[InternationalLicenses]
-                                WHERE DriverID = @id";
+                                 FROM [dbo].[InternationalLicenses]";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         try
@@ -2389,7 +2388,6 @@ namespace DVLDdataAccessLayer
                 }
                 return dt;
             }
-
         }
 
         public class Drivers

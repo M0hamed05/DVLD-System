@@ -34,26 +34,24 @@
             this.peoplePictureBox = new System.Windows.Forms.PictureBox();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.headerLabel = new System.Windows.Forms.Label();
-            this.detainButton = new System.Windows.Forms.Button();
-            this.ReleaseBtn = new System.Windows.Forms.Button();
             this.fliterLabel = new System.Windows.Forms.Label();
             this.filter_txtbox = new System.Windows.Forms.TextBox();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
-            this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.showLicenseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.showPersonDetialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.releaseDetainLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllLicenses_dgv = new System.Windows.Forms.DataGridView();
             this.upperButtenPanels = new System.Windows.Forms.Panel();
+            this.isActiveFilterComboBox = new System.Windows.Forms.ComboBox();
+            this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LocalradioButton = new System.Windows.Forms.RadioButton();
+            this.InternationalradioButton = new System.Windows.Forms.RadioButton();
+            this.showDriverHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.downBtnsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.titlePanel.SuspendLayout();
-            this.optionsContextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllLicenses_dgv)).BeginInit();
             this.upperButtenPanels.SuspendLayout();
+            this.optionsContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // downBtnsPanel
@@ -108,40 +106,6 @@
             this.headerLabel.Text = "All Licenses";
             this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // detainButton
-            // 
-            this.detainButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.detainButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.detainButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.detainButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.detainButton.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detainButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.detainButton.Image = global::DVLD.Properties.Resources.deleteLicense;
-            this.detainButton.Location = new System.Drawing.Point(814, 63);
-            this.detainButton.Name = "detainButton";
-            this.detainButton.Size = new System.Drawing.Size(150, 40);
-            this.detainButton.TabIndex = 7;
-            this.detainButton.Text = "Detain";
-            this.detainButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.detainButton.UseVisualStyleBackColor = true;
-            // 
-            // ReleaseBtn
-            // 
-            this.ReleaseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ReleaseBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ReleaseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ReleaseBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ReleaseBtn.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReleaseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ReleaseBtn.Image = global::DVLD.Properties.Resources.addcard;
-            this.ReleaseBtn.Location = new System.Drawing.Point(970, 61);
-            this.ReleaseBtn.Name = "ReleaseBtn";
-            this.ReleaseBtn.Size = new System.Drawing.Size(150, 40);
-            this.ReleaseBtn.TabIndex = 6;
-            this.ReleaseBtn.Text = "Release";
-            this.ReleaseBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ReleaseBtn.UseVisualStyleBackColor = true;
-            // 
             // fliterLabel
             // 
             this.fliterLabel.AutoSize = true;
@@ -159,6 +123,8 @@
             this.filter_txtbox.Name = "filter_txtbox";
             this.filter_txtbox.Size = new System.Drawing.Size(250, 35);
             this.filter_txtbox.TabIndex = 5;
+            this.filter_txtbox.TextChanged += new System.EventHandler(this.filter_txtbox_TextChanged);
+            this.filter_txtbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.filter_txtbox_KeyPress);
             // 
             // filterComboBox
             // 
@@ -169,61 +135,7 @@
             this.filterComboBox.Name = "filterComboBox";
             this.filterComboBox.Size = new System.Drawing.Size(220, 34);
             this.filterComboBox.TabIndex = 4;
-            // 
-            // showPersonLicenseHistoryToolStripMenuItem
-            // 
-            this.showPersonLicenseHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.showPersonLicenseHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.personhisory;
-            this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
-            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(397, 38);
-            this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(394, 6);
-            // 
-            // showLicenseDetailsToolStripMenuItem
-            // 
-            this.showLicenseDetailsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.showLicenseDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverslicense;
-            this.showLicenseDetailsToolStripMenuItem.Name = "showLicenseDetailsToolStripMenuItem";
-            this.showLicenseDetailsToolStripMenuItem.Size = new System.Drawing.Size(397, 38);
-            this.showLicenseDetailsToolStripMenuItem.Text = "Show License Detais";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(394, 6);
-            // 
-            // showPersonDetialsToolStripMenuItem
-            // 
-            this.showPersonDetialsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.showPersonDetialsToolStripMenuItem.Image = global::DVLD.Properties.Resources.details;
-            this.showPersonDetialsToolStripMenuItem.Name = "showPersonDetialsToolStripMenuItem";
-            this.showPersonDetialsToolStripMenuItem.Size = new System.Drawing.Size(397, 38);
-            this.showPersonDetialsToolStripMenuItem.Text = "Show Person Detials";
-            // 
-            // optionsContextMenuStrip
-            // 
-            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showPersonDetialsToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.showLicenseDetailsToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.showPersonLicenseHistoryToolStripMenuItem,
-            this.releaseDetainLicenseToolStripMenuItem});
-            this.optionsContextMenuStrip.Name = "optionsContextMenuStrip";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(398, 168);
-            // 
-            // releaseDetainLicenseToolStripMenuItem
-            // 
-            this.releaseDetainLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.releaseDetainLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.addcard;
-            this.releaseDetainLicenseToolStripMenuItem.Name = "releaseDetainLicenseToolStripMenuItem";
-            this.releaseDetainLicenseToolStripMenuItem.Size = new System.Drawing.Size(397, 38);
-            this.releaseDetainLicenseToolStripMenuItem.Text = "Release Detain License";
+            this.filterComboBox.SelectedIndexChanged += new System.EventHandler(this.filterComboBox_SelectedIndexChanged);
             // 
             // AllLicenses_dgv
             // 
@@ -246,8 +158,9 @@
             // 
             // upperButtenPanels
             // 
-            this.upperButtenPanels.Controls.Add(this.detainButton);
-            this.upperButtenPanels.Controls.Add(this.ReleaseBtn);
+            this.upperButtenPanels.Controls.Add(this.InternationalradioButton);
+            this.upperButtenPanels.Controls.Add(this.LocalradioButton);
+            this.upperButtenPanels.Controls.Add(this.isActiveFilterComboBox);
             this.upperButtenPanels.Controls.Add(this.fliterLabel);
             this.upperButtenPanels.Controls.Add(this.filter_txtbox);
             this.upperButtenPanels.Controls.Add(this.filterComboBox);
@@ -256,6 +169,81 @@
             this.upperButtenPanels.Name = "upperButtenPanels";
             this.upperButtenPanels.Size = new System.Drawing.Size(1123, 104);
             this.upperButtenPanels.TabIndex = 22;
+            // 
+            // isActiveFilterComboBox
+            // 
+            this.isActiveFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.isActiveFilterComboBox.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isActiveFilterComboBox.FormattingEnabled = true;
+            this.isActiveFilterComboBox.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.isActiveFilterComboBox.Location = new System.Drawing.Point(368, 62);
+            this.isActiveFilterComboBox.Name = "isActiveFilterComboBox";
+            this.isActiveFilterComboBox.Size = new System.Drawing.Size(125, 34);
+            this.isActiveFilterComboBox.TabIndex = 6;
+            this.isActiveFilterComboBox.Visible = false;
+            this.isActiveFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.isActiveFilterComboBox_SelectedIndexChanged);
+            // 
+            // optionsContextMenuStrip
+            // 
+            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLicenseToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.showDriverHistoryToolStripMenuItem});
+            this.optionsContextMenuStrip.Name = "contextMenuStrip1";
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(287, 115);
+            // 
+            // showLicenseToolStripMenuItem
+            // 
+            this.showLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.showLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverlicenses;
+            this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
+            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
+            // 
+            // LocalradioButton
+            // 
+            this.LocalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LocalradioButton.AutoSize = true;
+            this.LocalradioButton.Checked = true;
+            this.LocalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalradioButton.Location = new System.Drawing.Point(833, 61);
+            this.LocalradioButton.Name = "LocalradioButton";
+            this.LocalradioButton.Size = new System.Drawing.Size(89, 30);
+            this.LocalradioButton.TabIndex = 7;
+            this.LocalradioButton.TabStop = true;
+            this.LocalradioButton.Text = "Local";
+            this.LocalradioButton.UseVisualStyleBackColor = true;
+            // 
+            // InternationalradioButton
+            // 
+            this.InternationalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.InternationalradioButton.AutoSize = true;
+            this.InternationalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InternationalradioButton.Location = new System.Drawing.Point(928, 60);
+            this.InternationalradioButton.Name = "InternationalradioButton";
+            this.InternationalradioButton.Size = new System.Drawing.Size(169, 33);
+            this.InternationalradioButton.TabIndex = 8;
+            this.InternationalradioButton.Text = "International";
+            this.InternationalradioButton.UseVisualStyleBackColor = true;
+            // 
+            // showDriverHistoryToolStripMenuItem
+            // 
+            this.showDriverHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.showDriverHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.personhisory;
+            this.showDriverHistoryToolStripMenuItem.Name = "showDriverHistoryToolStripMenuItem";
+            this.showDriverHistoryToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.showDriverHistoryToolStripMenuItem.Text = "Show Driver History";
+            this.showDriverHistoryToolStripMenuItem.Click += new System.EventHandler(this.showDriverHistoryToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(283, 6);
             // 
             // AllLicensesForm
             // 
@@ -274,10 +262,10 @@
             this.downBtnsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).EndInit();
             this.titlePanel.ResumeLayout(false);
-            this.optionsContextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AllLicenses_dgv)).EndInit();
             this.upperButtenPanels.ResumeLayout(false);
             this.upperButtenPanels.PerformLayout();
+            this.optionsContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -289,19 +277,17 @@
         private System.Windows.Forms.PictureBox peoplePictureBox;
         private System.Windows.Forms.Panel titlePanel;
         private System.Windows.Forms.Label headerLabel;
-        private System.Windows.Forms.Button detainButton;
-        private System.Windows.Forms.Button ReleaseBtn;
         private System.Windows.Forms.Label fliterLabel;
         private System.Windows.Forms.TextBox filter_txtbox;
         private System.Windows.Forms.ComboBox filterComboBox;
-        private System.Windows.Forms.ToolStripMenuItem showPersonLicenseHistoryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem showLicenseDetailsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem showPersonDetialsToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip optionsContextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem releaseDetainLicenseToolStripMenuItem;
         private System.Windows.Forms.DataGridView AllLicenses_dgv;
         private System.Windows.Forms.Panel upperButtenPanels;
+        private System.Windows.Forms.ComboBox isActiveFilterComboBox;
+        private System.Windows.Forms.ContextMenuStrip optionsContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem showLicenseToolStripMenuItem;
+        private System.Windows.Forms.RadioButton InternationalradioButton;
+        private System.Windows.Forms.RadioButton LocalradioButton;
+        private System.Windows.Forms.ToolStripMenuItem showDriverHistoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
