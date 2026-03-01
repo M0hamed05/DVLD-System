@@ -150,6 +150,8 @@ namespace DVLDBussinessLayer
             public static bool save_test_withCase(int testAppointmentID, bool testResult, string notes) =>DVLD_DAL.Applications.save_test_withCase(testAppointmentID, testResult, notes);
 
             public static bool delete_localDrivingLicenseApplication(int LDLA_ID) => DVLD_DAL.Applications.delete_localDrivingLicenseApplication(LDLA_ID);
+
+            public static int get_applicantPersonID_by_LDLA(int LDLA_ID) => DVLD_DAL.Applications.get_applicantPersonID_by_LDLA(LDLA_ID);
         }
 
         public class Licenses
@@ -197,6 +199,8 @@ namespace DVLDBussinessLayer
             public static bool release_detainLicense(int detainLicenseID, int applicationID) => DVLD_DAL.Licenses.release_detainLicense(detainLicenseID, applicationID);
 
             public static DataTable get_all_detainLicense() => DVLD_DAL.Licenses.get_all_detainLicense();
+
+            public static DataTable get_all_local_licenses() =>DVLD_DAL.Licenses.get_all_local_licenses();
         }
 
         public class Drivers

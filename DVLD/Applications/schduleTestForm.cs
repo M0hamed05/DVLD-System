@@ -8,12 +8,14 @@ namespace DVLD.Applications
     public partial class schduleTestForm : Form
     {
         byte typeID = 0;
+        int LDLA_ID;
         int appointmentID = -1;
         public schduleTestForm(int LDLA_ID,string licenseClass,string ApplicantName, int trial, byte typeID,int appointmentID = -1)
         {
             InitializeComponent();
             this.typeID = typeID;
-            if(appointmentID != -1)
+            this.LDLA_ID = LDLA_ID;
+            if (appointmentID != -1)
             {
                 headerLabel.Text = "Update Schedule Test";
             }
@@ -40,6 +42,11 @@ namespace DVLD.Applications
                 if (DVLD_BL.Applications.add_testApptoitments(Convert.ToInt32(applicationIDtxtBox.Text), typeID, TestdateTimePicker.Value, DVLDShared.currentUser.userID,
                     Convert.ToDecimal(totalFeesTxtBox.Text)))
                 {
+                    if(Convert.ToInt32(trialTxtBox.Text) > 0)
+                    {
+                        retakeAppIDTxtBox.Text = DVLD_BL.Applications.add_new_application(DVLD_BL.Applications.get_applicantPersonID_by_LDLA(LDLA_ID),
+                            (int)DVLDShared.enAppplicationTyoes.RetakeTest).ToString();
+                    }
                     MessageBox.Show("Test Added Successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     saved = true;
                     Form frm = Application.OpenForms["VisionTestForm"];
@@ -123,7 +130,5 @@ namespace DVLD.Applications
             }
 
         }
-        
-
     }
 }

@@ -1523,6 +1523,33 @@ namespace DVLDdataAccessLayer
                 }
                 return success;
             }
+
+            public static int get_applicantPersonID_by_LDLA(int LDLA_ID)
+            {
+                int id = -1;
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"SELECT Applications.ApplicantPersonID FROM Applications
+                                    WHERE Applications.ApplicationID = (SELECT LocalDrivingLicenseApplications.ApplicationID FROM LocalDrivingLicenseApplications
+                                    WHERE LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @id);";
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", LDLA_ID);
+
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteScalar();
+                            id = (result != null) ? Convert.ToInt32(result) : -1;
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return id;
+            }
         }
 
         public class Licenses
@@ -2296,6 +2323,73 @@ namespace DVLDdataAccessLayer
                 }
                 return dt;
             }
+
+            public static DataTable get_all_local_licenses()
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"SELECT 
+                                   L.LicenseID AS [License ID], 
+                                   L.ApplicationID AS [Application ID], 
+                                   [Driver Name] = P.FirstName + P.SecondName + ISNULL(P.ThirdName,' ') + ' ' + P.LastName,
+                                   C.ClassName AS [Class Name], -- here for name instead of number by inner join
+                                   L.IssueDate AS [Issue Date], 
+                                   L.ExpirationDate AS [Expiration Date], 
+                                   L.IsActive AS [IsActive]
+                                FROM [dbo].[Licenses] L
+                                INNER JOIN [dbo].[LicenseClasses] C ON L.LicenseClass = C.LicenseClassID
+                                INNER JOIN [dbo].[Drivers] D ON L.DriverID = D.DriverID
+                                INNER JOIN [dbo].[People] P ON D.PersonID = P.PersonID";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.HasRows) dt.Load(reader);
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return dt;
+            }
+
+            public static DataTable get_all_international_license()
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"SELECT [InternationalLicenseID]
+                                     ,[ApplicationID]
+                                     ,[IssuedUsingLocalLicenseID]
+                                     ,[IssueDate]
+                                     ,[ExpirationDate]
+                                     ,[IsActive]
+                                 FROM [dbo].[InternationalLicenses]
+                                WHERE DriverID = @id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.HasRows) dt.Load(reader);
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return dt;
+            }
+
         }
 
         public class Drivers

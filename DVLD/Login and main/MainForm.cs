@@ -235,5 +235,10 @@ namespace DVLD
                 mainPanel.BackgroundImage = null;
             }
         }
+
+        private void licensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            open_child_form(new AllLicensesForm());
+        }
     }
 }

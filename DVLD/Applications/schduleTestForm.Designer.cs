@@ -30,34 +30,34 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(schduleTestForm));
             this.picturePanel = new System.Windows.Forms.Panel();
+            this.topicPictureBox = new System.Windows.Forms.PictureBox();
             this.headerLabel = new System.Windows.Forms.Label();
             this.infoGroupBox = new System.Windows.Forms.GroupBox();
             this.FeesTxtBox = new System.Windows.Forms.TextBox();
-            this.trialTxtBox = new System.Windows.Forms.TextBox();
-            this.TestdateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.LicenseTxtBox = new System.Windows.Forms.TextBox();
-            this.applicationIDtxtBox = new System.Windows.Forms.TextBox();
-            this.retakeInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.totalFeesTxtBox = new System.Windows.Forms.TextBox();
-            this.r_appFeesTxtBox = new System.Windows.Forms.TextBox();
-            this.retakeAppIDTxtBox = new System.Windows.Forms.TextBox();
-            this.closeBtn = new System.Windows.Forms.Button();
-            this.totalFees = new System.Windows.Forms.Label();
-            this.r_appFeesLabel = new System.Windows.Forms.Label();
-            this.retakeIDLabel = new System.Windows.Forms.Label();
-            this.saveBtn = new System.Windows.Forms.Button();
             this.FeesLabel = new System.Windows.Forms.Label();
+            this.trialTxtBox = new System.Windows.Forms.TextBox();
             this.trialLabel = new System.Windows.Forms.Label();
+            this.TestdateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dateLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.nameTxtBox = new System.Windows.Forms.TextBox();
+            this.LicenseTxtBox = new System.Windows.Forms.TextBox();
             this.LicenseLabel = new System.Windows.Forms.Label();
+            this.applicationIDtxtBox = new System.Windows.Forms.TextBox();
             this.ApplicationID = new System.Windows.Forms.Label();
-            this.topicPictureBox = new System.Windows.Forms.PictureBox();
+            this.retakeInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.totalFeesTxtBox = new System.Windows.Forms.TextBox();
+            this.totalFees = new System.Windows.Forms.Label();
+            this.r_appFeesTxtBox = new System.Windows.Forms.TextBox();
+            this.r_appFeesLabel = new System.Windows.Forms.Label();
+            this.retakeAppIDTxtBox = new System.Windows.Forms.TextBox();
+            this.retakeIDLabel = new System.Windows.Forms.Label();
+            this.closeBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.picturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).BeginInit();
             this.infoGroupBox.SuspendLayout();
             this.retakeInfoGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // picturePanel
@@ -68,6 +68,17 @@
             this.picturePanel.Name = "picturePanel";
             this.picturePanel.Size = new System.Drawing.Size(496, 100);
             this.picturePanel.TabIndex = 0;
+            // 
+            // topicPictureBox
+            // 
+            this.topicPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topicPictureBox.Image = global::DVLD.Properties.Resources.eye;
+            this.topicPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.topicPictureBox.Name = "topicPictureBox";
+            this.topicPictureBox.Size = new System.Drawing.Size(496, 100);
+            this.topicPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.topicPictureBox.TabIndex = 0;
+            this.topicPictureBox.TabStop = false;
             // 
             // headerLabel
             // 
@@ -113,6 +124,18 @@
             this.FeesTxtBox.Size = new System.Drawing.Size(99, 32);
             this.FeesTxtBox.TabIndex = 26;
             // 
+            // FeesLabel
+            // 
+            this.FeesLabel.AutoSize = true;
+            this.FeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FeesLabel.Image = global::DVLD.Properties.Resources.coin;
+            this.FeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FeesLabel.Location = new System.Drawing.Point(13, 290);
+            this.FeesLabel.Name = "FeesLabel";
+            this.FeesLabel.Size = new System.Drawing.Size(140, 29);
+            this.FeesLabel.TabIndex = 25;
+            this.FeesLabel.Text = "Fees :          ";
+            // 
             // trialTxtBox
             // 
             this.trialTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,6 +145,18 @@
             this.trialTxtBox.Size = new System.Drawing.Size(100, 32);
             this.trialTxtBox.TabIndex = 24;
             // 
+            // trialLabel
+            // 
+            this.trialLabel.AutoSize = true;
+            this.trialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trialLabel.Image = global::DVLD.Properties.Resources.counter;
+            this.trialLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.trialLabel.Location = new System.Drawing.Point(13, 192);
+            this.trialLabel.Name = "trialLabel";
+            this.trialLabel.Size = new System.Drawing.Size(134, 29);
+            this.trialLabel.TabIndex = 23;
+            this.trialLabel.Text = "Trial :          ";
+            // 
             // TestdateTimePicker
             // 
             this.TestdateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -130,6 +165,30 @@
             this.TestdateTimePicker.Name = "TestdateTimePicker";
             this.TestdateTimePicker.Size = new System.Drawing.Size(200, 30);
             this.TestdateTimePicker.TabIndex = 22;
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Image = global::DVLD.Properties.Resources.dataofbirth;
+            this.dateLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.dateLabel.Location = new System.Drawing.Point(13, 239);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(135, 29);
+            this.dateLabel.TabIndex = 21;
+            this.dateLabel.Text = "Date :          ";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Image = global::DVLD.Properties.Resources.nameuser;
+            this.nameLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nameLabel.Location = new System.Drawing.Point(13, 146);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(132, 29);
+            this.nameLabel.TabIndex = 20;
+            this.nameLabel.Text = "Name :       ";
             // 
             // nameTxtBox
             // 
@@ -149,6 +208,18 @@
             this.LicenseTxtBox.Size = new System.Drawing.Size(317, 32);
             this.LicenseTxtBox.TabIndex = 5;
             // 
+            // LicenseLabel
+            // 
+            this.LicenseLabel.AutoSize = true;
+            this.LicenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LicenseLabel.Image = global::DVLD.Properties.Resources.license;
+            this.LicenseLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LicenseLabel.Location = new System.Drawing.Point(12, 97);
+            this.LicenseLabel.Name = "LicenseLabel";
+            this.LicenseLabel.Size = new System.Drawing.Size(138, 29);
+            this.LicenseLabel.TabIndex = 4;
+            this.LicenseLabel.Text = "D.Class :     ";
+            // 
             // applicationIDtxtBox
             // 
             this.applicationIDtxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +228,18 @@
             this.applicationIDtxtBox.ReadOnly = true;
             this.applicationIDtxtBox.Size = new System.Drawing.Size(100, 32);
             this.applicationIDtxtBox.TabIndex = 3;
+            // 
+            // ApplicationID
+            // 
+            this.ApplicationID.AutoSize = true;
+            this.ApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApplicationID.Image = global::DVLD.Properties.Resources.namecard;
+            this.ApplicationID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ApplicationID.Location = new System.Drawing.Point(13, 39);
+            this.ApplicationID.Name = "ApplicationID";
+            this.ApplicationID.Size = new System.Drawing.Size(175, 29);
+            this.ApplicationID.TabIndex = 2;
+            this.ApplicationID.Text = "D.L App ID :      ";
             // 
             // retakeInfoGroupBox
             // 
@@ -185,6 +268,18 @@
             this.totalFeesTxtBox.Size = new System.Drawing.Size(99, 32);
             this.totalFeesTxtBox.TabIndex = 30;
             // 
+            // totalFees
+            // 
+            this.totalFees.AutoSize = true;
+            this.totalFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalFees.Image = global::DVLD.Properties.Resources.coin;
+            this.totalFees.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.totalFees.Location = new System.Drawing.Point(13, 136);
+            this.totalFees.Name = "totalFees";
+            this.totalFees.Size = new System.Drawing.Size(219, 29);
+            this.totalFees.TabIndex = 29;
+            this.totalFees.Text = "Total Fees :             ";
+            // 
             // r_appFeesTxtBox
             // 
             this.r_appFeesTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -194,6 +289,18 @@
             this.r_appFeesTxtBox.Size = new System.Drawing.Size(99, 32);
             this.r_appFeesTxtBox.TabIndex = 28;
             // 
+            // r_appFeesLabel
+            // 
+            this.r_appFeesLabel.AutoSize = true;
+            this.r_appFeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.r_appFeesLabel.Image = global::DVLD.Properties.Resources.coin;
+            this.r_appFeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.r_appFeesLabel.Location = new System.Drawing.Point(13, 90);
+            this.r_appFeesLabel.Name = "r_appFeesLabel";
+            this.r_appFeesLabel.Size = new System.Drawing.Size(218, 29);
+            this.r_appFeesLabel.TabIndex = 27;
+            this.r_appFeesLabel.Text = "R. App Fees :          ";
+            // 
             // retakeAppIDTxtBox
             // 
             this.retakeAppIDTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,6 +309,18 @@
             this.retakeAppIDTxtBox.ReadOnly = true;
             this.retakeAppIDTxtBox.Size = new System.Drawing.Size(100, 32);
             this.retakeAppIDTxtBox.TabIndex = 3;
+            // 
+            // retakeIDLabel
+            // 
+            this.retakeIDLabel.AutoSize = true;
+            this.retakeIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retakeIDLabel.Image = global::DVLD.Properties.Resources.namecard;
+            this.retakeIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.retakeIDLabel.Location = new System.Drawing.Point(13, 39);
+            this.retakeIDLabel.Name = "retakeIDLabel";
+            this.retakeIDLabel.Size = new System.Drawing.Size(216, 29);
+            this.retakeIDLabel.TabIndex = 2;
+            this.retakeIDLabel.Text = "R.Test App ID  :      ";
             // 
             // closeBtn
             // 
@@ -219,42 +338,6 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // totalFees
-            // 
-            this.totalFees.AutoSize = true;
-            this.totalFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFees.Image = global::DVLD.Properties.Resources.coin;
-            this.totalFees.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.totalFees.Location = new System.Drawing.Point(13, 136);
-            this.totalFees.Name = "totalFees";
-            this.totalFees.Size = new System.Drawing.Size(219, 29);
-            this.totalFees.TabIndex = 29;
-            this.totalFees.Text = "Total Fees :             ";
-            // 
-            // r_appFeesLabel
-            // 
-            this.r_appFeesLabel.AutoSize = true;
-            this.r_appFeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r_appFeesLabel.Image = global::DVLD.Properties.Resources.coin;
-            this.r_appFeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.r_appFeesLabel.Location = new System.Drawing.Point(13, 90);
-            this.r_appFeesLabel.Name = "r_appFeesLabel";
-            this.r_appFeesLabel.Size = new System.Drawing.Size(218, 29);
-            this.r_appFeesLabel.TabIndex = 27;
-            this.r_appFeesLabel.Text = "R. App Fees :          ";
-            // 
-            // retakeIDLabel
-            // 
-            this.retakeIDLabel.AutoSize = true;
-            this.retakeIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.retakeIDLabel.Image = global::DVLD.Properties.Resources.namecard;
-            this.retakeIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.retakeIDLabel.Location = new System.Drawing.Point(13, 39);
-            this.retakeIDLabel.Name = "retakeIDLabel";
-            this.retakeIDLabel.Size = new System.Drawing.Size(216, 29);
-            this.retakeIDLabel.TabIndex = 2;
-            this.retakeIDLabel.Text = "R.Test App ID  :      ";
-            // 
             // saveBtn
             // 
             this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -270,89 +353,6 @@
             this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // FeesLabel
-            // 
-            this.FeesLabel.AutoSize = true;
-            this.FeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FeesLabel.Image = global::DVLD.Properties.Resources.coin;
-            this.FeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.FeesLabel.Location = new System.Drawing.Point(13, 290);
-            this.FeesLabel.Name = "FeesLabel";
-            this.FeesLabel.Size = new System.Drawing.Size(140, 29);
-            this.FeesLabel.TabIndex = 25;
-            this.FeesLabel.Text = "Fees :          ";
-            // 
-            // trialLabel
-            // 
-            this.trialLabel.AutoSize = true;
-            this.trialLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trialLabel.Image = global::DVLD.Properties.Resources.counter;
-            this.trialLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.trialLabel.Location = new System.Drawing.Point(13, 192);
-            this.trialLabel.Name = "trialLabel";
-            this.trialLabel.Size = new System.Drawing.Size(134, 29);
-            this.trialLabel.TabIndex = 23;
-            this.trialLabel.Text = "Trial :          ";
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Image = global::DVLD.Properties.Resources.dataofbirth;
-            this.dateLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.dateLabel.Location = new System.Drawing.Point(13, 239);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(135, 29);
-            this.dateLabel.TabIndex = 21;
-            this.dateLabel.Text = "Date :          ";
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Image = global::DVLD.Properties.Resources.nameuser;
-            this.nameLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.nameLabel.Location = new System.Drawing.Point(13, 146);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(132, 29);
-            this.nameLabel.TabIndex = 20;
-            this.nameLabel.Text = "Name :       ";
-            // 
-            // LicenseLabel
-            // 
-            this.LicenseLabel.AutoSize = true;
-            this.LicenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenseLabel.Image = global::DVLD.Properties.Resources.license;
-            this.LicenseLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LicenseLabel.Location = new System.Drawing.Point(12, 97);
-            this.LicenseLabel.Name = "LicenseLabel";
-            this.LicenseLabel.Size = new System.Drawing.Size(138, 29);
-            this.LicenseLabel.TabIndex = 4;
-            this.LicenseLabel.Text = "D.Class :     ";
-            // 
-            // ApplicationID
-            // 
-            this.ApplicationID.AutoSize = true;
-            this.ApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApplicationID.Image = global::DVLD.Properties.Resources.namecard;
-            this.ApplicationID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ApplicationID.Location = new System.Drawing.Point(13, 39);
-            this.ApplicationID.Name = "ApplicationID";
-            this.ApplicationID.Size = new System.Drawing.Size(175, 29);
-            this.ApplicationID.TabIndex = 2;
-            this.ApplicationID.Text = "D.L App ID :      ";
-            // 
-            // topicPictureBox
-            // 
-            this.topicPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topicPictureBox.Image = global::DVLD.Properties.Resources.eye;
-            this.topicPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.topicPictureBox.Name = "topicPictureBox";
-            this.topicPictureBox.Size = new System.Drawing.Size(496, 100);
-            this.topicPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.topicPictureBox.TabIndex = 0;
-            this.topicPictureBox.TabStop = false;
             // 
             // schduleTestForm
             // 
@@ -372,11 +372,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "schedule Test";
             this.picturePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).EndInit();
             this.infoGroupBox.ResumeLayout(false);
             this.infoGroupBox.PerformLayout();
             this.retakeInfoGroupBox.ResumeLayout(false);
             this.retakeInfoGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
