@@ -152,6 +152,8 @@ namespace DVLDBussinessLayer
             public static bool delete_localDrivingLicenseApplication(int LDLA_ID) => DVLD_DAL.Applications.delete_localDrivingLicenseApplication(LDLA_ID);
 
             public static int get_applicantPersonID_by_LDLA(int LDLA_ID) => DVLD_DAL.Applications.get_applicantPersonID_by_LDLA(LDLA_ID);
+
+            public static bool update_LocalDrivingLicenseApplication(int LDLA_ID, int drivingClassID) => DVLD_DAL.Applications.update_LocalDrivingLicenseApplication(LDLA_ID, drivingClassID);
         }
 
         public class Licenses

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 
 // point 2 like point 1 organize them( not in one file)
 namespace DVLDdataAccessLayer
@@ -905,7 +906,7 @@ namespace DVLDdataAccessLayer
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
                     string query = @"SELECT *
-                            FROM [dbo].[LocalDrivingLicenseApplications_View]";
+                            FROM [dbo].[LocalDrivingLicenseApplications_View] ORDER BY ApplicationDate DESC";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         try
@@ -1549,6 +1550,34 @@ namespace DVLDdataAccessLayer
                     }
                 }
                 return id;
+            }
+
+            public static bool update_LocalDrivingLicenseApplication(int LDLA_ID,int drivingClassID)
+            {
+                bool success = false;
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
+                    string query = @"UPDATE [dbo].[LocalDrivingLicenseApplications]
+                                      SET [LicenseClassID] = @LicenseClassID
+                                    WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
+                    using(SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@LicenseClassID",drivingClassID);
+                        command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LDLA_ID);
+                        try
+                        {
+                            connection.Open();
+                            object result = command.ExecuteNonQuery();
+                            success = (result != null && Convert.ToInt32(result) != 0);
+                        }
+                        catch
+                        {
+                            success = false;
+                            throw;
+                        }
+                    }
+                }
+                return success;
             }
         }
 

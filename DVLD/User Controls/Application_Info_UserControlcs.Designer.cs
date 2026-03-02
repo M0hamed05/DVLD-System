@@ -38,7 +38,6 @@
             this.DLA_ID_Label = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.applicantTxtBox = new System.Windows.Forms.TextBox();
-            this.applicantLinkedLabel = new System.Windows.Forms.LinkLabel();
             this.userTxtBox = new System.Windows.Forms.TextBox();
             this.createdByLabel = new System.Windows.Forms.Label();
             this.startDateTxtBox = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.dateLabel = new System.Windows.Forms.Label();
             this.applicationIDtxtBox = new System.Windows.Forms.TextBox();
             this.ApplicationID = new System.Windows.Forms.Label();
+            this.applicantBtn = new System.Windows.Forms.Button();
             this.DrivingLicenseApplicationInfoGroupBox.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -154,8 +154,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.applicantBtn);
             this.groupBox1.Controls.Add(this.applicantTxtBox);
-            this.groupBox1.Controls.Add(this.applicantLinkedLabel);
             this.groupBox1.Controls.Add(this.userTxtBox);
             this.groupBox1.Controls.Add(this.createdByLabel);
             this.groupBox1.Controls.Add(this.startDateTxtBox);
@@ -187,17 +187,6 @@
             this.applicantTxtBox.ReadOnly = true;
             this.applicantTxtBox.Size = new System.Drawing.Size(392, 32);
             this.applicantTxtBox.TabIndex = 17;
-            // 
-            // applicantLinkedLabel
-            // 
-            this.applicantLinkedLabel.AutoSize = true;
-            this.applicantLinkedLabel.Location = new System.Drawing.Point(19, 238);
-            this.applicantLinkedLabel.Name = "applicantLinkedLabel";
-            this.applicantLinkedLabel.Size = new System.Drawing.Size(121, 29);
-            this.applicantLinkedLabel.TabIndex = 16;
-            this.applicantLinkedLabel.TabStop = true;
-            this.applicantLinkedLabel.Text = "Applicant";
-            this.applicantLinkedLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.applicantLinkedLabel_LinkClicked);
             // 
             // userTxtBox
             // 
@@ -346,6 +335,19 @@
             this.ApplicationID.TabIndex = 0;
             this.ApplicationID.Text = "ID :            ";
             // 
+            // applicantBtn
+            // 
+            this.applicantBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applicantBtn.Image = global::DVLD.Properties.Resources.nameuser;
+            this.applicantBtn.Location = new System.Drawing.Point(8, 234);
+            this.applicantBtn.Name = "applicantBtn";
+            this.applicantBtn.Size = new System.Drawing.Size(128, 39);
+            this.applicantBtn.TabIndex = 18;
+            this.applicantBtn.Text = "Applicant";
+            this.applicantBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.applicantBtn.UseVisualStyleBackColor = true;
+            this.applicantBtn.Click += new System.EventHandler(this.applicantBtn_Click);
+            // 
             // Application_Info_UserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -388,7 +390,7 @@
         private System.Windows.Forms.TextBox startDateTxtBox;
         private System.Windows.Forms.Label statusDateLabel;
         private System.Windows.Forms.TextBox applicantTxtBox;
-        private System.Windows.Forms.LinkLabel applicantLinkedLabel;
         private System.Windows.Forms.Button ShowLicenseBtn;
+        private System.Windows.Forms.Button applicantBtn;
     }
 }

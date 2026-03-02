@@ -247,11 +247,11 @@
     <Compile Include="Applications\ManageTestTypeForm.Designer.cs">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\People\PeersonInfoWithFilterUserControl.cs">
+    <Compile Include="User Controls\People\PersonInfoWithFilterUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\People\PeersonInfoWithFilterUserControl.Designer.cs">
-      <DependentUpon>PeersonInfoWithFilterUserControl.cs</DependentUpon>
+    <Compile Include="User Controls\People\PersonInfoWithFilterUserControl.Designer.cs">
+      <DependentUpon>PersonInfoWithFilterUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="People\PeopleForm.cs">
       <SubType>Form</SubType>
@@ -396,8 +396,8 @@
     <EmbeddedResource Include="Applications\ManageTestTypeForm.resx">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\People\PeersonInfoWithFilterUserControl.resx">
-      <DependentUpon>PeersonInfoWithFilterUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\People\PersonInfoWithFilterUserControl.resx">
+      <DependentUpon>PersonInfoWithFilterUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\PeopleForm.resx">
       <DependentUpon>PeopleForm.cs</DependentUpon>

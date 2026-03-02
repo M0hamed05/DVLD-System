@@ -249,7 +249,9 @@ namespace DVLD.Applications
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Feature could be added in the future","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            AddLocalDrivingLicenseApplicationForm frm = new AddLocalDrivingLicenseApplicationForm((int)applications_dgv.CurrentRow.Cells[0].Value,
+                (string)applications_dgv.CurrentRow.Cells[1].Value, (DateTime)applications_dgv.CurrentRow.Cells[4].Value);
+            frm.ShowDialog();
         }
     }
 }

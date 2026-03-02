@@ -46,7 +46,7 @@
             this.licenseClassLabel = new System.Windows.Forms.Label();
             this.applicationDateLabel = new System.Windows.Forms.Label();
             this.DLAppicationIdLabel = new System.Windows.Forms.Label();
-            this.peersonInfoWithFilterUserControl1 = new DVLD.PeersonInfoWithFilterUserControl();
+            this.peersonInfoWithFilterUserControl1 = new DVLD.PersonInfoWithFilterUserControl();
             this.nextBtnPanel.SuspendLayout();
             this.buttomPanel.SuspendLayout();
             this.applicationInfoPanel.SuspendLayout();
@@ -60,7 +60,7 @@
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(1092, 54);
             this.headerLabel.TabIndex = 1;
-            this.headerLabel.Text = "New Local Driving License Applications ";
+            this.headerLabel.Text = "New Local Driving License Application ";
             this.headerLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // nextBtnPanel
@@ -293,7 +293,7 @@
 
         #endregion
 
-        private PeersonInfoWithFilterUserControl peersonInfoWithFilterUserControl1;
+        private PersonInfoWithFilterUserControl peersonInfoWithFilterUserControl1;
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Panel nextBtnPanel;
         private System.Windows.Forms.Button nxtBtn;

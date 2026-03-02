@@ -20,7 +20,7 @@ namespace DVLD.User_Controls
 
         }
 
-        public void load_data(int LDLA_ID, string licenseClass, byte passedTests,bool isThereLicense = false)
+        public void load_data(int LDLA_ID, string licenseClass, int passedTests,bool isThereLicense = false)
         {
             int applicationID = DVLD_BL.Applications.get_applicationID_by_LDLA(LDLA_ID);
             DVLDShared.clsApplication application = DVLD_BL.Applications.get_application_basic_info(applicationID);
@@ -40,14 +40,6 @@ namespace DVLD.User_Controls
             passedTxtBox.Text = $"{passedTests.ToString()}/3";
 
             ShowLicenseBtn.Enabled = isThereLicense;
-
-        }
-
-        private void applicantLinkedLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            PersonDetailsForm frm = new PersonDetailsForm(person.personID);
-            frm.ShowDialog();
-
         }
 
         public string get_applicant_name() => applicantTxtBox.Text;
@@ -60,6 +52,12 @@ namespace DVLD.User_Controls
         private void ShowLicenseBtn_Click(object sender, EventArgs e)
         {
             ShowLicenseInfo frm = new ShowLicenseInfo(Convert.ToInt32(applicationIDtxtBox.Text));
+            frm.ShowDialog();
+        }
+
+        private void applicantBtn_Click(object sender, EventArgs e)
+        {
+            PersonDetailsForm frm = new PersonDetailsForm(person.personID);
             frm.ShowDialog();
         }
     }

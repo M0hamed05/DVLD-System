@@ -1,6 +1,6 @@
 ﻿namespace DVLD
 {
-    partial class PeersonInfoWithFilterUserControl
+    partial class PersonInfoWithFilterUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.filterPanel = new System.Windows.Forms.Panel();
             this.addPersonButton = new System.Windows.Forms.Button();
-            this.allUsersComboBox = new System.Windows.Forms.ComboBox();
+            this.ContentFilterComboBox = new System.Windows.Forms.ComboBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.fliterLabel = new System.Windows.Forms.Label();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
@@ -42,7 +42,7 @@
             // 
             this.filterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.filterPanel.Controls.Add(this.addPersonButton);
-            this.filterPanel.Controls.Add(this.allUsersComboBox);
+            this.filterPanel.Controls.Add(this.ContentFilterComboBox);
             this.filterPanel.Controls.Add(this.addBtn);
             this.filterPanel.Controls.Add(this.fliterLabel);
             this.filterPanel.Controls.Add(this.filterComboBox);
@@ -68,15 +68,15 @@
             this.addPersonButton.UseVisualStyleBackColor = true;
             this.addPersonButton.Click += new System.EventHandler(this.addPersonButton_Click);
             // 
-            // allUsersComboBox
+            // ContentFilterComboBox
             // 
-            this.allUsersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.allUsersComboBox.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allUsersComboBox.FormattingEnabled = true;
-            this.allUsersComboBox.Location = new System.Drawing.Point(353, 9);
-            this.allUsersComboBox.Name = "allUsersComboBox";
-            this.allUsersComboBox.Size = new System.Drawing.Size(220, 34);
-            this.allUsersComboBox.TabIndex = 27;
+            this.ContentFilterComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ContentFilterComboBox.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContentFilterComboBox.FormattingEnabled = true;
+            this.ContentFilterComboBox.Location = new System.Drawing.Point(353, 9);
+            this.ContentFilterComboBox.Name = "ContentFilterComboBox";
+            this.ContentFilterComboBox.Size = new System.Drawing.Size(220, 34);
+            this.ContentFilterComboBox.TabIndex = 27;
             // 
             // addBtn
             // 
@@ -122,13 +122,13 @@
             this.personInfoUserControl1.Size = new System.Drawing.Size(1101, 394);
             this.personInfoUserControl1.TabIndex = 3;
             // 
-            // PeersonInfoWithFilterUserControl
+            // PersonInfoWithFilterUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.filterPanel);
             this.Controls.Add(this.personInfoUserControl1);
-            this.Name = "PeersonInfoWithFilterUserControl";
+            this.Name = "PersonInfoWithFilterUserControl";
             this.Size = new System.Drawing.Size(1101, 463);
             this.Load += new System.EventHandler(this.PeersonInfoWithFilterUserControl_Load);
             this.filterPanel.ResumeLayout(false);
@@ -142,7 +142,7 @@
         private PersonInfoUserControl personInfoUserControl1;
         private System.Windows.Forms.Panel filterPanel;
         private System.Windows.Forms.Button addPersonButton;
-        private System.Windows.Forms.ComboBox allUsersComboBox;
+        private System.Windows.Forms.ComboBox ContentFilterComboBox;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Label fliterLabel;
         private System.Windows.Forms.ComboBox filterComboBox;
