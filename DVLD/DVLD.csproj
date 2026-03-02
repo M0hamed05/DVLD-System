@@ -61,22 +61,22 @@
     <Compile Include="Licenses\DetainLicenseForm.Designer.cs">
       <DependentUpon>DetainLicenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\internationalLicenseApplicationForm.cs">
+    <Compile Include="Licenses\International\internationalLicenseApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\internationalLicenseApplicationForm.Designer.cs">
+    <Compile Include="Licenses\International\internationalLicenseApplicationForm.Designer.cs">
       <DependentUpon>internationalLicenseApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\IssueInternationalLicenseApplicationForm.cs">
+    <Compile Include="Licenses\International\IssueInternationalLicenseApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\IssueInternationalLicenseApplicationForm.Designer.cs">
+    <Compile Include="Licenses\International\IssueInternationalLicenseApplicationForm.Designer.cs">
       <DependentUpon>IssueInternationalLicenseApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\IssueDrivingLicenseApplicaionForm.cs">
+    <Compile Include="Licenses\Local\IssueDrivingLicenseApplicaionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\IssueDrivingLicenseApplicaionForm.Designer.cs">
+    <Compile Include="Licenses\Local\IssueDrivingLicenseApplicaionForm.Designer.cs">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Drivers\ManageDriversForm.cs">
@@ -109,10 +109,10 @@
     <Compile Include="Applications\ShowApplicationDetailsForm.Designer.cs">
       <DependentUpon>ShowApplicationDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\LocalDrivingLicenseApplicationsForm.cs">
+    <Compile Include="Licenses\Local\LocalDrivingLicenseApplicationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\LocalDrivingLicenseApplicationsForm.Designer.cs">
+    <Compile Include="Licenses\Local\LocalDrivingLicenseApplicationsForm.Designer.cs">
       <DependentUpon>LocalDrivingLicenseApplicationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Licenses\ReleaseDetainedLicenseForm.cs">
@@ -133,16 +133,16 @@
     <Compile Include="Licenses\ReplacementForLostOrDamagedForm.Designer.cs">
       <DependentUpon>ReplacementForLostOrDamagedForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\ShowInternationalLicenseForm.cs">
+    <Compile Include="Licenses\International\ShowInternationalLicenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\ShowInternationalLicenseForm.Designer.cs">
+    <Compile Include="Licenses\International\ShowInternationalLicenseForm.Designer.cs">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licenses\ShowLicenseInfo.cs">
+    <Compile Include="Licenses\Local\ShowLicenseInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licenses\ShowLicenseInfo.Designer.cs">
+    <Compile Include="Licenses\Local\ShowLicenseInfo.Designer.cs">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\TakeTestForm.cs">
@@ -303,13 +303,13 @@
     <EmbeddedResource Include="Licenses\DetainLicenseForm.resx">
       <DependentUpon>DetainLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\internationalLicenseApplicationForm.resx">
+    <EmbeddedResource Include="Licenses\International\internationalLicenseApplicationForm.resx">
       <DependentUpon>internationalLicenseApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\IssueInternationalLicenseApplicationForm.resx">
+    <EmbeddedResource Include="Licenses\International\IssueInternationalLicenseApplicationForm.resx">
       <DependentUpon>IssueInternationalLicenseApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\IssueDrivingLicenseApplicaionForm.resx">
+    <EmbeddedResource Include="Licenses\Local\IssueDrivingLicenseApplicaionForm.resx">
       <DependentUpon>IssueDrivingLicenseApplicaionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\ManageDriversForm.resx">
@@ -327,7 +327,7 @@
     <EmbeddedResource Include="Applications\ShowApplicationDetailsForm.resx">
       <DependentUpon>ShowApplicationDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\LocalDrivingLicenseApplicationsForm.resx">
+    <EmbeddedResource Include="Licenses\Local\LocalDrivingLicenseApplicationsForm.resx">
       <DependentUpon>LocalDrivingLicenseApplicationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licenses\ReleaseDetainedLicenseForm.resx">
@@ -339,10 +339,10 @@
     <EmbeddedResource Include="Licenses\ReplacementForLostOrDamagedForm.resx">
       <DependentUpon>ReplacementForLostOrDamagedForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\ShowInternationalLicenseForm.resx">
+    <EmbeddedResource Include="Licenses\International\ShowInternationalLicenseForm.resx">
       <DependentUpon>ShowInternationalLicenseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Licenses\ShowLicenseInfo.resx">
+    <EmbeddedResource Include="Licenses\Local\ShowLicenseInfo.resx">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\TakeTestForm.resx">

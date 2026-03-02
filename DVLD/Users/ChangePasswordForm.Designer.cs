@@ -184,6 +184,7 @@
             // 
             // ChangePasswordForm
             // 
+            this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 698);
@@ -192,10 +193,12 @@
             this.Controls.Add(this.buttomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "ChangePasswordForm";
             this.Text = "Change User Password";
             this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChangePasswordForm_KeyDown);
             this.loginInfoPanel.ResumeLayout(false);
             this.loginInfoPanel.PerformLayout();
             this.buttomPanel.ResumeLayout(false);

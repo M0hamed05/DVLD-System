@@ -118,19 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="ShowLicenseInfoBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
-        sgAABLIBmNLkLwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF2SURBVFhH7dZN
-        K0RRHMfxW5IsJC/AyoalRFjYWCHvg1cg2SmllL3YYYO8ASHJGsXSwmOUlJKF5+/vdqfO/Dsz586Yp8X9
-        1Wdz+p9z/rczd86NsmRppAzhAE94qRKtfYhh5GUCX/itEe01iThNuIOvsJruob2jnmSgHrR31OcMFPKG
-        K/w4Y5WgvYMNLKIZShdO4asrR7CBI9h0w1dbjmAD8/DlAW7dMVYCdvEJd16wgXXYtMFd6AOtSJMduOsH
-        G9DiI8hFr80abN0GZgIW8Ap3XrAB0dNuYxlnyVilpGrgBEuYg87yGrZmFe7TzuISts4q2oAW6IeNjmEK
-        71CdjqkFNtOwa1oFG7hAB4plFNpc9efYcujInmHXtbwNfKMXaaKjceeWytvAPtKmE//5e/Y2sIm0aUfu
-        t1AObwOiX7ounxB9ZNi5pYgbqOd1rHslfq1uk4FaukH8QaKMw14U1aS9xpCXQegNeIT9mKwUrb2HAWTJ
-        0giJoj9DGyBbglQb6QAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="totalFeesLabel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -227,6 +214,19 @@
 </value>
   </data>
   <data name="detainIDLabel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
+        sgAABLIBmNLkLwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF2SURBVFhH7dZN
+        K0RRHMfxW5IsJC/AyoalRFjYWCHvg1cg2SmllL3YYYO8ASHJGsXSwmOUlJKF5+/vdqfO/Dsz586Yp8X9
+        1Wdz+p9z/rczd86NsmRppAzhAE94qRKtfYhh5GUCX/itEe01iThNuIOvsJruob2jnmSgHrR31OcMFPKG
+        K/w4Y5WgvYMNLKIZShdO4asrR7CBI9h0w1dbjmAD8/DlAW7dMVYCdvEJd16wgXXYtMFd6AOtSJMduOsH
+        G9DiI8hFr80abN0GZgIW8Ap3XrAB0dNuYxlnyVilpGrgBEuYg87yGrZmFe7TzuISts4q2oAW6IeNjmEK
+        71CdjqkFNtOwa1oFG7hAB4plFNpc9efYcujInmHXtbwNfKMXaaKjceeWytvAPtKmE//5e/Y2sIm0aUfu
+        t1AObwOiX7ounxB9ZNi5pYgbqOd1rHslfq1uk4FaukH8QaKMw14U1aS9xpCXQegNeIT9mKwUrb2HAWTJ
+        0giJoj9DGyBbglQb6QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ShowLicenseInfoBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAE
         sgAABLIBmNLkLwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF2SURBVFhH7dZN

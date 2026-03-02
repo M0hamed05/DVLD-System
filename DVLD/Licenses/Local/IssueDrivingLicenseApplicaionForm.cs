@@ -92,5 +92,19 @@ namespace DVLD.Applications
             else
                 this.Close();
         }
+
+        private void IssueDrivingLicenseApplicaionForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (!saved)
+                {
+                    if (MessageBox.Show("Nothing Saved, Are you Sure to Close?", "Warning", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning) == DialogResult.Yes) this.Close();
+                }
+                else
+                    this.Close();
+            }
+        }
     }
 }

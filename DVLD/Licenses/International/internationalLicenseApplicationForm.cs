@@ -54,7 +54,6 @@ namespace DVLD.Licenses
             frm.ShowDialog();
         }
 
-        int value;
         private void filter_txtbox_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(filter_txtbox.Text))
@@ -64,27 +63,7 @@ namespace DVLD.Licenses
                 return;
             }
 
-            if (filterComboBox.SelectedIndex == 0)
-            {
-                if (int.TryParse(filter_txtbox.Text, out value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[0]},'System.String') LIKE '{value}%'";
-
-            }
-            else if (filterComboBox.SelectedIndex == 1)
-            {
-                if (int.TryParse(filter_txtbox.Text, out value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[1]},'System.String') LIKE '{value}%'";
-            }
-            else if (filterComboBox.SelectedIndex == 2)
-            {
-                if (int.TryParse(filter_txtbox.Text, out value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[2]},'System.String') LIKE '{value}%'";
-            }
-            else if (filterComboBox.SelectedIndex == 3)
-            {
-                if (int.TryParse(filter_txtbox.Text, out value))
-                    dt.DefaultView.RowFilter = $"Convert({dt.Columns[3]},'System.String') LIKE '{value}%'";
-            }
+            dt.DefaultView.RowFilter = $"Convert({dt.Columns[filterComboBox.SelectedIndex]},'System.String') LIKE '{filter_txtbox.Text}%'";
 
             recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
         }

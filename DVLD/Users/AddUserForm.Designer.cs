@@ -346,12 +346,14 @@
             this.Controls.Add(this.HeaderPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "AddEditUserForm";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New User";
             this.Load += new System.EventHandler(this.AddUserForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddEditUserForm_KeyDown);
             this.HeaderPanel.ResumeLayout(false);
             this.buttomPanel.ResumeLayout(false);
             this.filterPanel.ResumeLayout(false);

@@ -240,5 +240,25 @@ namespace DVLD
         {
             open_child_form(new AllLicensesForm());
         }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.D2)
+            {
+                peopleToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control && e.KeyCode == Keys.D3)
+            {
+                driversToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control && e.KeyCode == Keys.D4)
+            {
+                licensesToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control && e.KeyCode == Keys.D5)
+            {
+                usersToolStripMenuItem.PerformClick();
+            }
+        }
     }
 }

@@ -161,6 +161,7 @@ namespace DVLD.Login_and_main
                 setImageBtn.Text = "Change Image";
                 viewPictureBox.ImageLocation = Properties.Settings.Default.BackgorundImage;//should be form file here
             }
+            image_path = viewPictureBox.ImageLocation;
         }
     }
 }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainBtnsMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.mainPanel = new System.Windows.Forms.Panel();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingLicenseCarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDrivingLicesnseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +63,7 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.mainBtnsMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,16 +83,6 @@
             this.mainBtnsMenuStrip.Size = new System.Drawing.Size(1380, 72);
             this.mainBtnsMenuStrip.TabIndex = 0;
             this.mainBtnsMenuStrip.Text = "menuStrip1";
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 72);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(5);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1380, 592);
-            this.mainPanel.TabIndex = 1;
             // 
             // applicationsToolStripMenuItem
             // 
@@ -395,6 +385,16 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(0, 72);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(5);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1380, 592);
+            this.mainPanel.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -403,6 +403,7 @@
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.mainBtnsMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.mainBtnsMenuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -410,6 +411,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.mainBtnsMenuStrip.ResumeLayout(false);
             this.mainBtnsMenuStrip.PerformLayout();
             this.ResumeLayout(false);

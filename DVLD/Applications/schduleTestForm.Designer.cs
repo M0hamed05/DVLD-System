@@ -356,6 +356,7 @@
             // 
             // schduleTestForm
             // 
+            this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 730);
@@ -367,10 +368,12 @@
             this.Controls.Add(this.picturePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "schduleTestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "schedule Test";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.schduleTestForm_KeyDown);
             this.picturePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).EndInit();
             this.infoGroupBox.ResumeLayout(false);

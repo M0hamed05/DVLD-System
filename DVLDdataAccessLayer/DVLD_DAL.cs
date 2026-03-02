@@ -2330,7 +2330,7 @@ namespace DVLDdataAccessLayer
                                    L.LicenseID AS [License ID], 
                                    L.DriverID AS [Driver ID], 
                                    P.NationalNo AS [National No],
-                                   [Driver Name] = P.FirstName + P.SecondName + ISNULL(P.ThirdName,' ') + ' ' + P.LastName,
+                                   [Driver Name] = P.FirstName + ' ' + P.SecondName + ' ' + ISNULL(P.ThirdName,' ') + ' ' + P.LastName,
                                    C.ClassName AS [Class Name], -- here for name instead of number by inner join
                                    CAST(L.ExpirationDate AS DATE) AS [Expiration Date], 
                                    L.IsActive AS [Is Active]
@@ -2361,10 +2361,41 @@ namespace DVLDdataAccessLayer
                 DataTable dt = new DataTable();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
+                    string query = @"SELECT [InternationalLicenseID]
+                                    ,[ApplicationID]
+                                    ,[DriverID]
+                                    ,[IssuedUsingLocalLicenseID]
+                                    ,[IssueDate]
+                                    ,[ExpirationDate]
+                                    ,[IsActive]
+                                FROM [dbo].[InternationalLicenses]";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            connection.Open();
+                            SqlDataReader reader = command.ExecuteReader();
+                            if (reader.HasRows) dt.Load(reader);
+                            reader.Close();
+                        }
+                        catch
+                        {
+                            throw;
+                        }
+                    }
+                }
+                return dt;
+            }
+
+            public static DataTable get_all_international_licenses_view()
+            {
+                DataTable dt = new DataTable();
+                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
+                {
                     string query = @"SELECT L.InternationalLicenseID AS [Int License ID]
                                      ,L.IssuedUsingLocalLicenseID AS [Local Lincese ID]
                                      ,P.NationalNo AS [National No]
-                                     ,[Driver Name] = P.FirstName + P.SecondName + ISNULL(P.ThirdName,' ') + ' ' + P.LastName
+                                     ,[Driver Name] = P.FirstName + ' ' + P.SecondName + ' ' + ISNULL(P.ThirdName,' ') + ' ' + P.LastName
                                      ,CAST(L.ExpirationDate AS DATE) AS [Expiration Date]
                                      ,L.IsActive AS [Is Active]
                                  FROM [dbo].[InternationalLicenses] L

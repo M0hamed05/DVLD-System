@@ -111,5 +111,10 @@ namespace DVLD.Licenses
             return detainLicense;
         }
 
+        private void DetainLicenseForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

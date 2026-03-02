@@ -12,9 +12,9 @@ namespace DVLD.Applications
             
         }
 
-        private void ApplicationInfoForm_Load(object sender, EventArgs e)
+        private void closeBtn_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

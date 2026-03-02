@@ -41,6 +41,7 @@
             this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showApplicationDetialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cancelApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.downBtnsPanel = new System.Windows.Forms.Panel();
             this.recordsLabel = new System.Windows.Forms.Label();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.upperButtenPanels.SuspendLayout();
@@ -210,6 +210,15 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(446, 6);
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.addcard;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(449, 38);
+            this.editToolStripMenuItem.Text = "Edit Application";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // deleteApplicationToolStripMenuItem
             // 
             this.deleteApplicationToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -330,15 +339,6 @@
             this.recordsLabel.Size = new System.Drawing.Size(161, 33);
             this.recordsLabel.TabIndex = 1;
             this.recordsLabel.Text = "Records: 0";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.addcard;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(449, 38);
-            this.editToolStripMenuItem.Text = "Edit Application";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // LocalDrivingLicenseApplicationsForm
             // 

@@ -35,18 +35,18 @@
             this.FineFeesTxtBox = new System.Windows.Forms.TextBox();
             this.ApplicationDateTxtBox = new System.Windows.Forms.TextBox();
             this.createdByTxtBox = new System.Windows.Forms.TextBox();
+            this.FineFeesLabel = new System.Windows.Forms.Label();
+            this.createdByLabel = new System.Windows.Forms.Label();
+            this.DetainDateLabel = new System.Windows.Forms.Label();
             this.LicenseIDTxtBox = new System.Windows.Forms.TextBox();
             this.detainIDTxtBox = new System.Windows.Forms.TextBox();
+            this.LicenseIDLabel = new System.Windows.Forms.Label();
+            this.detainIDLabel = new System.Windows.Forms.Label();
             this.buttomPanel = new System.Windows.Forms.Panel();
             this.ShowLicenseInfoBtn = new System.Windows.Forms.Button();
             this.showLicenseHistoryBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.DetainBtn = new System.Windows.Forms.Button();
-            this.FineFeesLabel = new System.Windows.Forms.Label();
-            this.createdByLabel = new System.Windows.Forms.Label();
-            this.DetainDateLabel = new System.Windows.Forms.Label();
-            this.LicenseIDLabel = new System.Windows.Forms.Label();
-            this.detainIDLabel = new System.Windows.Forms.Label();
             this.RenewApplicationInfoGroupBox.SuspendLayout();
             this.buttomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,42 @@
             this.createdByTxtBox.Size = new System.Drawing.Size(145, 32);
             this.createdByTxtBox.TabIndex = 10;
             // 
+            // FineFeesLabel
+            // 
+            this.FineFeesLabel.AutoSize = true;
+            this.FineFeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FineFeesLabel.Image = ((System.Drawing.Image)(resources.GetObject("FineFeesLabel.Image")));
+            this.FineFeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.FineFeesLabel.Location = new System.Drawing.Point(378, 90);
+            this.FineFeesLabel.Name = "FineFeesLabel";
+            this.FineFeesLabel.Size = new System.Drawing.Size(162, 26);
+            this.FineFeesLabel.TabIndex = 9;
+            this.FineFeesLabel.Text = "Fine Fees :       ";
+            // 
+            // createdByLabel
+            // 
+            this.createdByLabel.AutoSize = true;
+            this.createdByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createdByLabel.Image = ((System.Drawing.Image)(resources.GetObject("createdByLabel.Image")));
+            this.createdByLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.createdByLabel.Location = new System.Drawing.Point(728, 37);
+            this.createdByLabel.Name = "createdByLabel";
+            this.createdByLabel.Size = new System.Drawing.Size(157, 26);
+            this.createdByLabel.TabIndex = 8;
+            this.createdByLabel.Text = "Created By:     ";
+            // 
+            // DetainDateLabel
+            // 
+            this.DetainDateLabel.AutoSize = true;
+            this.DetainDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DetainDateLabel.Image = ((System.Drawing.Image)(resources.GetObject("DetainDateLabel.Image")));
+            this.DetainDateLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DetainDateLabel.Location = new System.Drawing.Point(12, 87);
+            this.DetainDateLabel.Name = "DetainDateLabel";
+            this.DetainDateLabel.Size = new System.Drawing.Size(187, 26);
+            this.DetainDateLabel.TabIndex = 4;
+            this.DetainDateLabel.Text = "Detain Date  :       ";
+            // 
             // LicenseIDTxtBox
             // 
             this.LicenseIDTxtBox.Location = new System.Drawing.Point(547, 34);
@@ -132,6 +168,30 @@
             this.detainIDTxtBox.Size = new System.Drawing.Size(100, 32);
             this.detainIDTxtBox.TabIndex = 2;
             this.detainIDTxtBox.Text = "N/A";
+            // 
+            // LicenseIDLabel
+            // 
+            this.LicenseIDLabel.AutoSize = true;
+            this.LicenseIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LicenseIDLabel.Image = ((System.Drawing.Image)(resources.GetObject("LicenseIDLabel.Image")));
+            this.LicenseIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LicenseIDLabel.Location = new System.Drawing.Point(376, 37);
+            this.LicenseIDLabel.Name = "LicenseIDLabel";
+            this.LicenseIDLabel.Size = new System.Drawing.Size(165, 25);
+            this.LicenseIDLabel.TabIndex = 1;
+            this.LicenseIDLabel.Text = "License ID :          ";
+            // 
+            // detainIDLabel
+            // 
+            this.detainIDLabel.AutoSize = true;
+            this.detainIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.detainIDLabel.Image = ((System.Drawing.Image)(resources.GetObject("detainIDLabel.Image")));
+            this.detainIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.detainIDLabel.Location = new System.Drawing.Point(12, 44);
+            this.detainIDLabel.Name = "detainIDLabel";
+            this.detainIDLabel.Size = new System.Drawing.Size(187, 26);
+            this.detainIDLabel.TabIndex = 0;
+            this.detainIDLabel.Text = "Detain ID :            ";
             // 
             // buttomPanel
             // 
@@ -209,68 +269,9 @@
             this.DetainBtn.UseVisualStyleBackColor = true;
             this.DetainBtn.Click += new System.EventHandler(this.DetainBtn_Click);
             // 
-            // FineFeesLabel
-            // 
-            this.FineFeesLabel.AutoSize = true;
-            this.FineFeesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FineFeesLabel.Image = ((System.Drawing.Image)(resources.GetObject("FineFeesLabel.Image")));
-            this.FineFeesLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.FineFeesLabel.Location = new System.Drawing.Point(378, 90);
-            this.FineFeesLabel.Name = "FineFeesLabel";
-            this.FineFeesLabel.Size = new System.Drawing.Size(162, 26);
-            this.FineFeesLabel.TabIndex = 9;
-            this.FineFeesLabel.Text = "Fine Fees :       ";
-            // 
-            // createdByLabel
-            // 
-            this.createdByLabel.AutoSize = true;
-            this.createdByLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createdByLabel.Image = ((System.Drawing.Image)(resources.GetObject("createdByLabel.Image")));
-            this.createdByLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.createdByLabel.Location = new System.Drawing.Point(728, 37);
-            this.createdByLabel.Name = "createdByLabel";
-            this.createdByLabel.Size = new System.Drawing.Size(157, 26);
-            this.createdByLabel.TabIndex = 8;
-            this.createdByLabel.Text = "Created By:     ";
-            // 
-            // DetainDateLabel
-            // 
-            this.DetainDateLabel.AutoSize = true;
-            this.DetainDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DetainDateLabel.Image = ((System.Drawing.Image)(resources.GetObject("DetainDateLabel.Image")));
-            this.DetainDateLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DetainDateLabel.Location = new System.Drawing.Point(12, 87);
-            this.DetainDateLabel.Name = "DetainDateLabel";
-            this.DetainDateLabel.Size = new System.Drawing.Size(187, 26);
-            this.DetainDateLabel.TabIndex = 4;
-            this.DetainDateLabel.Text = "Detain Date  :       ";
-            // 
-            // LicenseIDLabel
-            // 
-            this.LicenseIDLabel.AutoSize = true;
-            this.LicenseIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LicenseIDLabel.Image = ((System.Drawing.Image)(resources.GetObject("LicenseIDLabel.Image")));
-            this.LicenseIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LicenseIDLabel.Location = new System.Drawing.Point(376, 37);
-            this.LicenseIDLabel.Name = "LicenseIDLabel";
-            this.LicenseIDLabel.Size = new System.Drawing.Size(165, 25);
-            this.LicenseIDLabel.TabIndex = 1;
-            this.LicenseIDLabel.Text = "License ID :          ";
-            // 
-            // detainIDLabel
-            // 
-            this.detainIDLabel.AutoSize = true;
-            this.detainIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detainIDLabel.Image = ((System.Drawing.Image)(resources.GetObject("detainIDLabel.Image")));
-            this.detainIDLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.detainIDLabel.Location = new System.Drawing.Point(12, 44);
-            this.detainIDLabel.Name = "detainIDLabel";
-            this.detainIDLabel.Size = new System.Drawing.Size(187, 26);
-            this.detainIDLabel.TabIndex = 0;
-            this.detainIDLabel.Text = "Detain ID :            ";
-            // 
             // DetainLicenseForm
             // 
+            this.AcceptButton = this.DetainBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 874);
@@ -280,12 +281,14 @@
             this.Controls.Add(this.headerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "DetainLicenseForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detain License";
             this.Load += new System.EventHandler(this.DetainLicenseForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DetainLicenseForm_KeyDown);
             this.RenewApplicationInfoGroupBox.ResumeLayout(false);
             this.RenewApplicationInfoGroupBox.PerformLayout();
             this.buttomPanel.ResumeLayout(false);

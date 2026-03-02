@@ -68,6 +68,7 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeBtn.Image = global::DVLD.Properties.Resources.close;
@@ -173,8 +174,10 @@
             // 
             // EditTestTypeSmallForm
             // 
+            this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.closeBtn;
             this.ClientSize = new System.Drawing.Size(643, 426);
             this.Controls.Add(this.DescriptionTxtBox);
             this.Controls.Add(this.label3);

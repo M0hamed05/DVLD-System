@@ -31,25 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisionTestForm));
             this.downBtnsPanel = new System.Windows.Forms.Panel();
+            this.closeBtn = new System.Windows.Forms.Button();
             this.recordsLabel = new System.Windows.Forms.Label();
             this.titlePanel = new System.Windows.Forms.Panel();
+            this.peoplePictureBox = new System.Windows.Forms.PictureBox();
             this.headerLabel = new System.Windows.Forms.Label();
             this.middlePanel = new System.Windows.Forms.Panel();
+            this.addTestBtn = new System.Windows.Forms.Button();
             this.apptiontmentsLabel = new System.Windows.Forms.Label();
             this.appoitments_dgv = new System.Windows.Forms.DataGridView();
             this.OptionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.application_Info_UserControl1 = new DVLD.User_Controls.Application_Info_UserControl();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.takeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTestBtn = new System.Windows.Forms.Button();
-            this.peoplePictureBox = new System.Windows.Forms.PictureBox();
-            this.closeBtn = new System.Windows.Forms.Button();
+            this.application_Info_UserControl1 = new DVLD.User_Controls.Application_Info_UserControl();
             this.downBtnsPanel.SuspendLayout();
             this.titlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.middlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appoitments_dgv)).BeginInit();
             this.OptionsContextMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // downBtnsPanel
@@ -61,6 +61,22 @@
             this.downBtnsPanel.Name = "downBtnsPanel";
             this.downBtnsPanel.Size = new System.Drawing.Size(997, 66);
             this.downBtnsPanel.TabIndex = 13;
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeBtn.Image = global::DVLD.Properties.Resources.close;
+            this.closeBtn.Location = new System.Drawing.Point(815, 12);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(170, 45);
+            this.closeBtn.TabIndex = 25;
+            this.closeBtn.Text = "Close";
+            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.closeBtn.UseVisualStyleBackColor = true;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // recordsLabel
             // 
@@ -83,6 +99,16 @@
             this.titlePanel.Size = new System.Drawing.Size(997, 76);
             this.titlePanel.TabIndex = 14;
             // 
+            // peoplePictureBox
+            // 
+            this.peoplePictureBox.Image = global::DVLD.Properties.Resources.eye;
+            this.peoplePictureBox.Location = new System.Drawing.Point(3, 3);
+            this.peoplePictureBox.Name = "peoplePictureBox";
+            this.peoplePictureBox.Size = new System.Drawing.Size(85, 71);
+            this.peoplePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.peoplePictureBox.TabIndex = 7;
+            this.peoplePictureBox.TabStop = false;
+            // 
             // headerLabel
             // 
             this.headerLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +129,22 @@
             this.middlePanel.Name = "middlePanel";
             this.middlePanel.Size = new System.Drawing.Size(997, 66);
             this.middlePanel.TabIndex = 16;
+            // 
+            // addTestBtn
+            // 
+            this.addTestBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTestBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addTestBtn.Image = global::DVLD.Properties.Resources.managetest;
+            this.addTestBtn.Location = new System.Drawing.Point(825, 6);
+            this.addTestBtn.Name = "addTestBtn";
+            this.addTestBtn.Size = new System.Drawing.Size(160, 51);
+            this.addTestBtn.TabIndex = 25;
+            this.addTestBtn.Text = "Add";
+            this.addTestBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addTestBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.addTestBtn.UseVisualStyleBackColor = true;
+            this.addTestBtn.Click += new System.EventHandler(this.addTestBtn_Click);
             // 
             // apptiontmentsLabel
             // 
@@ -143,14 +185,6 @@
             this.OptionsContextMenuStrip.Name = "OptionsContextMenuStrip";
             this.OptionsContextMenuStrip.Size = new System.Drawing.Size(162, 68);
             // 
-            // application_Info_UserControl1
-            // 
-            this.application_Info_UserControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.application_Info_UserControl1.Location = new System.Drawing.Point(3, 79);
-            this.application_Info_UserControl1.Name = "application_Info_UserControl1";
-            this.application_Info_UserControl1.Size = new System.Drawing.Size(997, 435);
-            this.application_Info_UserControl1.TabIndex = 15;
-            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.editTest;
@@ -167,50 +201,17 @@
             this.takeTestToolStripMenuItem.Text = "Take Test";
             this.takeTestToolStripMenuItem.Click += new System.EventHandler(this.takeTestToolStripMenuItem_Click);
             // 
-            // addTestBtn
+            // application_Info_UserControl1
             // 
-            this.addTestBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addTestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addTestBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addTestBtn.Image = global::DVLD.Properties.Resources.managetest;
-            this.addTestBtn.Location = new System.Drawing.Point(825, 6);
-            this.addTestBtn.Name = "addTestBtn";
-            this.addTestBtn.Size = new System.Drawing.Size(160, 51);
-            this.addTestBtn.TabIndex = 25;
-            this.addTestBtn.Text = "Add";
-            this.addTestBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addTestBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addTestBtn.UseVisualStyleBackColor = true;
-            this.addTestBtn.Click += new System.EventHandler(this.addTestBtn_Click);
-            // 
-            // peoplePictureBox
-            // 
-            this.peoplePictureBox.Image = global::DVLD.Properties.Resources.eye;
-            this.peoplePictureBox.Location = new System.Drawing.Point(3, 3);
-            this.peoplePictureBox.Name = "peoplePictureBox";
-            this.peoplePictureBox.Size = new System.Drawing.Size(85, 71);
-            this.peoplePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.peoplePictureBox.TabIndex = 7;
-            this.peoplePictureBox.TabStop = false;
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.closeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeBtn.Image = global::DVLD.Properties.Resources.close;
-            this.closeBtn.Location = new System.Drawing.Point(815, 12);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(170, 45);
-            this.closeBtn.TabIndex = 25;
-            this.closeBtn.Text = "Close";
-            this.closeBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.closeBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.closeBtn.UseVisualStyleBackColor = true;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            this.application_Info_UserControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.application_Info_UserControl1.Location = new System.Drawing.Point(3, 79);
+            this.application_Info_UserControl1.Name = "application_Info_UserControl1";
+            this.application_Info_UserControl1.Size = new System.Drawing.Size(997, 435);
+            this.application_Info_UserControl1.TabIndex = 15;
             // 
             // VisionTestForm
             // 
+            this.AcceptButton = this.addTestBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1003, 816);
@@ -221,20 +222,22 @@
             this.Controls.Add(this.downBtnsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "VisionTestForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visison Test";
             this.Load += new System.EventHandler(this.VisionTestForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.VisionTestForm_KeyDown);
             this.downBtnsPanel.ResumeLayout(false);
             this.downBtnsPanel.PerformLayout();
             this.titlePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).EndInit();
             this.middlePanel.ResumeLayout(false);
             this.middlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.appoitments_dgv)).EndInit();
             this.OptionsContextMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

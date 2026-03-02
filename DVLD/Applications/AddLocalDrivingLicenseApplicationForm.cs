@@ -147,5 +147,19 @@ namespace DVLD
             dateTxtBox.Text = applicationDate.ToShortDateString();
             usernameTxtBox.Text = DVLD_BL.Users.get_user_data(application.UserID).username;
         }
+
+        private void AddLocalDrivingLicenseApplicationForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                if (!saved)
+                {
+                    if (MessageBox.Show("Nothing Saved, Are you Sure to Close?", "Warning", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning) == DialogResult.Yes) this.Close();
+                }
+                else
+                    this.Close();
+            }
+        }
     }
 }

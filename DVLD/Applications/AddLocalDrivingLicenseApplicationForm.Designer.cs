@@ -267,6 +267,7 @@
             // 
             // AddLocalDrivingLicenseApplicationForm
             // 
+            this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 774);
@@ -277,12 +278,14 @@
             this.Controls.Add(this.buttomPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "AddLocalDrivingLicenseApplicationForm";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Local Driving License";
             this.Load += new System.EventHandler(this.AddLocalDrivingLicenseApplicationForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AddLocalDrivingLicenseApplicationForm_KeyDown);
             this.nextBtnPanel.ResumeLayout(false);
             this.buttomPanel.ResumeLayout(false);
             this.applicationInfoPanel.ResumeLayout(false);

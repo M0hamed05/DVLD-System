@@ -133,5 +133,13 @@ namespace DVLD.Licenses
             return license;
         }
 
+        private void ReplacementForLostOrDamagedForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+
+                this.Close();
+            }
+        }
     }
 }

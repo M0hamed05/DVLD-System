@@ -188,6 +188,8 @@ namespace DVLDBussinessLayer
 
             public static DataTable get_all_international_licenses() => DVLD_DAL.Licenses.get_all_international_licenses();
 
+            public static DataTable get_all_international_licenses_all_Form() => DVLD_DAL.Licenses.get_all_international_licenses_view();
+
             public static decimal get_licenseClassFees(int licenseClassID) => DVLD_DAL.Licenses.get_licenseClassFees(licenseClassID);
 
             public static bool set_license_not_active(int licenseID) => DVLD_DAL.Licenses.set_license_not_active(licenseID);

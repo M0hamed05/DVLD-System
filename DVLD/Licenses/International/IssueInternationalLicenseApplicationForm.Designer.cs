@@ -341,8 +341,9 @@
             this.drvierLicenseInfo_WithFilter1.Size = new System.Drawing.Size(1055, 615);
             this.drvierLicenseInfo_WithFilter1.TabIndex = 0;
             // 
-            // InternationalLicenseApplicationForm
+            // IssueInternationalLicenseApplicationForm
             // 
+            this.AcceptButton = this.issueBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1065, 905);
@@ -352,12 +353,14 @@
             this.Controls.Add(this.headerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.Name = "InternationalLicenseApplicationForm";
+            this.Name = "IssueInternationalLicenseApplicationForm";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "International License Application";
             this.Load += new System.EventHandler(this.InternationalLicenseApplicationForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IssueInternationalLicenseApplicationForm_KeyDown);
             this.applicationGroupBox.ResumeLayout(false);
             this.applicationGroupBox.PerformLayout();
             this.buttomPanel.ResumeLayout(false);

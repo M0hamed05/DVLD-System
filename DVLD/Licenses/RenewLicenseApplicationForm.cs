@@ -122,5 +122,11 @@ namespace DVLD.Licenses
             PersonLicenseHistoryForm frm = new PersonLicenseHistoryForm(drvierLicenseInfo_WithFilterUserControl1.get_personID());
             frm.ShowDialog();
         }
+
+        private void RenewLicenseApplicationForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

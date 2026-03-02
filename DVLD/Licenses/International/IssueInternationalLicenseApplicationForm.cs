@@ -25,7 +25,7 @@ namespace DVLD.Applications
             drvierLicenseInfo_WithFilter1.addButtonClicked += userControl_addButtonClicked;//connect event with this function in this form
         }
 
-        private void userControl_addButtonClicked(object sender,EventArgs e)
+        private void userControl_addButtonClicked(object sender, EventArgs e)
         {
             LocalLicenseIDTxtBox.Text = Convert.ToString(drvierLicenseInfo_WithFilter1.get_licenseID());
             applicationDateTxtBox.Text = DateTime.Now.ToShortDateString();
@@ -45,7 +45,7 @@ namespace DVLD.Applications
             }
             else
             {
-                MessageBox.Show("No License Added yet","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("No License Added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,7 +99,7 @@ namespace DVLD.Applications
                         drvierLicenseInfo_WithFilter1.disable_filter_panel();
 
                         ApplicationIDTxtBox.Text = applicationID.ToString();
-                       internationalLicenseIDTxtBox.Text = internationalLicenseID.ToString();
+                        internationalLicenseIDTxtBox.Text = internationalLicenseID.ToString();
 
                         Form frm = Application.OpenForms["internationalLicenseApplicationForm"];
                         if (frm != null && frm is internationalLicenseApplicationForm)
@@ -137,6 +137,12 @@ namespace DVLD.Applications
         {
             ShowInternationalLicenseForm frm = new ShowInternationalLicenseForm(internationalLicenseID);
             frm.ShowDialog();
+        }
+
+        private void IssueInternationalLicenseApplicationForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
         }
     }
 }

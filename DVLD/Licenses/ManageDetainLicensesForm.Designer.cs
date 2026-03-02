@@ -199,7 +199,7 @@
             this.detainButton.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detainButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.detainButton.Image = global::DVLD.Properties.Resources.deleteLicense;
-            this.detainButton.Location = new System.Drawing.Point(941, 63);
+            this.detainButton.Location = new System.Drawing.Point(928, 56);
             this.detainButton.Name = "detainButton";
             this.detainButton.Size = new System.Drawing.Size(150, 40);
             this.detainButton.TabIndex = 7;
@@ -217,7 +217,7 @@
             this.ReleaseBtn.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReleaseBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ReleaseBtn.Image = global::DVLD.Properties.Resources.addcard;
-            this.ReleaseBtn.Location = new System.Drawing.Point(1097, 61);
+            this.ReleaseBtn.Location = new System.Drawing.Point(1084, 56);
             this.ReleaseBtn.Name = "ReleaseBtn";
             this.ReleaseBtn.Size = new System.Drawing.Size(150, 40);
             this.ReleaseBtn.TabIndex = 6;
@@ -276,6 +276,7 @@
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.downBtnsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "ManageDetainLicensesForm";
             this.Text = "ManageDetainLicensesForm";
             this.Load += new System.EventHandler(this.ManageDetainLicensesForm_Load);

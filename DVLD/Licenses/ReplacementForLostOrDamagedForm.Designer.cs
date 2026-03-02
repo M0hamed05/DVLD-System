@@ -323,6 +323,7 @@
             // 
             // ReplacementForLostOrDamagedForm
             // 
+            this.AcceptButton = this.issueReplacmentBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1060, 871);
@@ -334,12 +335,14 @@
             this.Controls.Add(this.headerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "ReplacementForLostOrDamagedForm";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Replacement For Lost Or Damaged License";
             this.Load += new System.EventHandler(this.ReplacementForLostOrDamagedForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReplacementForLostOrDamagedForm_KeyDown);
             this.RenewApplicationInfoGroupBox.ResumeLayout(false);
             this.RenewApplicationInfoGroupBox.PerformLayout();
             this.buttomPanel.ResumeLayout(false);

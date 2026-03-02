@@ -8,7 +8,6 @@ namespace DVLD
     public partial class EditTestTypeSmallForm : Form
     {
         int testID = -1;
-        bool saved = false;
         public EditTestTypeSmallForm(int id, string test_title, string test_description,double fees)
         {
             InitializeComponent();
@@ -53,23 +52,15 @@ namespace DVLD
                 Form frm = Application.OpenForms["ManageApplicationTypesForm"];
                 if (frm != null)
                     ((ManageApplicationTypesForm)frm).refersh_all();
-                saved = true;
             }
             else
             {
                 MessageBox.Show("Error updateing the Test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                saved = false;
             }
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            if (!saved)
-            {
-                if (MessageBox.Show("Nothing Saved, Are you Sure to Close?", "Warning", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning) == DialogResult.Yes) this.Close();
-            }
-            else
                 this.Close();
         }
 

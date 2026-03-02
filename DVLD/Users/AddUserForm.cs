@@ -279,5 +279,19 @@ namespace DVLD
         {
             add_clicked = false;
         }
+
+        private void AddEditUserForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape)
+            {
+                if (!saved)
+                {
+                    if (MessageBox.Show("Nothing Saved, Are you Sure to Close?", "Warning", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning) == DialogResult.Yes) this.Close();
+                }
+                else
+                    this.Close();
+            }
+        }
     }
 }
