@@ -38,20 +38,20 @@
             this.filter_txtbox = new System.Windows.Forms.TextBox();
             this.filterComboBox = new System.Windows.Forms.ComboBox();
             this.AllLicenses_dgv = new System.Windows.Forms.DataGridView();
-            this.upperButtenPanels = new System.Windows.Forms.Panel();
-            this.isActiveFilterComboBox = new System.Windows.Forms.ComboBox();
             this.optionsContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.LocalradioButton = new System.Windows.Forms.RadioButton();
-            this.InternationalradioButton = new System.Windows.Forms.RadioButton();
-            this.showDriverHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.showDriverHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.upperButtenPanels = new System.Windows.Forms.Panel();
+            this.InternationalradioButton = new System.Windows.Forms.RadioButton();
+            this.LocalradioButton = new System.Windows.Forms.RadioButton();
+            this.isActiveFilterComboBox = new System.Windows.Forms.ComboBox();
             this.downBtnsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).BeginInit();
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AllLicenses_dgv)).BeginInit();
-            this.upperButtenPanels.SuspendLayout();
             this.optionsContextMenuStrip.SuspendLayout();
+            this.upperButtenPanels.SuspendLayout();
             this.SuspendLayout();
             // 
             // downBtnsPanel
@@ -156,6 +156,39 @@
             this.AllLicenses_dgv.Size = new System.Drawing.Size(1123, 328);
             this.AllLicenses_dgv.TabIndex = 23;
             // 
+            // optionsContextMenuStrip
+            // 
+            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showLicenseToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.showDriverHistoryToolStripMenuItem});
+            this.optionsContextMenuStrip.Name = "contextMenuStrip1";
+            this.optionsContextMenuStrip.Size = new System.Drawing.Size(287, 82);
+            // 
+            // showLicenseToolStripMenuItem
+            // 
+            this.showLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.showLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverlicenses;
+            this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
+            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.showLicenseToolStripMenuItem.Text = "Show License";
+            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(283, 6);
+            // 
+            // showDriverHistoryToolStripMenuItem
+            // 
+            this.showDriverHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.showDriverHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.personhisory;
+            this.showDriverHistoryToolStripMenuItem.Name = "showDriverHistoryToolStripMenuItem";
+            this.showDriverHistoryToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
+            this.showDriverHistoryToolStripMenuItem.Text = "Show Driver History";
+            this.showDriverHistoryToolStripMenuItem.Click += new System.EventHandler(this.showDriverHistoryToolStripMenuItem_Click);
+            // 
             // upperButtenPanels
             // 
             this.upperButtenPanels.Controls.Add(this.InternationalradioButton);
@@ -169,6 +202,34 @@
             this.upperButtenPanels.Name = "upperButtenPanels";
             this.upperButtenPanels.Size = new System.Drawing.Size(1123, 104);
             this.upperButtenPanels.TabIndex = 22;
+            // 
+            // InternationalradioButton
+            // 
+            this.InternationalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.InternationalradioButton.AutoSize = true;
+            this.InternationalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InternationalradioButton.Location = new System.Drawing.Point(928, 60);
+            this.InternationalradioButton.Name = "InternationalradioButton";
+            this.InternationalradioButton.Size = new System.Drawing.Size(169, 33);
+            this.InternationalradioButton.TabIndex = 8;
+            this.InternationalradioButton.Text = "International";
+            this.InternationalradioButton.UseVisualStyleBackColor = true;
+            this.InternationalradioButton.CheckedChanged += new System.EventHandler(this.InternationalradioButton_CheckedChanged);
+            // 
+            // LocalradioButton
+            // 
+            this.LocalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LocalradioButton.AutoSize = true;
+            this.LocalradioButton.Checked = true;
+            this.LocalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocalradioButton.Location = new System.Drawing.Point(833, 61);
+            this.LocalradioButton.Name = "LocalradioButton";
+            this.LocalradioButton.Size = new System.Drawing.Size(89, 30);
+            this.LocalradioButton.TabIndex = 7;
+            this.LocalradioButton.TabStop = true;
+            this.LocalradioButton.Text = "Local";
+            this.LocalradioButton.UseVisualStyleBackColor = true;
+            this.LocalradioButton.CheckedChanged += new System.EventHandler(this.LocalradioButton_CheckedChanged);
             // 
             // isActiveFilterComboBox
             // 
@@ -185,65 +246,6 @@
             this.isActiveFilterComboBox.TabIndex = 6;
             this.isActiveFilterComboBox.Visible = false;
             this.isActiveFilterComboBox.SelectedIndexChanged += new System.EventHandler(this.isActiveFilterComboBox_SelectedIndexChanged);
-            // 
-            // optionsContextMenuStrip
-            // 
-            this.optionsContextMenuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.optionsContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showLicenseToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.showDriverHistoryToolStripMenuItem});
-            this.optionsContextMenuStrip.Name = "contextMenuStrip1";
-            this.optionsContextMenuStrip.Size = new System.Drawing.Size(287, 115);
-            // 
-            // showLicenseToolStripMenuItem
-            // 
-            this.showLicenseToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.showLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.driverlicenses;
-            this.showLicenseToolStripMenuItem.Name = "showLicenseToolStripMenuItem";
-            this.showLicenseToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
-            this.showLicenseToolStripMenuItem.Text = "Show License";
-            this.showLicenseToolStripMenuItem.Click += new System.EventHandler(this.showLicenseToolStripMenuItem_Click);
-            // 
-            // LocalradioButton
-            // 
-            this.LocalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LocalradioButton.AutoSize = true;
-            this.LocalradioButton.Checked = true;
-            this.LocalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocalradioButton.Location = new System.Drawing.Point(833, 61);
-            this.LocalradioButton.Name = "LocalradioButton";
-            this.LocalradioButton.Size = new System.Drawing.Size(89, 30);
-            this.LocalradioButton.TabIndex = 7;
-            this.LocalradioButton.TabStop = true;
-            this.LocalradioButton.Text = "Local";
-            this.LocalradioButton.UseVisualStyleBackColor = true;
-            // 
-            // InternationalradioButton
-            // 
-            this.InternationalradioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.InternationalradioButton.AutoSize = true;
-            this.InternationalradioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InternationalradioButton.Location = new System.Drawing.Point(928, 60);
-            this.InternationalradioButton.Name = "InternationalradioButton";
-            this.InternationalradioButton.Size = new System.Drawing.Size(169, 33);
-            this.InternationalradioButton.TabIndex = 8;
-            this.InternationalradioButton.Text = "International";
-            this.InternationalradioButton.UseVisualStyleBackColor = true;
-            // 
-            // showDriverHistoryToolStripMenuItem
-            // 
-            this.showDriverHistoryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.showDriverHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.personhisory;
-            this.showDriverHistoryToolStripMenuItem.Name = "showDriverHistoryToolStripMenuItem";
-            this.showDriverHistoryToolStripMenuItem.Size = new System.Drawing.Size(286, 36);
-            this.showDriverHistoryToolStripMenuItem.Text = "Show Driver History";
-            this.showDriverHistoryToolStripMenuItem.Click += new System.EventHandler(this.showDriverHistoryToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(283, 6);
             // 
             // AllLicensesForm
             // 
@@ -263,9 +265,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.peoplePictureBox)).EndInit();
             this.titlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AllLicenses_dgv)).EndInit();
+            this.optionsContextMenuStrip.ResumeLayout(false);
             this.upperButtenPanels.ResumeLayout(false);
             this.upperButtenPanels.PerformLayout();
-            this.optionsContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

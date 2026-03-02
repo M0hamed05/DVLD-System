@@ -2029,38 +2029,6 @@ namespace DVLDdataAccessLayer
                 }
                 return license;
             }
-
-            public static DataTable get_all_international_licenses()
-            {
-                DataTable dt = new DataTable();
-                using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
-                {
-                    string query = @"SELECT [InternationalLicenseID]
-                                    ,[ApplicationID]
-                                    ,[DriverID]
-                                    ,[IssuedUsingLocalLicenseID]
-                                    ,[IssueDate]
-                                    ,[ExpirationDate]
-                                    ,[IsActive]
-                                FROM [dbo].[InternationalLicenses]";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        try
-                        {
-                            connection.Open();
-                            SqlDataReader reader = command.ExecuteReader();
-                            if (reader.HasRows) dt.Load(reader);
-                            reader.Close();
-                        }
-                        catch
-                        {
-                            throw;
-                        }
-                    }
-                }
-                return dt;
-            }
-
             public static decimal get_licenseClassFees(int licenseClassID)
             {
                 decimal fees = 0;
@@ -2359,18 +2327,20 @@ namespace DVLDdataAccessLayer
                 return dt;
             }
 
-            public static DataTable get_all_international_license()
+            public static DataTable get_all_international_licenses()
             {
                 DataTable dt = new DataTable();
                 using (SqlConnection connection = new SqlConnection(DataAccessSetting.connection_string))
                 {
-                    string query = @"SELECT [InternationalLicenseID]
-                                     ,[ApplicationID]
-                                     ,[IssuedUsingLocalLicenseID]
-                                     ,[IssueDate]
-                                     ,[ExpirationDate]
-                                     ,[IsActive]
-                                 FROM [dbo].[InternationalLicenses]";
+                    string query = @"SELECT L.InternationalLicenseID AS [Int License ID]
+                                     ,L.IssuedUsingLocalLicenseID AS [Local Lincese ID]
+                                     ,P.NationalNo AS [National No]
+                                     ,[Driver Name] = P.FirstName + P.SecondName + ISNULL(P.ThirdName,' ') + ' ' + P.LastName
+                                     ,CAST(L.ExpirationDate AS DATE) AS [Expiration Date]
+                                     ,L.IsActive AS [Is Active]
+                                 FROM [dbo].[InternationalLicenses] L
+                                INNER JOIN [dbo].[Drivers] D ON L.DriverID = D.DriverID
+                                INNER JOIN [dbo].[People] P ON D.PersonID = P.PersonID ";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         try
