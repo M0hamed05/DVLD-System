@@ -11,6 +11,10 @@ namespace DVLD.Applications
         string licenseClass = "";
         int testpassed = 0;
         byte testype = 0;
+        public void change_testType(byte testtype)
+        {
+            testype = testtype;
+        }
 
         public VisionTestForm(int LDLA_ID, string className, byte testpassed,byte type)
         {
@@ -156,6 +160,12 @@ namespace DVLD.Applications
         {
             if(e.KeyCode == Keys.Escape)
                 this.Close();
+        }
+
+        public void refersh_all()
+        {
+            applyView(testype);
+            refresh_table();
         }
     } 
 }

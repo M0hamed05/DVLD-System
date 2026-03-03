@@ -7,10 +7,11 @@ namespace DVLD.Applications
     public partial class TakeTestForm : Form
     {
         int testAppiontmnetID = -1;
+        byte typeID = 1;
         public TakeTestForm(int LDLA_ID, string licenseClass, string ApplicantName, int trial, byte typeID,int testAppiontmnetID)
         {
             this.testAppiontmnetID = testAppiontmnetID;
-
+            this.typeID = typeID;
             InitializeComponent();
 
             applyView(typeID);
@@ -18,10 +19,6 @@ namespace DVLD.Applications
         }
 
         bool saved = false;
-        private void TakeTestForm_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void load_data(int LDLA_ID, string licenseClass, string ApplicantName, int trial, byte typeID)
         {
@@ -53,16 +50,27 @@ namespace DVLD.Applications
                 {
                     MessageBox.Show("Date Saved Successfully", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     saved = true;
-                    Form frm = Application.OpenForms["VisionTestForm"];
+
+                    Form frm = Application.OpenForms["LocalDrivingLicenseApplicationsForm"];
+                    if (frm != null)
+                        ((LocalDrivingLicenseApplicationsForm)frm).refersh_all();
+
+
+                     frm = Application.OpenForms["VisionTestForm"];
                     if (frm != null)
                     {
                         ((VisionTestForm)frm).refresh_table();
-                        if(PassRadioButton.Checked)
-                        ((VisionTestForm)frm).update_test_passed();
+                        if (PassRadioButton.Checked)
+                        {
+                            ((VisionTestForm)frm).update_test_passed();
+                            if (typeID != 3)
+                            {
+                                ((VisionTestForm)frm).change_testType(Convert.ToByte((typeID + 1)));
+                                ((VisionTestForm)frm).refersh_all();
+                            }
+                        }
+
                     }
-                    frm = Application.OpenForms["LocalDrivingLicenseApplicationsForm"];
-                    if (frm != null)
-                        ((LocalDrivingLicenseApplicationsForm)frm).refersh_all();
 
                     this.Close();
                 }

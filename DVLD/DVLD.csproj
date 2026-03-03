@@ -97,10 +97,10 @@
     <Compile Include="Licenses\PersonLicenseHistoryForm.Designer.cs">
       <DependentUpon>PersonLicenseHistoryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\schduleTestForm.cs">
+    <Compile Include="Applications\Test\schduleTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\schduleTestForm.Designer.cs">
+    <Compile Include="Applications\Test\schduleTestForm.Designer.cs">
       <DependentUpon>schduleTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\ShowApplicationDetailsForm.cs">
@@ -145,16 +145,16 @@
     <Compile Include="Licenses\Local\ShowLicenseInfo.Designer.cs">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\TakeTestForm.cs">
+    <Compile Include="Applications\Test\TakeTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\TakeTestForm.Designer.cs">
+    <Compile Include="Applications\Test\TakeTestForm.Designer.cs">
       <DependentUpon>TakeTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\VisionTestForm.cs">
+    <Compile Include="Applications\Test\VisionTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\VisionTestForm.Designer.cs">
+    <Compile Include="Applications\Test\VisionTestForm.Designer.cs">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login and main\ChangeBackgroundImageForm.cs">
@@ -223,10 +223,10 @@
     <Compile Include="Applications\EditApplicationTypeSmallForm.Designer.cs">
       <DependentUpon>EditApplicationTypeSmallForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\EditTestTypeSmallForm.cs">
+    <Compile Include="Applications\Test\EditTestTypeSmallForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\EditTestTypeSmallForm.Designer.cs">
+    <Compile Include="Applications\Test\EditTestTypeSmallForm.Designer.cs">
       <DependentUpon>EditTestTypeSmallForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Login and main\Form1.cs">
@@ -241,10 +241,10 @@
     <Compile Include="Login and main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\ManageTestTypeForm.cs">
+    <Compile Include="Applications\Test\ManageTestTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\ManageTestTypeForm.Designer.cs">
+    <Compile Include="Applications\Test\ManageTestTypeForm.Designer.cs">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\People\PersonInfoWithFilterUserControl.cs">
@@ -321,7 +321,7 @@
     <EmbeddedResource Include="Licenses\PersonLicenseHistoryForm.resx">
       <DependentUpon>PersonLicenseHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\schduleTestForm.resx">
+    <EmbeddedResource Include="Applications\Test\schduleTestForm.resx">
       <DependentUpon>schduleTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\ShowApplicationDetailsForm.resx">
@@ -345,10 +345,10 @@
     <EmbeddedResource Include="Licenses\Local\ShowLicenseInfo.resx">
       <DependentUpon>ShowLicenseInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\TakeTestForm.resx">
+    <EmbeddedResource Include="Applications\Test\TakeTestForm.resx">
       <DependentUpon>TakeTestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\VisionTestForm.resx">
+    <EmbeddedResource Include="Applications\Test\VisionTestForm.resx">
       <DependentUpon>VisionTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login and main\ChangeBackgroundImageForm.resx">
@@ -384,7 +384,7 @@
     <EmbeddedResource Include="Applications\EditApplicationTypeSmallForm.resx">
       <DependentUpon>EditApplicationTypeSmallForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\EditTestTypeSmallForm.resx">
+    <EmbeddedResource Include="Applications\Test\EditTestTypeSmallForm.resx">
       <DependentUpon>EditTestTypeSmallForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login and main\Form1.resx">
@@ -393,7 +393,7 @@
     <EmbeddedResource Include="Login and main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\ManageTestTypeForm.resx">
+    <EmbeddedResource Include="Applications\Test\ManageTestTypeForm.resx">
       <DependentUpon>ManageTestTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\People\PersonInfoWithFilterUserControl.resx">

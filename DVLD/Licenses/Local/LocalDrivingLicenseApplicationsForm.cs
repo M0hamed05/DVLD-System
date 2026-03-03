@@ -111,6 +111,9 @@ namespace DVLD.Applications
             {
                 item.Enabled = true;
             }
+            sechduleVisionTestToolStripMenuItem.Enabled = true;
+            sechduleStreetTestToolStripMenuItem.Enabled = true;
+            sechduleWrittenTestToolStripMenuItem.Enabled = true;
 
             if (Convert.ToString(applications_dgv.CurrentRow.Cells[6].Value) == "Completed")
             {

@@ -350,7 +350,6 @@
             this.Name = "TakeTestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Take Test";
-            this.Load += new System.EventHandler(this.TakeTestForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TakeTestForm_KeyDown);
             this.picturePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.topicPictureBox)).EndInit();
