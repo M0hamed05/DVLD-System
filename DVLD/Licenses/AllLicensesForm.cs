@@ -99,7 +99,7 @@ namespace DVLD.Licenses
 
         private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(filterComboBox.SelectedIndex == (filterComboBox.Items.Count -1))
+            if (filterComboBox.SelectedIndex == (filterComboBox.Items.Count - 1))
             {
                 filter_txtbox.Visible = false;
                 isActiveFilterComboBox.Visible = true;
@@ -108,8 +108,8 @@ namespace DVLD.Licenses
             {
                 filter_txtbox.Visible = true;
                 isActiveFilterComboBox.Visible = false;
-            dt.DefaultView.RowFilter = "";
-            recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
+                dt.DefaultView.RowFilter = "";
+                recordsLabel.Text = $"Records: {dt.DefaultView.Count}";
             }
 
         }
@@ -164,12 +164,17 @@ namespace DVLD.Licenses
             if (LocalradioButton.Checked)
                 refersh_all();
 
+            dt.DefaultView.RowFilter = "";
+            filter_txtbox.Text = "";
         }
 
         private void LocalradioButton_CheckedChanged(object sender, EventArgs e)
         {
             if (InternationalradioButton.Checked)
                 refersh_all();
+
+            dt.DefaultView.RowFilter = "";
+            filter_txtbox.Text = "";
         }
     }
 }

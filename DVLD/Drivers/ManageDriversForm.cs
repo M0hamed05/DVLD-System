@@ -85,11 +85,5 @@ namespace DVLD.Applications
             PersonDetailsForm frm = new PersonDetailsForm(Convert.ToInt32(drivers_dgv.CurrentRow.Cells[1].Value));
             frm.ShowDialog();
         }
-
-        private void issueInternationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            IssueInternationalLicenseApplicationForm frm = new IssueInternationalLicenseApplicationForm();
-            frm.ShowDialog();
-        }
     }
 }

@@ -32,8 +32,8 @@ namespace DVLD.Applications
             issueDateTxtBox.Text = DateTime.Now.ToShortDateString();
             feesTxtBox.Text = DVLD_BL.Applications.get_application_Type_Info((Convert.ToInt32(DVLDShared.enAppplicationTyoes.NewInternationalLicense))).Fees.ToString();
             createdByTxtBox.Text = DVLDShared.currentUser.username;
-            ExpirationDateTxtBox.Text = DateTime.Now.AddYears(DVLD_BL.Licenses.DefaultValidityLengthAge(drvierLicenseInfo_WithFilter1.get_licenseClassID())).ToShortDateString();
-
+            ExpirationDateTxtBox.Text = DateTime.Now.AddYears(1).ToShortDateString();
+            issueBtn.Enabled = true;
         }
 
         private void showLicenseHistoryBtn_Click(object sender, EventArgs e)
@@ -51,6 +51,11 @@ namespace DVLD.Applications
 
         public bool licenseValid()
         {
+            if(drvierLicenseInfo_WithFilter1.get_licenseClassID() != 3)
+            {
+                MessageBox.Show("License Should be With class 3", "Application Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             if (drvierLicenseInfo_WithFilter1.get_driverID() == 0)
             {
                 MessageBox.Show("No License Added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

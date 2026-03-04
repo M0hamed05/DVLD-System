@@ -15,8 +15,14 @@ namespace DVLD.Applications
         {
             InitializeComponent();
             personInfoUserControl1.load_person_data(personID);
-            dtLocal = DVLD_BL.Licenses.get_Driver_local_license(DVLD_BL.Drivers.get_DriverID_by_PerosnID(personInfoUserControl1.get_personID()));
-            dtInternational = DVLD_BL.Licenses.get_Driver_international_license(DVLD_BL.Drivers.get_DriverID_by_PerosnID(personInfoUserControl1.get_personID()));
+            int driverID = DVLD_BL.Drivers.get_DriverID_by_PerosnID(personInfoUserControl1.get_personID());
+            if(driverID == -1 )
+            {
+                MessageBox.Show("No Driver with this ID", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            dtLocal = DVLD_BL.Licenses.get_Driver_local_license(driverID);
+            dtInternational = DVLD_BL.Licenses.get_Driver_international_license(driverID);
         }
 
         private void PersonLicenseHistoryForm_Load(object sender, EventArgs e)

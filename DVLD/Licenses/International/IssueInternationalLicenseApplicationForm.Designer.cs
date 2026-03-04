@@ -320,6 +320,7 @@
             // 
             // issueBtn
             // 
+            this.issueBtn.Enabled = false;
             this.issueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.issueBtn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.issueBtn.Image = global::DVLD.Properties.Resources.maps__1_;

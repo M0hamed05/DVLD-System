@@ -96,8 +96,7 @@ namespace DVLD.Licenses
 
         private void optionsContextMenuStrip_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (Convert.ToBoolean(detainLicense_dgv.CurrentRow.Cells[3].Value)) releaseDetainLicenseToolStripMenuItem.Enabled = false;
-            else releaseDetainLicenseToolStripMenuItem.Enabled = true;
+            releaseDetainLicenseToolStripMenuItem.Enabled = !(bool)detainLicense_dgv.CurrentRow.Cells[3].Value;
         }
     }
 }

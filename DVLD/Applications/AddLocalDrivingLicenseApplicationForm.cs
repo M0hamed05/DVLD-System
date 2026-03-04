@@ -41,7 +41,7 @@ namespace DVLD
         {
             if (!nextClicked)
             {
-                if (!peersonInfoWithFilterUserControl1.is_add_selected()) peersonInfoWithFilterUserControl1.perform_add_click();
+                peersonInfoWithFilterUserControl1.perform_add_click();
                 dateTxtBox.Text = $"{DateTime.Now.ToShortDateString()}";
                 usernameTxtBox.Text = $"{DVLDShared.currentUser.username}";
                 feesTxtBox.Text = $"{DVLD_BL.Applications.get_application_Type_Info((int)DVLDShared.enAppplicationTyoes.NewLocalDrivingLicenseApplication).Fees}";

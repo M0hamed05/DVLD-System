@@ -8,7 +8,6 @@ using System.Net;
 // point 2 like point 1 organize them( not in one file)
 namespace DVLDdataAccessLayer
 {
-
     public class DVLD_DAL
     {
         public class People
@@ -20,7 +19,7 @@ namespace DVLDdataAccessLayer
                 {
                     string query = @"SELECT PersonID,NationalNo,
                             FirstName,SecondName,ThirdName,LastName,
-                            DateOfBirth,    
+                            CAST(DateOfBirth AS DATE) AS DateOfBirth,    
                             CASE
                             WHEN Gendor = 0 THEN 'Male'
                             ELSE 'Female'
@@ -2221,7 +2220,7 @@ namespace DVLDdataAccessLayer
                                 detainLicense.CreatedByUserID = (int)reader["CreatedByUserID"];
                                 detainLicense.IsReleased = (bool)reader["IsReleased"];
 
-                                detainLicense.ReleaseDate = reader["ReleaseDate"] == DBNull.Value ? null : (DateTime?)reader["[ReleaseDate]"];
+                                detainLicense.ReleaseDate = reader["ReleaseDate"] == DBNull.Value ? null : (DateTime?)reader["ReleaseDate"];
                                 detainLicense.ReleasedByUserID = reader["ReleasedByUserID"] == DBNull.Value ? null : (int?)reader["ReleasedByUserID"];
                                 detainLicense.ReleaseApplicationID = reader["ReleaseApplicationID"] == DBNull.Value ? null : (int?)reader["ReleaseApplicationID"];
 
