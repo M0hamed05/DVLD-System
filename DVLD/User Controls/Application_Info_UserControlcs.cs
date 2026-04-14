@@ -60,5 +60,10 @@ namespace DVLD.User_Controls
             PersonDetailsForm frm = new PersonDetailsForm(person.personID);
             frm.ShowDialog();
         }
+
+        public void enable_show_application_license()
+        {
+            ShowLicenseBtn.Enabled = true;
+        }
     }
 }

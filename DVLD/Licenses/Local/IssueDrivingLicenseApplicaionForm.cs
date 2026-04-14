@@ -35,6 +35,8 @@ namespace DVLD.Applications
                     ((LocalDrivingLicenseApplicationsForm)frm).refersh_all();
                 saved = true;
 
+                application_Info_UserControl1.enable_show_application_license();
+
             }
             else
             {

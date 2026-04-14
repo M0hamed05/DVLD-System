@@ -1,35 +1,50 @@
-#  DVLD - Drivers and Vehicles License Department
+# 🚗 DVLD - Driver & Vehicle Licensing Department
 
-A comprehensive desktop application for managing driving licenses, vehicles, and related services. Built using **.NET Framework (WinForms)** and **SQL Server**.
+A comprehensive Desktop Application for managing driving licenses, tests, and applications. Developed as a capstone project for the **Programming Advices** roadmap.
 
-## 🌟 Features
-* **Manage People:** Add, Edit, Delete, and List people with filtering.
-* **Manage Users:** System users with role-based permissions.
-* **License Management:**
-    * Issue Local & International Licenses.
-    * Renew, Replace (Lost/Damaged) Licenses.
-    * **Detain & Release Licenses:** Full workflow for handling traffic violations.
-* **Tests Management:** Schedule Vision, Written, and Street tests.
-* **Applications:** Manage different types of applications and application types.
+---
 
-## 🛠 Tech Stack
-* **Language:** C#
-* **Framework:** .NET Framework 4.7.2+ (WinForms)
-* **Database:** MS SQL Server
-* **Architecture:** N-Tier Architecture (Presentation, Business Logic, Data Access).
-* **Data Access:** ADO.NET
+## ⏱️ Project Timeline
+I managed to deliver this complex system in a very competitive timeframe:
+- **Core Development:** Completed in **21 Days** (Database Design, DAL, BL, and Basic UI).
+- **Maintenance & Refactoring:** **18 Days** dedicated to code cleaning, bug fixing, and adding user-friendly shortcuts.
 
-## 🚀 How to Run
+---
 
-1. **Database Setup:** - The database backup file (`.bak`) or script (`.sql`) is included in the `/Database` folder.
-   - Restore the database on your local **SQL Server** instance and name it `DVLD`.
+## 🛠️ Built With
+- **Language:** C#
+- **Framework:** .NET Framework (WinForms)
+- **Database:** Microsoft SQL Server (T-SQL)
+- **Architecture:** Clean 3-Layer Architecture (Data Access, Business, and Presentation Layers).
 
-2. **Configuration:**
-   - Open the project in Visual Studio.
-   - Navigate to the `DataAccessLayer` or `App.config` and update the **Connection String** with your Server Name.
+---
 
-3. **Run the App:**
-   - Build the solution and press `F5` to start the application.
+## 🌟 Key Features
+- **Application Management:** Local and International license applications.
+- **Test System:** Full workflow for Vision, Written, and Street tests.
+- **License Operations:** Issue, Renew, Replace (Damaged/Lost), Detain, and Release.
+- **User Management:** Secure login system with fine-grained permissions.
+- **Driver History:** Quick access to all licenses and test history for any driver.
 
-## 👤 Author
-**Mohamed Hassanien Moahmed Ibrahim**
+---
+
+## 🚀 Key Learning Outcomes
+During this project, I improved my skills in:
+- Designing complex **Relational Databases**.
+- Implementing **Layered Architecture** to separate concerns.
+- Handling **Events and Delegates** for cross-form communication.
+- Mastering **ADO.NET** for efficient data operations.
+- Writing **Clean Code** through continuous refactoring.
+
+---
+
+## 📸 Screenshots
+*(Add your screenshots here to make it look awesome!)*
+
+---
+
+## ⚖️ License
+This project is licensed under the **GNU GPLv3**. (Educational Use Only).
+
+---
+**Developed by [Your Name]** *March 2026*

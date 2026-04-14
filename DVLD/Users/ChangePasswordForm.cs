@@ -9,9 +9,11 @@ namespace DVLD
     {
         bool saved = false;
         int personID = -1;
+        DVLDShared.clsUser user = new DVLDShared.clsUser();
         public ChangePasswordForm(int personID)
         {
             InitializeComponent();
+            user = DVLD_BL.Users.get_user_data(DVLD_BL.Users.get_user_id_by_PersonID(personID));
             this.personID = personID;
         }
 
@@ -22,7 +24,7 @@ namespace DVLD
 
         private void oldPasswordTxtBox_Leave(object sender, EventArgs e)
         {
-            if (DVLDShared.currentUser.password != oldpasswordTxtBox.Text)
+            if (user.password != oldpasswordTxtBox.Text)
             {
                 errorProvider.SetError(oldpasswordTxtBox, "Password Should Match the old password");
             }
@@ -31,7 +33,7 @@ namespace DVLD
 
         private void passowrdTxtBox_Leave(object sender, EventArgs e)
         {
-            if (DVLDShared.currentUser.password == passowrdTxtBox.Text) errorProvider.SetError(passowrdTxtBox, "New Password Should be different");
+            if (user.password == passowrdTxtBox.Text) errorProvider.SetError(passowrdTxtBox, "New Password Should be different");
             else errorProvider.Clear();
         }
 

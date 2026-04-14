@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "E:\\Projects\\DVLD\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\users\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\users\\changepasswordform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChangePasswordForm.cs",
+              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Users\\ChangePasswordForm.cs",
+              "RelativeDocumentMoniker": "DVLD\\Users\\ChangePasswordForm.cs",
+              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Users\\ChangePasswordForm.cs",
+              "RelativeToolTip": "DVLD\\Users\\ChangePasswordForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T17:22:33.708Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
