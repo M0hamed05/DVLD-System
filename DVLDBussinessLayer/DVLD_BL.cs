@@ -1,5 +1,6 @@
 ﻿using DVLD_Shared;
 using DVLDdataAccessLayer;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -105,6 +106,24 @@ namespace DVLDBussinessLayer
             }
             
             public static bool update_user_password(int userID,string password) =>DVLD_DAL.Users.update_user_password(userID,password);
+
+            public static void Save_username_and_password_to_registry(string username,string password)
+            {
+                string keyPath = "HKEY_CURRENT_USER\\SOFTWARE\\DVLDsystem";
+                string usernameValueName = "username";
+                string passwordValueName = "password";
+
+                try
+                {
+                    Registry.SetValue(keyPath, usernameValueName, username,RegistryValueKind.String);
+                    Registry.SetValue(keyPath, passwordValueName, password, RegistryValueKind.String);
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
         }
 
         public class Applications

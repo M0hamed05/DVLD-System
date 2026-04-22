@@ -97,6 +97,7 @@ namespace DVLD
             this.Hide();
             Properties.Settings.Default.SavedID = 0;
             Properties.Settings.Default.Save();
+            DVLD_BL.Users.Save_username_and_password_to_registry("", "");
             DVLDShared.currentPerson = null;
             DVLDShared.currentUser = null;
             if (loginForm != null)

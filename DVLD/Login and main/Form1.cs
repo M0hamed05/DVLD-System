@@ -57,6 +57,7 @@ namespace DVLD
             if (rememberMeCheckBox.Checked)
             {
                 Properties.Settings.Default.SavedID = personID;
+                DVLD_BL.Users.Save_username_and_password_to_registry(usernameTextBox.Text, passwordTextBox.Text);
             }
             else
             {

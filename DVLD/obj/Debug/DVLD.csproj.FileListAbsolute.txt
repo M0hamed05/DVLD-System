@@ -52,7 +52,7 @@ E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ReplacementForLostOrDamagedForm.re
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.DetainLicenseForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ReleaseDetainedLicenseForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.ManageDetainLicensesForm.resources
-E:\Projects\DVLD\DVLD\obj\Debug\DVLD.exe.config
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Login_and_main.ChangeBackgroundImageForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.Licenses.AllLicensesForm.resources
 E:\Projects\DVLD\DVLD\obj\Debug\DVLD.PersonInfoWithFilterUserControl.resources
+E:\Projects\DVLD\DVLD\obj\Debug\DVLD.exe.config
