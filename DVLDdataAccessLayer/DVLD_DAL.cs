@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Net;
 
 // point 2 like point 1 organize them( not in one file)
@@ -35,8 +36,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -102,8 +104,9 @@ namespace DVLDdataAccessLayer
                             else personID = -1;
 
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            log_message(ex.Message);
                             personID = -1;
                             throw;
                         }
@@ -145,8 +148,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch(Exception ex) 
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -187,8 +191,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -236,8 +241,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch(Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -260,8 +266,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                         }
                     }
@@ -285,8 +292,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             return false;
                         }
                     }
@@ -310,8 +318,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             return false;
                         }
                     }
@@ -334,8 +343,9 @@ namespace DVLDdataAccessLayer
                             while (reader.Read()) AllnationalityNo.Add((string)reader["NationalNo"]);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -359,8 +369,9 @@ namespace DVLDdataAccessLayer
                             while (reader.Read()) AllnationalityNo.Add((string)reader["NationalNo"]);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -384,8 +395,9 @@ namespace DVLDdataAccessLayer
                             while (reader.Read()) peronsID.Add((int)reader["PersonID"]);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -409,8 +421,9 @@ namespace DVLDdataAccessLayer
                             while (reader.Read()) all_personIDs.Add((int)reader["PersonID"]);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -434,8 +447,9 @@ namespace DVLDdataAccessLayer
                             return result != null ? Convert.ToInt32(result) : -1;
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -458,8 +472,9 @@ namespace DVLDdataAccessLayer
                             return result != null;
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -489,8 +504,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             personID = result != null ? Convert.ToInt32(result) : 0;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             personID = -1;
                             throw;
                         }
@@ -517,8 +533,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return ((Convert.ToBoolean(result) == true));
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             return false;
                         }
 
@@ -552,8 +569,9 @@ namespace DVLDdataAccessLayer
                             }
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -577,8 +595,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             userID = result != null ? (int)result : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             userID = -1;
                             throw;
                         }
@@ -604,8 +623,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -629,8 +649,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             return false;
                         }
                     }
@@ -654,8 +675,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             return false;
                         }
                     }
@@ -691,8 +713,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             user.userID = result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -714,8 +737,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                         }
                     }
@@ -746,8 +770,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -774,8 +799,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -805,8 +831,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -833,8 +860,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -859,8 +887,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -889,8 +918,9 @@ namespace DVLDdataAccessLayer
                             connection.Open();
                             success = (Convert.ToInt32(command.ExecuteNonQuery()) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -915,8 +945,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -943,8 +974,9 @@ namespace DVLDdataAccessLayer
                             }
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -972,8 +1004,9 @@ namespace DVLDdataAccessLayer
                                 return Convert.ToInt32(result);
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -997,8 +1030,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1042,8 +1076,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1087,8 +1122,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1117,8 +1153,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1140,8 +1177,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1163,8 +1201,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1191,8 +1230,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteNonQuery();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1219,8 +1259,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteNonQuery();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1254,8 +1295,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1285,8 +1327,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1318,8 +1361,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1360,8 +1404,9 @@ namespace DVLDdataAccessLayer
                             object rowsAffected = command.ExecuteNonQuery();
                             success = (rowsAffected != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1390,8 +1435,9 @@ namespace DVLDdataAccessLayer
                             object rowsAffected = command.ExecuteNonQuery();
                             success = (Convert.ToInt32(rowsAffected) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1415,8 +1461,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToDecimal(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1443,8 +1490,9 @@ namespace DVLDdataAccessLayer
                             object rowsAffected = command.ExecuteNonQuery();
                             success = (Convert.ToInt32(rowsAffected) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1485,8 +1533,9 @@ namespace DVLDdataAccessLayer
                                 update_testApptoitmentCase(testAppointmentID);
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1514,8 +1563,9 @@ namespace DVLDdataAccessLayer
                             object rowsAffected = command.ExecuteNonQuery();
                             success = (Convert.ToInt32(rowsAffected) > 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1542,8 +1592,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             id = (result != null) ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1569,8 +1620,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteNonQuery();
                             success = (result != null && Convert.ToInt32(result) != 0);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -1630,8 +1682,9 @@ namespace DVLDdataAccessLayer
                             object id = command.ExecuteScalar();
                             license.LicenseID = id != null ? Convert.ToInt32(id) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             license.LicenseID = -1;
                             throw;
                         }
@@ -1660,8 +1713,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             licenseID = result != null ? (int)result : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             licenseID = -1;
                             throw;
                         }
@@ -1686,8 +1740,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             AllowedAge = result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             AllowedAge = -1;
                             throw;
                         }
@@ -1727,8 +1782,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1751,8 +1807,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToString(result) : "";
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1790,8 +1847,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1815,8 +1873,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return (result != null);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1849,8 +1908,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1882,8 +1942,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1907,8 +1968,9 @@ namespace DVLDdataAccessLayer
                             while (reader.Read()) LicenseID.Add((int)reader["LicenseID"]);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -1955,8 +2017,9 @@ namespace DVLDdataAccessLayer
                             object id = command.ExecuteScalar();
                             license.InternationalLicenseID = id != null ? Convert.ToInt32(id) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             license.InternationalLicenseID = -1;
                             throw;
                         }
@@ -1983,8 +2046,9 @@ namespace DVLDdataAccessLayer
                                 found = Convert.ToByte(result) != 0 ? true : false;
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2011,8 +2075,9 @@ namespace DVLDdataAccessLayer
                                     found = Convert.ToByte(result) != 0 ? true : false;
                                 }
                             }
-                            catch
+                            catch (Exception ex)
                             {
+                                log_message(ex.Message);
                                 throw;
                             }
                         }
@@ -2049,8 +2114,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2072,8 +2138,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             if (result != null) fees = Convert.ToDecimal(result);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2096,8 +2163,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteNonQuery();
                             if (result != null) sucess = Convert.ToByte(result) == 1 ? true : false;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             sucess = false;
                             throw;
                         }
@@ -2155,8 +2223,9 @@ namespace DVLDdataAccessLayer
                                 detainLicense.DetainID = -1;
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             detainLicense.DetainID = -1;
                             throw;
                         }
@@ -2187,8 +2256,9 @@ namespace DVLDdataAccessLayer
                                 success = false;
                             }
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -2228,8 +2298,9 @@ namespace DVLDdataAccessLayer
                             reader.Close();
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2271,8 +2342,9 @@ namespace DVLDdataAccessLayer
                             }
 
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             success = false;
                             throw;
                         }
@@ -2311,8 +2383,9 @@ namespace DVLDdataAccessLayer
                             SqlDataReader reader = command.ExecuteReader();
                             if (reader.HasRows) dt.Load(reader);
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2346,8 +2419,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2377,8 +2451,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2409,8 +2484,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2448,8 +2524,9 @@ namespace DVLDdataAccessLayer
                             object id = command.ExecuteScalar();
                             return id != null ? Convert.ToInt32(id) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
 
@@ -2472,8 +2549,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2495,8 +2573,9 @@ namespace DVLDdataAccessLayer
                             object result = command.ExecuteScalar();
                             return result != null ? Convert.ToInt32(result) : -1;
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2518,8 +2597,9 @@ namespace DVLDdataAccessLayer
                             if (reader.HasRows) dt.Load(reader);
                             reader.Close();
                         }
-                        catch
+                        catch (Exception ex)
                         {
+                            log_message(ex.Message);
                             throw;
                         }
                     }
@@ -2547,14 +2627,34 @@ namespace DVLDdataAccessLayer
                         }
                         reader.Close();
                     }
-                    catch
+                    catch (Exception ex)
                     {
+                        log_message(ex.Message);
                         throw;
                     }
                 }
             }
             DVLDShared.countries = countries;
             return countries;
+        }
+
+        private static void log_message(string ErrorMessage)
+        {
+            string sourceName = "DVLDsystem";
+
+            try
+            {
+
+                if (!EventLog.SourceExists(sourceName))
+                    EventLog.CreateEventSource(sourceName, "Application");
+
+                EventLog.WriteEntry(sourceName,ErrorMessage,EventLogEntryType.Error);
+            }
+            catch (Exception ex)
+            {
+                log_message(ex.Message);
+
+            }
         }
     }
 }
