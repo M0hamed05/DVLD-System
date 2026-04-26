@@ -24,7 +24,7 @@ namespace DVLD
 
         private void oldPasswordTxtBox_Leave(object sender, EventArgs e)
         {
-            if (user.password != oldpasswordTxtBox.Text)
+            if (user.password != DVLD_BL.Users.ComputeHash(oldpasswordTxtBox.Text))
             {
                 errorProvider.SetError(oldpasswordTxtBox, "Password Should Match the old password");
             }
@@ -72,14 +72,13 @@ namespace DVLD
                 saved = false;
             }
 
-            if (DVLD_BL.Users.update_user_password(DVLDShared.currentUser.userID, passowrdTxtBox.Text))
+            if (DVLD_BL.Users.update_user_password(user.userID, DVLD_BL.Users.ComputeHash(passowrdTxtBox.Text)))
             {
                 MessageBox.Show("User Password Updated Successfully!", "Password Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Form frm = Application.OpenForms["UsersForm"];
                 if (frm != null)
                     ((UsersForm)frm).refersh_all();
                 saved = true;
-                DVLDShared.currentUser = DVLD_BL.Users.get_user_data(DVLDShared.currentUser.userID);
             }
             else
             {

@@ -29,7 +29,7 @@ namespace DVLD
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            int personID = DVLD_BL.Users.authonticate(usernameTextBox.Text, passwordTextBox.Text);
+            int personID = DVLD_BL.Users.authonticate(usernameTextBox.Text, DVLD_BL.Users.ComputeHash(passwordTextBox.Text));
 
             if (personID == 0)
             {
@@ -57,7 +57,7 @@ namespace DVLD
             if (rememberMeCheckBox.Checked)
             {
                 Properties.Settings.Default.SavedID = personID;
-                DVLD_BL.Users.Save_username_and_password_to_registry(usernameTextBox.Text, passwordTextBox.Text);
+                DVLD_BL.Users.Save_username_and_password_to_registry(usernameTextBox.Text, DVLD_BL.Users.ComputeHash(passwordTextBox.Text));
             }
             else
             {

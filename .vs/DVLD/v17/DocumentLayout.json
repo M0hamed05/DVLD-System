@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\Projects\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F42E2D62-3540-494C-8EA8-95D17F3663FF}|DVLDdataAccessLayer\\DVLDdataAccessLayer.csproj|e:\\projects\\dvld\\dvlddataaccesslayer\\dvld_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F42E2D62-3540-494C-8EA8-95D17F3663FF}|DVLDdataAccessLayer\\DVLDdataAccessLayer.csproj|solutionrelative:dvlddataaccesslayer\\dvld_dal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|e:\\projects\\dvld\\dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0A8E7BA8-52B8-42FE-B580-500BFDB19899}|DVLD\\DVLD.csproj|solutionrelative:dvld\\login and main\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "app.manifest",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\app.manifest",
-              "RelativeDocumentMoniker": "DVLD\\app.manifest",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\app.manifest",
-              "RelativeToolTip": "DVLD\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2026-04-23T13:36:00.849Z",
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
+              "RelativeDocumentMoniker": "DVLD\\Login and main\\Form1.cs",
+              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
+              "RelativeToolTip": "DVLD\\Login and main\\Form1.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAUwDsAAACKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T09:15:48.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DVLD_DAL.cs",
-              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLDdataAccessLayer\\DVLD_DAL.cs",
-              "RelativeDocumentMoniker": "DVLDdataAccessLayer\\DVLD_DAL.cs",
-              "ToolTip": "E:\\Projects\\DVLD\\DVLDdataAccessLayer\\DVLD_DAL.cs",
-              "RelativeToolTip": "DVLDdataAccessLayer\\DVLD_DAL.cs",
-              "ViewState": "AgIAAH4JAAAAAAAAAAAowGMKAAABAAAAAAAAAA==",
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs",
+              "RelativeDocumentMoniker": "DVLD\\Login and main\\Form1.cs",
+              "ToolTip": "E:\\Projects\\DVLD\\DVLD\\Login and main\\Form1.cs [Design]",
+              "RelativeToolTip": "DVLD\\Login and main\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T13:03:24.363Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-26T09:15:44.434Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

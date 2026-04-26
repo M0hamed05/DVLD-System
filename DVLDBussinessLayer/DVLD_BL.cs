@@ -4,6 +4,8 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 //point 1 = prefered not to be all in one class 
 //point 4 = should be implemented in classes and clsperosn as a class with all its functions
@@ -107,7 +109,7 @@ namespace DVLDBussinessLayer
             
             public static bool update_user_password(int userID,string password) =>DVLD_DAL.Users.update_user_password(userID,password);
 
-            public static void Save_username_and_password_to_registry(string username,string password)
+            public static void Save_username_and_password_to_registry(string username, string password)
             {
                 string keyPath = "HKEY_CURRENT_USER\\SOFTWARE\\DVLDsystem";
                 string usernameValueName = "username";
@@ -115,13 +117,22 @@ namespace DVLDBussinessLayer
 
                 try
                 {
-                    Registry.SetValue(keyPath, usernameValueName, username,RegistryValueKind.String);
-                    Registry.SetValue(keyPath, passwordValueName, password, RegistryValueKind.String);
+                    Registry.SetValue(keyPath, usernameValueName, username, RegistryValueKind.String);
+                    Registry.SetValue(keyPath, passwordValueName, ComputeHash(password), RegistryValueKind.String);
 
                 }
                 catch (Exception e)
                 {
+                    DVLD_DAL.log_message(e.Message);
+                }
+            }
 
+            public static string ComputeHash(string password)
+            {
+                using(SHA256 sha256 = SHA256.Create())
+                {
+                    byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                    return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
                 }
             }
         }

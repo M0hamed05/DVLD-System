@@ -2638,7 +2638,7 @@ namespace DVLDdataAccessLayer
             return countries;
         }
 
-        private static void log_message(string ErrorMessage)
+        public static void log_message(string ErrorMessage)
         {
             string sourceName = "DVLDsystem";
 

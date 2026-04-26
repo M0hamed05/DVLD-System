@@ -86,10 +86,20 @@ namespace DVLD
 
         private void usernameTxtBox_Leave(object sender, EventArgs e)
         {
-            if (DVLD_BL.Users.is_repeated_user_id(usernameTxtBox.Text.ToString()))
-                errorProvider.SetError(usernameTxtBox, "There is a username with this id");
-            else if (string.IsNullOrWhiteSpace(usernameTxtBox.Text)) errorProvider.SetError(usernameTxtBox, "This is requried field");
-            else errorProvider.Clear();
+            if (editmode)
+            {
+                if (DVLD_BL.Users.is_repeated_user_id_but_personal(usernameTxtBox.Text.ToString(), userID))
+                    errorProvider.SetError(usernameTxtBox, "There is a username with this id");
+                else if (string.IsNullOrWhiteSpace(usernameTxtBox.Text)) errorProvider.SetError(usernameTxtBox, "This is requried field");
+                else errorProvider.Clear();
+            }
+            else
+            {
+                if (DVLD_BL.Users.is_repeated_user_id(usernameTxtBox.Text.ToString()))
+                    errorProvider.SetError(usernameTxtBox, "There is a username with this id");
+                else if (string.IsNullOrWhiteSpace(usernameTxtBox.Text)) errorProvider.SetError(usernameTxtBox, "This is requried field");
+                else errorProvider.Clear();
+            }
         }
 
         private void confrimPasswordTxtBox_Leave(object sender, EventArgs e)
@@ -121,17 +131,23 @@ namespace DVLD
         private void saveBtn_Click(object sender, EventArgs e)
         {
 
-            foreach (Control ctrl in loginInfoPanel.Controls)
+            if(string.IsNullOrWhiteSpace(usernameTxtBox.Text))
             {
-                if (!string.IsNullOrEmpty(errorProvider.GetError(ctrl)))
-                {
-                    MessageBox.Show("Error, Please Fix the red Errors!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                MessageBox.Show("Error, Please Fill all the data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             if (!editmode)
             {
+                foreach (Control ctrl in loginInfoPanel.Controls)
+                {
+                    if (string.IsNullOrEmpty(errorProvider.GetError(ctrl)))
+                    {
+                        MessageBox.Show("Error, Please Fix the red Errors or Fill all data!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
                 int userID = DVLD_BL.Users.add_new_user(save_user_to_class());
                 if (userID != -1)
                 {
@@ -176,6 +192,7 @@ namespace DVLD
 
 
             }
+
             personID = -1;
             userID = -1;
             all_nationalty = DVLD_BL.People.get_all_nationlityID_for_user_adding();
@@ -201,7 +218,7 @@ namespace DVLD
         {
             DVLDShared.clsUser user = new DVLDShared.clsUser();
             user.username = usernameTxtBox.Text;
-            user.password = passowrdTxtBox.Text;
+            user.password = DVLD_BL.Users.ComputeHash(passowrdTxtBox.Text);
             user.personID = personID;
             user.userID = userID;
             user.isActive = isActiveCheckButton.Checked;
@@ -210,6 +227,8 @@ namespace DVLD
 
         private void load_user_data_for_edit(int personID, int UserID)
         {
+            passowrdTxtBox.Enabled = false;
+            confrimPasswordTxtBox.Enabled = false;
             filterPanel.Visible = false;
             nextBtnPanel.Visible = false;
             loginInfoPanel.Visible = true;
@@ -221,8 +240,6 @@ namespace DVLD
 
             user = DVLD_BL.Users.get_user_data(UserID);
             usernameTxtBox.Text = user.username.ToString();
-            passowrdTxtBox.Text = user.password.ToString();
-            confrimPasswordTxtBox.Text = passowrdTxtBox.Text;
 
             if (user.isActive == true)
                 isActiveCheckButton.Checked = true;
