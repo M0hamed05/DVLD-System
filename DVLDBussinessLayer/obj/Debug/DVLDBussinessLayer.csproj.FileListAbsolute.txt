@@ -9,3 +9,14 @@ E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.csproj.CoreComp
 E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBuss.F42A9AF3.Up2Date
 E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.dll
 E:\Projects\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.pdb
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLDBussinessLayer.dll
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLDBussinessLayer.pdb
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLDdataAccessLayer.dll
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLD_Shared.dll
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLDdataAccessLayer.pdb
+D:\Projects\C#\DVLD\DVLDBussinessLayer\bin\Debug\DVLD_Shared.pdb
+D:\Projects\C#\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.csproj.AssemblyReference.cache
+D:\Projects\C#\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.csproj.CoreCompileInputs.cache
+D:\Projects\C#\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBuss.F42A9AF3.Up2Date
+D:\Projects\C#\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.dll
+D:\Projects\C#\DVLD\DVLDBussinessLayer\obj\Debug\DVLDBussinessLayer.pdb

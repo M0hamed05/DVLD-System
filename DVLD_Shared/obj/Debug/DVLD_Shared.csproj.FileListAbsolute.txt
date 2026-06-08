@@ -4,3 +4,9 @@ E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.AssemblyReference.cach
 E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.CoreCompileInputs.cache
 E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.dll
 E:\Projects\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.pdb
+D:\Projects\C#\DVLD\DVLD_Shared\bin\Debug\DVLD_Shared.dll
+D:\Projects\C#\DVLD\DVLD_Shared\bin\Debug\DVLD_Shared.pdb
+D:\Projects\C#\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.AssemblyReference.cache
+D:\Projects\C#\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.csproj.CoreCompileInputs.cache
+D:\Projects\C#\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.dll
+D:\Projects\C#\DVLD\DVLD_Shared\obj\Debug\DVLD_Shared.pdb
